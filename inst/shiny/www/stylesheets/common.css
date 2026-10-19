@@ -1,0 +1,35 @@
+/* USGS common styles (adapted from the age-subsampling-simulation project) */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header-nav {
+  background-color: #000000 !important;
+  padding: 0;
+  margin: 0;
+}
+
+.tmp-container {
+  max-width: 1200px;
+  margin: 0;
+  padding: 5px 15px;
+  text-align: left;
+}
+
+.logo-header {
+  padding: 5px;
+  display: inline-block;
+  float: left;
+}
+
+.logo-header img {
+  height: 50px;
+  padding: 5px;
+}
+
+#maincontent {
+  padding: 0;
+}

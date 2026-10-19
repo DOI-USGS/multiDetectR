@@ -1,0 +1,150 @@
+---
+title: "Getting started with multiDetectR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with multiDetectR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 6,
+                      fig.height = 4)
+```
+
+```{r setup}
+library(multiDetectR)
+```
+
+## The problem
+
+A survey that looks for a target often nests its sampling: sites hold samples,
+samples hold replicates, and so on.
+Each level costs something and detects the target with some probability, and a
+fixed budget has to be split among the levels.
+`multiDetectR` implements the closed-form rule that solves this allocation
+exactly, at any depth.
+Function and argument names follow the equations of the accompanying
+manuscript, so the code and the paper read the same way.
+
+Levels are ordered from the **outermost** (the reporting level, index 1) to the
+**innermost** (index `d`).
+For a three-level environmental DNA survey, level 1 might be sites, level 2
+water samples within a site, and level 3 PCR replicates within a sample.
+Two numbers describe each level:
+
+- `theta[i]`: the probability a level-`i` unit carries the target given that the
+  unit containing it does (a conditional detectability);
+- `cost[i]`: the marginal cost of one level-`i` unit, excluding the cost of what
+  it contains.
+
+## Allocating a budget
+
+Give `allocate()` the per-level detectabilities and costs, a goal, and a budget:
+
+```{r}
+des <- allocate(
+  theta  = c(0.3, 0.5, 0.6),   # site, sample, replicate detectabilities
+  cost   = c(200, 20, 2),      # cost of a site, a sample, a replicate
+  goal   = "detection",
+  budget = 5000
+)
+des
+```
+
+The design says how many units to take at each level: here, `r des$n[1]`
+sites, `r des$n[2]` samples per site, and `r des$n[3]` replicates per sample,
+reaching a detection probability of `r round(des$P1, 3)`.
+
+`summary()` lays the design out level by level, including each level's detection
+hazard and its price of a detection `kappa`:
+
+```{r}
+summary(des)
+```
+
+## Reaching a required detection probability
+
+The same rule answers the dual question: what is the cheapest design that
+reaches a required detection probability?
+Supply `P_target` instead of `budget`.
+
+```{r}
+allocate(theta = c(0.3, 0.5, 0.6), cost = c(200, 20, 2),
+         goal = "detection", P_target = 0.95)
+```
+
+The inner design is identical to the budget version; only the number of
+outermost units differs.
+This is the budget-invariance property: replication within the hierarchy does
+not depend on how much money there is.
+
+## The budget-detection frontier
+
+Once a design is reduced to its outermost price of a detection `kappa_1`, the
+whole budget-detection relationship is a single curve,
+`P(B) = 1 - exp(-B / kappa_1)`:
+
+```{r}
+plot(des)
+```
+
+The curve is smooth and strictly concave, so returns diminish everywhere at the
+same proportional rate; there is no natural stopping point, and the budget or a
+required detection has to be chosen from outside the curve.
+
+## Two goals
+
+A search has two nested goals.
+The **detection** goal maximizes the chance of finding the target at least once.
+The **count** goal maximizes the number of level-1 samples in which it is found.
+They agree when a sample seldom carries the target, and diverge as it becomes
+common.
+
+```{r}
+allocate(theta = c(0.3, 0.5), cost = c(200, 2),
+         goal = "count", budget = 5000)
+```
+
+## Integer counts and small budgets
+
+By default replicate counts are integers, obtained by rounding in place.
+When a budget buys only a handful of outermost units, rounding can miss the best
+integer design, so enumerate instead:
+
+```{r}
+enumerate_designs(theta = c(0.3, 0.5, 0.6), cost = c(200, 20, 2),
+                  budget = 1500, goal = "detection")
+```
+
+For effort measured continuously (a volume, a time, a distance), set
+`integer = FALSE` and no rounding is needed.
+
+## Auditing a design
+
+At the optimum, each level spends on its contents the same share of its budget
+as those contents contribute to its detection power (the identity `A = B`).
+`optimality_identity()` reports both quantities, so a costed design can be
+checked level by level without re-solving:
+
+```{r}
+optimality_identity(allocate(theta = c(0.3, 0.5, 0.6), cost = c(200, 20, 2),
+                             goal = "detection", budget = 5000,
+                             integer = FALSE))
+```
+
+The differences are zero (to numerical tolerance) for a continuous optimum.
+
+## Choosing among branches
+
+Separate places or separate methods are *branches*, not nested levels.
+`allocate_branches()` decides whether to concentrate the budget on one branch or
+spread it, from the per-target, per-branch detection rates.
+
+```{r}
+## One target, two methods; the first is nine times better.
+allocate_branches(rate = matrix(c(0.9, 0.1), nrow = 1), budget = 20)
+```
+
+A method that dominates every target takes the whole budget; two places that
+each reach targets the other cannot are always shared.

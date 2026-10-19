@@ -1,0 +1,221 @@
+---
+title: "A worked example with simulated data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{A worked example with simulated data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 6,
+                      fig.height = 4)
+set.seed(2026)
+```
+
+```{r setup}
+library(multiDetectR)
+```
+
+This vignette walks through a complete analysis on **simulated** data, so every
+step is reproducible without any field data or model-fitting packages.
+We invent a three-level environmental DNA (eDNA) survey with known truth,
+simulate detections, estimate the inputs the allocation rule needs, allocate a
+budget, and then check the result against the known optimum.
+
+## A three-level survey
+
+Consider a survey that searches for one target across:
+
+1. **sites** (the outermost, reporting level),
+2. **water samples** within a site, and
+3. **PCR replicates** within a sample (the innermost level).
+
+Give each level a true conditional detectability `theta` and a true unit cost.
+These are the numbers an analyst would normally have to estimate; here we set
+them so we can check the answer.
+
+```{r truth}
+truth <- list(
+  theta = c(site = 0.35, sample = 0.55, replicate = 0.70),
+  cost  = c(site = 300,  sample = 25,   replicate = 3)
+)
+truth
+```
+
+## Simulating the nested detections
+
+The detection model is a cascade of conditional Bernoulli trials: a site carries
+the target with probability `theta[1]`; given that, each sample within it carries
+the target with probability `theta[2]`; given that, each replicate detects with
+probability `theta[3]`.
+The function below simulates one survey design and returns, for every
+sample, the per-replicate detections, which is exactly what a laboratory would
+report.
+
+```{r simulator}
+simulate_survey <- function(theta, n_sites, n_samples, n_reps) {
+  rows <- list()
+  for (s in seq_len(n_sites)) {
+    site_has <- stats::runif(1) < theta[1]
+    for (m in seq_len(n_samples)) {
+      sample_has <- site_has && stats::runif(1) < theta[2]
+      detections <- if (sample_has) {
+        stats::rbinom(1, size = n_reps, prob = theta[3])
+      } else {
+        0L
+      }
+      rows[[length(rows) + 1]] <- data.frame(
+        site = s, sample = m,
+        n_reps = n_reps, detections = detections
+      )
+    }
+  }
+  do.call(rbind, rows)
+}
+
+## A generous pilot survey to estimate the per-level detectabilities.
+pilot <- simulate_survey(truth$theta, n_sites = 60, n_samples = 8, n_reps = 10)
+head(pilot)
+```
+
+## Estimating the per-level detectabilities
+
+From the simulated detections we recover each level's conditional detectability
+with simple method-of-moments estimators, mirroring the three-level occupancy
+decomposition (`psi`, `theta`, `p`) described in the manuscript.
+
+- The **replicate** level `p`: among samples that detected the target at least
+  once, the fraction of replicates that were positive.
+- The **sample** level: among sites that detected the target in at least one
+  sample, the fraction of samples that were positive.
+- The **site** level: the fraction of sites that detected the target, corrected
+  upward for the chance a truly occupied site was missed.
+
+```{r estimate}
+## Replicate-level p: positive replicates among samples with any detection.
+pos_samples <- pilot[pilot$detections > 0, ]
+p_hat <- sum(pos_samples$detections) / sum(pos_samples$n_reps)
+
+## Sample-level: positive samples among sites with any detection.
+site_tab <- aggregate(detections ~ site, pilot, FUN = function(x) sum(x > 0))
+sites_with <- site_tab$site[site_tab$detections > 0]
+samp_in_pos_sites <- pilot[pilot$site %in% sites_with, ]
+sample_pos_rate <-
+  mean(tapply(samp_in_pos_sites$detections, samp_in_pos_sites$site,
+              function(x) mean(x > 0)))
+
+## Site-level: observed occupancy, corrected for missed-but-occupied sites.
+n_samples_per_site <- max(site_tab$detections[site_tab$detections > 0], 1)
+obs_site_rate <- mean(site_tab$detections > 0)
+## Probability an occupied site is detected at least once given the pilot design,
+## used to inflate the observed rate back toward true occupancy.
+detect_given_occ <- 1 - (1 - sample_pos_rate)^8
+psi_hat <- min(obs_site_rate / detect_given_occ, 0.999)
+
+theta_hat <- c(site = psi_hat, sample = sample_pos_rate, replicate = p_hat)
+rbind(truth = truth$theta, estimated = round(theta_hat, 3))
+```
+
+The estimates land near the truth, which is all the allocation rule needs.
+In a real study these per-level detectabilities would come from an occupancy
+model; the point here is that the rule consumes two numbers per level, however
+they are obtained.
+
+## Allocating a budget
+
+Now feed the estimated detectabilities and the known costs to `allocate()`.
+Suppose the program has a budget of 2,000 cost units and wants to maximize the
+chance of detecting the target where it is present.
+We pick a budget that leaves the optimal design short of certainty, since a
+budget large enough to saturate detection makes every design look equally good.
+
+```{r allocate}
+design <- allocate(
+  theta  = theta_hat,
+  cost   = truth$cost,
+  goal   = "detection",
+  budget = 2000
+)
+design
+summary(design)
+```
+
+The design prescribes how many sites to visit, how many samples per site, and
+how many replicates per sample.
+Most of the replication lands on the cheap inner levels, which is the rule's
+characteristic advice when inner units cost far less than outer ones.
+
+```{r frontier}
+plot(design)
+```
+
+## Checking against the known optimum
+
+Because this is simulation, we can check the one-pass design against a brute-force
+search over the integer design space at the same budget, using the package's own
+`enumerate_designs()`.
+The two should give essentially the same detection probability.
+
+```{r check}
+brute <- enumerate_designs(
+  theta  = theta_hat,
+  cost   = truth$cost,
+  budget = 2000,
+  goal   = "detection"
+)
+c(one_pass = round(design$P1, 4),
+  enumerated = round(brute$P1, 4))
+```
+
+We can also confirm the realized detection matches the budget-detection curve of
+equation (10), evaluated with the recovered `kappa_1`:
+
+```{r curve-check}
+c(reported   = round(design$P1, 4),
+  from_curve = round(detection_from_budget(design$kappa1, design$C), 4))
+```
+
+## How much did optimizing help?
+
+Compare the optimized design with a naive one that uses a fixed number of
+replicates at every level, a common default.
+At three levels the penalty is usually modest, but it grows with depth, as the
+manuscript shows.
+
+```{r naive}
+naive_counts <- function(theta, cost, budget, per_level = 3) {
+  n <- c(1, per_level, per_level)
+  C1 <- unit_cost_full(cost, n)[1]
+  n[1] <- floor(budget / C1)
+  detection_recursion(theta, n)$P1
+}
+
+c(optimized = round(design$P1, 4),
+  naive_3x3 = round(naive_counts(theta_hat, truth$cost, 2000), 4))
+```
+
+For the same budget the optimized design reaches a detection probability at
+least as high as the naive one.
+The gap is small here, which is the rule's own lesson: optimizing barely matters
+at shallow depth, and the benefit grows with the number of levels.
+`optimality_identity()` shows the design is at the optimum: each level spends on
+its contents the same share of its budget as those contents contribute to
+detection.
+
+```{r identity}
+optimality_identity(
+  allocate(theta_hat, truth$cost, goal = "detection",
+           budget = 2000, integer = FALSE)
+)
+```
+
+## Recap
+
+Starting from nothing but a set of true parameters, we simulated a nested
+survey, recovered the per-level detectabilities, allocated a budget with the
+closed-form rule, and verified the design against an exhaustive search and
+against the analytic budget-detection curve.
+The same workflow applies to real data: replace the simulator and the
+method-of-moments estimates with your field data and an occupancy model, then
+pass the per-level detectabilities and costs to `allocate()`.

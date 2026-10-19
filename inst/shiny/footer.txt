@@ -1,0 +1,52 @@
+<footer style="
+  background-color: #000000;
+  color: #ecf0f1;
+  padding: 20px 30px 20px 30px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+">
+  <div style="max-width: 1200px; margin: 0 auto; padding-bottom: 0;">
+
+    <p style="margin: 0 0 8px 0; font-weight: bold; font-size: 15px;">
+      multiDetectR: allocating detection effort across nested survey levels (PROVISIONAL)
+    </p>
+
+    <p style="margin: 0 0 6px 0;">
+      <strong>Reference:</strong>
+      Lafferty KD, Larson DM, Spear SF, Schulte N, Coombs JA, DeHaan P, Hayer C-A,
+      Maloy AP, Erickson RA. An exact rule allocates detection effort across nested
+      survey levels at any depth: an R package and eDNA examples.
+      <em>Methods in Ecology and Evolution</em> (in preparation).
+    </p>
+
+    <p style="margin: 0 0 6px 0;">
+      <strong>Disclaimer:</strong>
+      This software is preliminary and is subject to revision.
+      It is being provided to meet the need for timely best science.
+      The software has not received final approval by the U.S. Geological Survey (USGS).
+      No warranty, expressed or implied, is made by the USGS or the U.S. Government as to the
+      functionality of the software and related material nor shall the fact of release constitute
+      any such warranty. The software is provided on the condition that neither the USGS nor the
+      U.S. Government shall be held liable for any damages resulting from the authorized or
+      unauthorized use of the software.
+    </p>
+
+    <p style="margin: 0 0 0 0; font-size: 12px; color: #95a5a6;">
+      For questions or issues, contact:
+      <a href="mailto:rerickson@usgs.gov"
+         style="color: #aed6f1; text-decoration: none;">
+        rerickson@usgs.gov
+      </a>
+    </p>
+
+  </div>
+</footer>

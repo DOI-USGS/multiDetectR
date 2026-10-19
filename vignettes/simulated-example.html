@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>A worked example with simulated data</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">A worked example with simulated data</h1>
+
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(multiDetectR)</span></code></pre></div>
+<p>This vignette walks through a complete analysis on
+<strong>simulated</strong> data, so every step is reproducible without
+any field data or model-fitting packages. We invent a three-level
+environmental DNA (eDNA) survey with known truth, simulate detections,
+estimate the inputs the allocation rule needs, allocate a budget, and
+then check the result against the known optimum.</p>
+<div id="a-three-level-survey" class="section level2">
+<h2>A three-level survey</h2>
+<p>Consider a survey that searches for one target across:</p>
+<ol style="list-style-type: decimal">
+<li><strong>sites</strong> (the outermost, reporting level),</li>
+<li><strong>water samples</strong> within a site, and</li>
+<li><strong>PCR replicates</strong> within a sample (the innermost
+level).</li>
+</ol>
+<p>Give each level a true conditional detectability <code>theta</code>
+and a true unit cost. These are the numbers an analyst would normally
+have to estimate; here we set them so we can check the answer.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>truth <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="at">theta =</span> <span class="fu">c</span>(<span class="at">site =</span> <span class="fl">0.35</span>, <span class="at">sample =</span> <span class="fl">0.55</span>, <span class="at">replicate =</span> <span class="fl">0.70</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="at">cost  =</span> <span class="fu">c</span>(<span class="at">site =</span> <span class="dv">300</span>,  <span class="at">sample =</span> <span class="dv">25</span>,   <span class="at">replicate =</span> <span class="dv">3</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>truth</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; $theta</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt;      site    sample replicate </span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt;      0.35      0.55      0.70 </span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; $cost</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt;      site    sample replicate </span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt;       300        25         3</span></span></code></pre></div>
+</div>
+<div id="simulating-the-nested-detections" class="section level2">
+<h2>Simulating the nested detections</h2>
+<p>The detection model is a cascade of conditional Bernoulli trials: a
+site carries the target with probability <code>theta[1]</code>; given
+that, each sample within it carries the target with probability
+<code>theta[2]</code>; given that, each replicate detects with
+probability <code>theta[3]</code>. The function below simulates one
+survey design and returns, for every sample, the per-replicate
+detections, which is exactly what a laboratory would report.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>simulate_survey <span class="ot">&lt;-</span> <span class="cf">function</span>(theta, n_sites, n_samples, n_reps) {</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  rows <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="cf">for</span> (s <span class="cf">in</span> <span class="fu">seq_len</span>(n_sites)) {</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>    site_has <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> theta[<span class="dv">1</span>]</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="cf">for</span> (m <span class="cf">in</span> <span class="fu">seq_len</span>(n_samples)) {</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>      sample_has <span class="ot">&lt;-</span> site_has <span class="sc">&amp;&amp;</span> stats<span class="sc">::</span><span class="fu">runif</span>(<span class="dv">1</span>) <span class="sc">&lt;</span> theta[<span class="dv">2</span>]</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>      detections <span class="ot">&lt;-</span> <span class="cf">if</span> (sample_has) {</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>        stats<span class="sc">::</span><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="at">size =</span> n_reps, <span class="at">prob =</span> theta[<span class="dv">3</span>])</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>        <span class="dv">0</span><span class="dt">L</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>      }</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>      rows[[<span class="fu">length</span>(rows) <span class="sc">+</span> <span class="dv">1</span>]] <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>        <span class="at">site =</span> s, <span class="at">sample =</span> m,</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>        <span class="at">n_reps =</span> n_reps, <span class="at">detections =</span> detections</span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>      )</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    }</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>  }</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>  <span class="fu">do.call</span>(rbind, rows)</span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>}</span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="do">## A generous pilot survey to estimate the per-level detectabilities.</span></span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>pilot <span class="ot">&lt;-</span> <span class="fu">simulate_survey</span>(truth<span class="sc">$</span>theta, <span class="at">n_sites =</span> <span class="dv">60</span>, <span class="at">n_samples =</span> <span class="dv">8</span>, <span class="at">n_reps =</span> <span class="dv">10</span>)</span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a><span class="fu">head</span>(pilot)</span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="co">#&gt;   site sample n_reps detections</span></span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co">#&gt; 1    1      1     10          0</span></span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">#&gt; 2    1      2     10          0</span></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt; 3    1      3     10          0</span></span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">#&gt; 4    1      4     10          0</span></span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">#&gt; 5    1      5     10          0</span></span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a><span class="co">#&gt; 6    1      6     10          0</span></span></code></pre></div>
+</div>
+<div id="estimating-the-per-level-detectabilities" class="section level2">
+<h2>Estimating the per-level detectabilities</h2>
+<p>From the simulated detections we recover each level’s conditional
+detectability with simple method-of-moments estimators, mirroring the
+three-level occupancy decomposition (<code>psi</code>,
+<code>theta</code>, <code>p</code>) described in the manuscript.</p>
+<ul>
+<li>The <strong>replicate</strong> level <code>p</code>: among samples
+that detected the target at least once, the fraction of replicates that
+were positive.</li>
+<li>The <strong>sample</strong> level: among sites that detected the
+target in at least one sample, the fraction of samples that were
+positive.</li>
+<li>The <strong>site</strong> level: the fraction of sites that detected
+the target, corrected upward for the chance a truly occupied site was
+missed.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">## Replicate-level p: positive replicates among samples with any detection.</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>pos_samples <span class="ot">&lt;-</span> pilot[pilot<span class="sc">$</span>detections <span class="sc">&gt;</span> <span class="dv">0</span>, ]</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>p_hat <span class="ot">&lt;-</span> <span class="fu">sum</span>(pos_samples<span class="sc">$</span>detections) <span class="sc">/</span> <span class="fu">sum</span>(pos_samples<span class="sc">$</span>n_reps)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="do">## Sample-level: positive samples among sites with any detection.</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>site_tab <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(detections <span class="sc">~</span> site, pilot, <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>))</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>sites_with <span class="ot">&lt;-</span> site_tab<span class="sc">$</span>site[site_tab<span class="sc">$</span>detections <span class="sc">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>samp_in_pos_sites <span class="ot">&lt;-</span> pilot[pilot<span class="sc">$</span>site <span class="sc">%in%</span> sites_with, ]</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>sample_pos_rate <span class="ot">&lt;-</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="fu">tapply</span>(samp_in_pos_sites<span class="sc">$</span>detections, samp_in_pos_sites<span class="sc">$</span>site,</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>              <span class="cf">function</span>(x) <span class="fu">mean</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>)))</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="do">## Site-level: observed occupancy, corrected for missed-but-occupied sites.</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>n_samples_per_site <span class="ot">&lt;-</span> <span class="fu">max</span>(site_tab<span class="sc">$</span>detections[site_tab<span class="sc">$</span>detections <span class="sc">&gt;</span> <span class="dv">0</span>], <span class="dv">1</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>obs_site_rate <span class="ot">&lt;-</span> <span class="fu">mean</span>(site_tab<span class="sc">$</span>detections <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="do">## Probability an occupied site is detected at least once given the pilot design,</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="do">## used to inflate the observed rate back toward true occupancy.</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>detect_given_occ <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> sample_pos_rate)<span class="sc">^</span><span class="dv">8</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>psi_hat <span class="ot">&lt;-</span> <span class="fu">min</span>(obs_site_rate <span class="sc">/</span> detect_given_occ, <span class="fl">0.999</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>theta_hat <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">site =</span> psi_hat, <span class="at">sample =</span> sample_pos_rate, <span class="at">replicate =</span> p_hat)</span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="fu">rbind</span>(<span class="at">truth =</span> truth<span class="sc">$</span>theta, <span class="at">estimated =</span> <span class="fu">round</span>(theta_hat, <span class="dv">3</span>))</span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt;            site sample replicate</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; truth     0.350  0.550     0.700</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; estimated 0.367  0.557     0.705</span></span></code></pre></div>
+<p>The estimates land near the truth, which is all the allocation rule
+needs. In a real study these per-level detectabilities would come from
+an occupancy model; the point here is that the rule consumes two numbers
+per level, however they are obtained.</p>
+</div>
+<div id="allocating-a-budget" class="section level2">
+<h2>Allocating a budget</h2>
+<p>Now feed the estimated detectabilities and the known costs to
+<code>allocate()</code>. Suppose the program has a budget of 2,000 cost
+units and wants to maximize the chance of detecting the target where it
+is present. We pick a budget that leaves the optimal design short of
+certainty, since a budget large enough to saturate detection makes every
+design look equally good.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>design <span class="ot">&lt;-</span> <span class="fu">allocate</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="at">theta  =</span> theta_hat,</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="at">cost   =</span> truth<span class="sc">$</span>cost,</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  <span class="at">goal   =</span> <span class="st">&quot;detection&quot;</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="at">budget =</span> <span class="dv">2000</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>design</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; &lt;multidetect_design&gt; depth 3, goal = detection, integer counts</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt;   per-level n:     4, 4, 2</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt;   detection P1:    0.8168</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt;   total cost C:    1696</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt;   price kappa_1:   999.3 (cost per nat at the outermost level)</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="fu">summary</span>(design)</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt;           level     theta cost n    hazard      kappa</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt; site          1 0.3672131  300 4 0.4242890 999.318771</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; sample        2 0.5568182   25 4 0.7100789  43.657120</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; replicate     3 0.7051020    3 2 1.2211259   2.456749</span></span></code></pre></div>
+<p>The design prescribes how many sites to visit, how many samples per
+site, and how many replicates per sample. Most of the replication lands
+on the cheap inner levels, which is the rule’s characteristic advice
+when inner units cost far less than outer ones.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">plot</span>(design)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+<div id="checking-against-the-known-optimum" class="section level2">
+<h2>Checking against the known optimum</h2>
+<p>Because this is simulation, we can check the one-pass design against
+a brute-force search over the integer design space at the same budget,
+using the package’s own <code>enumerate_designs()</code>. The two should
+give essentially the same detection probability.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>brute <span class="ot">&lt;-</span> <span class="fu">enumerate_designs</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="at">theta  =</span> theta_hat,</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  <span class="at">cost   =</span> truth<span class="sc">$</span>cost,</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="at">budget =</span> <span class="dv">2000</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  <span class="at">goal   =</span> <span class="st">&quot;detection&quot;</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>)</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="fu">c</span>(<span class="at">one_pass =</span> <span class="fu">round</span>(design<span class="sc">$</span>P1, <span class="dv">4</span>),</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  <span class="at">enumerated =</span> <span class="fu">round</span>(brute<span class="sc">$</span>P1, <span class="dv">4</span>))</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt;   one_pass enumerated </span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt;     0.8168     0.8584</span></span></code></pre></div>
+<p>We can also confirm the realized detection matches the
+budget-detection curve of equation (10), evaluated with the recovered
+<code>kappa_1</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">c</span>(<span class="at">reported   =</span> <span class="fu">round</span>(design<span class="sc">$</span>P1, <span class="dv">4</span>),</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="at">from_curve =</span> <span class="fu">round</span>(<span class="fu">detection_from_budget</span>(design<span class="sc">$</span>kappa1, design<span class="sc">$</span>C), <span class="dv">4</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt;   reported from_curve </span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt;     0.8168     0.8168</span></span></code></pre></div>
+</div>
+<div id="how-much-did-optimizing-help" class="section level2">
+<h2>How much did optimizing help?</h2>
+<p>Compare the optimized design with a naive one that uses a fixed
+number of replicates at every level, a common default. At three levels
+the penalty is usually modest, but it grows with depth, as the
+manuscript shows.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>naive_counts <span class="ot">&lt;-</span> <span class="cf">function</span>(theta, cost, budget, <span class="at">per_level =</span> <span class="dv">3</span>) {</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, per_level, per_level)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>  C1 <span class="ot">&lt;-</span> <span class="fu">unit_cost_full</span>(cost, n)[<span class="dv">1</span>]</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  n[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">floor</span>(budget <span class="sc">/</span> C1)</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="fu">detection_recursion</span>(theta, n)<span class="sc">$</span>P1</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>}</span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="fu">c</span>(<span class="at">optimized =</span> <span class="fu">round</span>(design<span class="sc">$</span>P1, <span class="dv">4</span>),</span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>  <span class="at">naive_3x3 =</span> <span class="fu">round</span>(<span class="fu">naive_counts</span>(theta_hat, truth<span class="sc">$</span>cost, <span class="dv">2000</span>), <span class="dv">4</span>))</span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">#&gt; optimized naive_3x3 </span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt;    0.8168    0.8010</span></span></code></pre></div>
+<p>For the same budget the optimized design reaches a detection
+probability at least as high as the naive one. The gap is small here,
+which is the rule’s own lesson: optimizing barely matters at shallow
+depth, and the benefit grows with the number of levels.
+<code>optimality_identity()</code> shows the design is at the optimum:
+each level spends on its contents the same share of its budget as those
+contents contribute to detection.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">optimality_identity</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">allocate</span>(theta_hat, truth<span class="sc">$</span>cost, <span class="at">goal =</span> <span class="st">&quot;detection&quot;</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>           <span class="at">budget =</span> <span class="dv">2000</span>, <span class="at">integer =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>)</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt;   level         A         B         diff</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt; 1     1 0.2675399 0.2675399 2.227940e-12</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; 2     2 0.2295175 0.2295175 6.925016e-14</span></span></code></pre></div>
+</div>
+<div id="recap" class="section level2">
+<h2>Recap</h2>
+<p>Starting from nothing but a set of true parameters, we simulated a
+nested survey, recovered the per-level detectabilities, allocated a
+budget with the closed-form rule, and verified the design against an
+exhaustive search and against the analytic budget-detection curve. The
+same workflow applies to real data: replace the simulator and the
+method-of-moments estimates with your field data and an occupancy model,
+then pass the per-level detectabilities and costs to
+<code>allocate()</code>.</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

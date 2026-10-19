@@ -1,0 +1,5 @@
+<multidetect_assemblage> 6 targets, depth 2, integer counts
+  shared per-level n: 16,  7
+  weighted detection D: 0.9561
+  total cost C:         5440
+  binding target:       few_site_2 (largest miss-weight)

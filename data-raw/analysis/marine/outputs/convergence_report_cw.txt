@@ -1,0 +1,17 @@
+Coastwide marine occupancy MCMC convergence check
+Thresholds: Rhat < 1.01 and n_eff > 400 
+
+    subset n_fits max_Rhat min_n_eff n_flagged
+1 cw_2_12S    512 1.003366  2068.411         0
+2 cw_2_18S     34 1.003242  2682.495         0
+3 cw_2_COI    684 1.003587  1915.157         0
+4 gp_2_12S    200 1.002810  2374.686         0
+5 gp_2_18S     22 1.002756  2488.524         0
+6 gp_2_COI    414 1.002759  2389.187         0
+7 gp_3_12S    300 1.004201  1285.938         0
+8 gp_3_18S     33 1.003747  1607.811         0
+9 gp_3_COI    621 1.003979  1364.387         0
+
+Overall converged: TRUE 
+
+All species-parameters pass both thresholds.

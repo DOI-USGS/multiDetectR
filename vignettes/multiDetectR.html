@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>Getting started with multiDetectR</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Getting started with multiDetectR</h1>
+
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(multiDetectR)</span></code></pre></div>
+<div id="the-problem" class="section level2">
+<h2>The problem</h2>
+<p>A survey that looks for a target often nests its sampling: sites hold
+samples, samples hold replicates, and so on. Each level costs something
+and detects the target with some probability, and a fixed budget has to
+be split among the levels. <code>multiDetectR</code> implements the
+closed-form rule that solves this allocation exactly, at any depth.
+Function and argument names follow the equations of the accompanying
+manuscript, so the code and the paper read the same way.</p>
+<p>Levels are ordered from the <strong>outermost</strong> (the reporting
+level, index 1) to the <strong>innermost</strong> (index
+<code>d</code>). For a three-level environmental DNA survey, level 1
+might be sites, level 2 water samples within a site, and level 3 PCR
+replicates within a sample. Two numbers describe each level:</p>
+<ul>
+<li><code>theta[i]</code>: the probability a level-<code>i</code> unit
+carries the target given that the unit containing it does (a conditional
+detectability);</li>
+<li><code>cost[i]</code>: the marginal cost of one level-<code>i</code>
+unit, excluding the cost of what it contains.</li>
+</ul>
+</div>
+<div id="allocating-a-budget" class="section level2">
+<h2>Allocating a budget</h2>
+<p>Give <code>allocate()</code> the per-level detectabilities and costs,
+a goal, and a budget:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>des <span class="ot">&lt;-</span> <span class="fu">allocate</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="at">theta  =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>),   <span class="co"># site, sample, replicate detectabilities</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="at">cost   =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">20</span>, <span class="dv">2</span>),      <span class="co"># cost of a site, a sample, a replicate</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="at">goal   =</span> <span class="st">&quot;detection&quot;</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="at">budget =</span> <span class="dv">5000</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>des</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; &lt;multidetect_design&gt; depth 3, goal = detection, integer counts</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt;   per-level n:     16,  4,  3</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt;   detection P1:    0.9943</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt;   total cost C:    4864</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt;   price kappa_1:   941.4 (cost per nat at the outermost level)</span></span></code></pre></div>
+<p>The design says how many units to take at each level: here, 16 sites,
+4 samples per site, and 3 replicates per sample, reaching a detection
+probability of 0.994.</p>
+<p><code>summary()</code> lays the design out level by level, including
+each level’s detection hazard and its price of a detection
+<code>kappa</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">summary</span>(des)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt;   level theta cost  n    hazard      kappa</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; 1     1   0.3  200 16 0.3229214 941.405614</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; 2     2   0.5   20  4 0.6311118  41.197139</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; 3     3   0.6    2  3 0.9162907   2.182713</span></span></code></pre></div>
+</div>
+<div id="reaching-a-required-detection-probability" class="section level2">
+<h2>Reaching a required detection probability</h2>
+<p>The same rule answers the dual question: what is the cheapest design
+that reaches a required detection probability? Supply
+<code>P_target</code> instead of <code>budget</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">allocate</span>(<span class="at">theta =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>), <span class="at">cost =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">20</span>, <span class="dv">2</span>),</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>         <span class="at">goal =</span> <span class="st">&quot;detection&quot;</span>, <span class="at">P_target =</span> <span class="fl">0.95</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; &lt;multidetect_design&gt; depth 3, goal = detection, integer counts</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;   per-level n:     10,  4,  3</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt;   detection P1:    0.9604</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt;   total cost C:    3040</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;   price kappa_1:   941.4 (cost per nat at the outermost level)</span></span></code></pre></div>
+<p>The inner design is identical to the budget version; only the number
+of outermost units differs. This is the budget-invariance property:
+replication within the hierarchy does not depend on how much money there
+is.</p>
+</div>
+<div id="the-budget-detection-frontier" class="section level2">
+<h2>The budget-detection frontier</h2>
+<p>Once a design is reduced to its outermost price of a detection
+<code>kappa_1</code>, the whole budget-detection relationship is a
+single curve, <code>P(B) = 1 - exp(-B / kappa_1)</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">plot</span>(des)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>The curve is smooth and strictly concave, so returns diminish
+everywhere at the same proportional rate; there is no natural stopping
+point, and the budget or a required detection has to be chosen from
+outside the curve.</p>
+</div>
+<div id="two-goals" class="section level2">
+<h2>Two goals</h2>
+<p>A search has two nested goals. The <strong>detection</strong> goal
+maximizes the chance of finding the target at least once. The
+<strong>count</strong> goal maximizes the number of level-1 samples in
+which it is found. They agree when a sample seldom carries the target,
+and diverge as it becomes common.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">allocate</span>(<span class="at">theta =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.5</span>), <span class="at">cost =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">2</span>),</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>         <span class="at">goal =</span> <span class="st">&quot;count&quot;</span>, <span class="at">budget =</span> <span class="dv">5000</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#&gt; &lt;multidetect_design&gt; depth 2, goal = count, integer counts</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt;   per-level n:     23,  6</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt;   detection P1:    0.9997</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt;   total cost C:    4876</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt;   price kappa_1:   605.7 (cost per nat at the outermost level)</span></span></code></pre></div>
+</div>
+<div id="integer-counts-and-small-budgets" class="section level2">
+<h2>Integer counts and small budgets</h2>
+<p>By default replicate counts are integers, obtained by rounding in
+place. When a budget buys only a handful of outermost units, rounding
+can miss the best integer design, so enumerate instead:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">enumerate_designs</span>(<span class="at">theta =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>), <span class="at">cost =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">20</span>, <span class="dv">2</span>),</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>                  <span class="at">budget =</span> <span class="dv">1500</span>, <span class="at">goal =</span> <span class="st">&quot;detection&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt; &lt;multidetect_design&gt; depth 3, goal = detection, integer counts</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;   per-level n:     5, 4, 2</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt;   detection P1:    0.7870</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt;   total cost C:    1480</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt;   price kappa_1:   957 (cost per nat at the outermost level)</span></span></code></pre></div>
+<p>For effort measured continuously (a volume, a time, a distance), set
+<code>integer = FALSE</code> and no rounding is needed.</p>
+</div>
+<div id="auditing-a-design" class="section level2">
+<h2>Auditing a design</h2>
+<p>At the optimum, each level spends on its contents the same share of
+its budget as those contents contribute to its detection power (the
+identity <code>A = B</code>). <code>optimality_identity()</code> reports
+both quantities, so a costed design can be checked level by level
+without re-solving:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">optimality_identity</span>(<span class="fu">allocate</span>(<span class="at">theta =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>), <span class="at">cost =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">20</span>, <span class="dv">2</span>),</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>                             <span class="at">goal =</span> <span class="st">&quot;detection&quot;</span>, <span class="at">budget =</span> <span class="dv">5000</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>                             <span class="at">integer =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt;   level         A         B         diff</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt; 1     1 0.3148112 0.3148112 3.830714e-12</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; 2     2 0.2393080 0.2393080 1.347057e-10</span></span></code></pre></div>
+<p>The differences are zero (to numerical tolerance) for a continuous
+optimum.</p>
+</div>
+<div id="choosing-among-branches" class="section level2">
+<h2>Choosing among branches</h2>
+<p>Separate places or separate methods are <em>branches</em>, not nested
+levels. <code>allocate_branches()</code> decides whether to concentrate
+the budget on one branch or spread it, from the per-target, per-branch
+detection rates.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="do">## One target, two methods; the first is nine times better.</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">allocate_branches</span>(<span class="at">rate =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">0.1</span>), <span class="at">nrow =</span> <span class="dv">1</span>), <span class="at">budget =</span> <span class="dv">20</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">#&gt; $share</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co">#&gt; [1] 1.000000e+00 9.204505e-12</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co">#&gt; $concentrate</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co">#&gt; $detection</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">#&gt; [1] 1</span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="co">#&gt; $regime</span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt; [1] &quot;dominance&quot;</span></span></code></pre></div>
+<p>A method that dominates every target takes the whole budget; two
+places that each reach targets the other cannot are always shared.</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

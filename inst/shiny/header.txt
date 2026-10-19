@@ -1,0 +1,41 @@
+<head>
+<meta charset="UTF-8">
+<link href="stylesheets/common.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="stylesheets/custom.css" rel="stylesheet" type="text/css" media="screen" />
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
+<script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USGS" id="_fed_an_ua_tag"></script>
+<style>
+#navbar.header-nav {
+    background-color: black !important;
+    overflow: hidden;
+    width: 100%;
+}
+.logo-header {
+    padding: 10px;
+    display: inline-block;
+}
+.logo-header img {
+    padding: 5px;
+    background-color: black;
+}
+</style>
+</head>
+
+<body>
+<!-- BEGIN USGS Applications Header Template -->
+<header id="navbar" class="header-nav" role="banner">
+  <div class="tmp-container">
+      <div class="header-search">
+       <a class="logo-header" href="https://www.usgs.gov/" title="Home">
+          <img class="img" src="images/logo.png" alt="Home" />
+        </a>
+      </div>
+  </div>
+</header>
+<!-- END USGS Applications Header Template -->
+<div id="maincontent">

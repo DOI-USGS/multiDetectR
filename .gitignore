@@ -1,0 +1,22 @@
+# R / build artifacts
+.Rhistory
+.RData
+.Rproj.user
+*.RDS
+*.rds
+Rplots.pdf
+
+# targets run stores (contain absolute machine paths; regenerable)
+data-raw/analysis/**/_targets/
+_targets.yaml
+
+# Windows / endpoint sidecar files
+*Zone.Identifier
+*.Identifier
+*.endpointdlp
+*.sec.endpointdlp
+~$*
+
+# OS cruft
+.DS_Store
+Thumbs.db

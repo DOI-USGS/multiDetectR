@@ -1,0 +1,20 @@
+MCMCglmm power-law richness model convergence
+Stored posterior draws: 2000 
+
+Effective sample size (per fixed effect):
+(Intercept)   logeffort     logcost 
+     2000.0      1961.3      2000.0 
+
+Heidelberger-Welch stationarity test:
+                                          
+            Stationarity start     p-value
+            test         iteration        
+(Intercept) passed       1         0.677  
+logeffort   passed       1         0.272  
+logcost     passed       1         0.537  
+                                     
+            Halfwidth Mean  Halfwidth
+            test                     
+(Intercept) passed    1.697 0.004765 
+logeffort   passed    0.236 0.000345 
+logcost     passed    0.106 0.000747 

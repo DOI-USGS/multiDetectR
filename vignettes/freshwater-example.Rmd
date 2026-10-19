@@ -1,0 +1,148 @@
+---
+title: "Freshwater eDNA example: Burns Harbor"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Freshwater eDNA example: Burns Harbor}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 6,
+                      fig.height = 4)
+```
+
+```{r setup}
+library(multiDetectR)
+```
+
+This vignette applies the allocation rule to a real **two-level** freshwater
+environmental DNA (eDNA) survey of the fish community in Burns Harbor on Lake
+Michigan, sampled by the U.S. Fish and Wildlife Service in 2023 and 2024.
+As in the marine vignette, the model-fitting is done by the reproducible
+`targets` pipeline in `data-raw/analysis/carp/` of this package; here we take the
+pipeline's fitted per-level detectabilities and feed them to `allocate()`.
+The numbers below are copied from the pipeline outputs so the vignette builds
+without the field data.
+
+## Two levels, not three
+
+Unlike the marine survey, the freshwater survey has only two levels:
+
+1. **sites** (the outermost, reporting level; occupancy `psi`), and
+2. **water samples** within a site (per-sample detection `p`).
+
+Only a few samples carried molecular replicates, so the design does not support
+a third (replicate) level.
+A two-level occupancy model (fit with `occStan` in the pipeline) estimates `psi`
+and `p` for each species.
+The table below gives the median estimates for three species of management
+interest, taken from the pipeline output `data/all_summary.csv`.
+
+```{r theta}
+## Median per-level detectabilities from the two-level occupancy fits
+## (pipeline output all_summary.csv); psi = site, p = per-sample detection.
+fresh_theta <- data.frame(
+  species = c("Cyprinus carpio", "Dorosoma cepedianum",
+              "Neogobius melanostomus"),
+  psi     = c(0.743, 0.744, 0.749),
+  p       = c(0.710, 0.714, 0.809)
+)
+fresh_theta
+```
+
+These three carry unusually high per-sample detection; most species in the
+assemblage had much lower, more uncertain detection, which is why the survey
+leans on visiting many sites rather than deep sampling within a site.
+
+## Per-level costs
+
+A two-level freshwater design prices a site and a water sample.
+We use the same site and sample unit costs as the marine example for
+comparability (a site visit and a filtered water sample are the cost drivers);
+there is no replicate level to price here.
+
+```{r cost}
+fresh_cost <- c(site = 100, sample = 100)
+```
+
+## Allocating a budget for one species
+
+Take the first species and ask how a \$3,000 budget should be split between
+sites and samples to best detect it where it is present.
+
+```{r allocate}
+theta_one <- unlist(fresh_theta[1, c("psi", "p")])
+theta_one
+
+design <- allocate(
+  theta  = theta_one,
+  cost   = fresh_cost,
+  goal   = "detection",
+  budget = 3000
+)
+design
+summary(design)
+```
+
+With only two levels and a site and a sample costing the same, the rule has
+little room to shift effort inward: the design is close to the naive one, which
+is the rule's own lesson that optimizing barely matters at shallow depth.
+The payoff of the allocation rule grows with the number of levels.
+
+```{r frontier}
+plot(design)
+```
+
+## Why the number of sites matters most here
+
+The pipeline's species-accumulation analysis (summarized in
+`outputs/accum_curve_summary.csv`) shows that accumulated richness keeps rising
+as sites are added, reaching about four fifths of the detected pool only near
+50 sites, while species turnover between sites flattens around 25 sites.
+In a two-level design with modest per-sample detection, richness is governed by
+how many sites are visited, not by deeper sampling within a site, the opposite
+end of the spectrum from the marine three-level survey where cheap molecular
+replicates did the work.
+The count goal captures this: it maximizes the number of sampled sites that
+detect the target, and fixing the site count turns the problem into maximizing
+detection within a single site.
+
+```{r count-goal}
+design_count <- allocate(
+  theta  = theta_one,
+  cost   = fresh_cost,
+  goal   = "count",
+  budget = 3000
+)
+design_count$n
+```
+
+## Designing for the assemblage
+
+`allocate_assemblage()` sets the design by the whole target set, so the design
+serves the hardest-to-detect member.
+
+```{r assemblage}
+theta_mat <- as.matrix(fresh_theta[, c("psi", "p")])
+rownames(theta_mat) <- fresh_theta$species
+
+assemblage <- allocate_assemblage(
+  theta  = theta_mat,
+  cost   = fresh_cost,
+  budget = 3000
+)
+assemblage
+```
+
+## Recap
+
+The freshwater survey is the shallow-design counterpart to the marine example:
+with two levels and no cheap inner replicate to exploit, the allocation rule
+offers little gain over a naive split, and richness across the harbor is
+governed by the number of sites visited.
+Together the two vignettes show the rule's central lesson, that the value of
+optimizing effort allocation grows with the depth of the design.
+The full occupancy fits, accumulation curves, and turnover analysis behind
+these inputs live in `data-raw/analysis/carp/` and are reported in the
+accompanying manuscript.

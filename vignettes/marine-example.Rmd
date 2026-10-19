@@ -1,0 +1,142 @@
+---
+title: "Marine eDNA example: Point Conception"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Marine eDNA example: Point Conception}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 6,
+                      fig.height = 4)
+```
+
+```{r setup}
+library(multiDetectR)
+```
+
+This vignette applies the allocation rule to a real three-level marine
+environmental DNA (eDNA) survey at Point Conception, California.
+The heavy work, fitting occupancy models to each species and building the
+cost and Pareto analyses, is done by the reproducible `targets` pipeline in
+`data-raw/analysis/marine/` of this package, which draws on the Point Conception
+data release (Altstatt et al. 2026) and the laboratory methods of
+Schulte et al. (2026).
+Here we take the pipeline's fitted per-level detectabilities and show how
+`allocate()` turns them into a sampling design.
+The numbers below are copied from the pipeline outputs so the vignette builds
+without the field data or the model-fitting packages.
+
+## The three levels
+
+The marine survey nests effort across three levels:
+
+1. **sites** (the outermost, reporting level; occupancy `psi`),
+2. **water samples** within a site (sample availability `theta`), and
+3. **molecular (PCR) replicates** within a sample (per-replicate detection `p`).
+
+At Government Point, where the survey varied all three levels, a three-level
+occupancy model (fit with `occStan` in the pipeline) estimates `psi`, `theta`,
+and `p` for each fish species from the 12S marker.
+The table below gives the median estimates for three example species, taken
+from the pipeline output `data/cw_summary_3_12S.csv`.
+
+```{r theta}
+## Median per-level detectabilities from the three-level occupancy fits
+## (pipeline output cw_summary_3_12S.csv); psi = site, theta = sample, p = replicate.
+marine_theta <- data.frame(
+  species   = c("Atherinops affinis", "Atherinopsis californiensis",
+                "Cebidichthys violaceus"),
+  psi       = c(0.596, 0.601, 0.600),
+  theta     = c(0.815, 0.922, 0.609),
+  p         = c(0.421, 0.427, 0.338)
+)
+marine_theta
+```
+
+## Per-level costs
+
+The pipeline prices each design from per-level unit costs: about \$100 for a
+site, \$100 for a water sample, and \$5 for a molecular sub-sample (a fixed
+per-event travel cost sits outside the allocation and does not change the shape
+of a design within a site).
+
+```{r cost}
+marine_cost <- c(site = 100, sample = 100, replicate = 5)
+```
+
+## Allocating a budget for one species
+
+Take the first species and ask: under a budget of \$3,000, and aiming to detect
+the species where it is present, how should effort be split across sites,
+samples, and replicates?
+
+```{r allocate}
+theta_one <- unlist(marine_theta[1, c("psi", "theta", "p")])
+theta_one
+
+design <- allocate(
+  theta  = theta_one,
+  cost   = marine_cost,
+  goal   = "detection",
+  budget = 3000
+)
+design
+summary(design)
+```
+
+The design places most of its replication on the cheap molecular level, which
+is the rule's characteristic advice when the inner units cost far less than the
+outer ones: a replicate costs a twentieth of a site, so buying detection with
+replicates is far cheaper than buying it with sites.
+
+```{r frontier}
+plot(design)
+```
+
+## The same rule reproduces the Pareto knee
+
+The pipeline's Pareto-front analysis, run over 200 designs that vary sites,
+samples, and replicates, places its cost-efficient "knee" at four sites, one
+water sample, and about ten molecular replicates, at a cost near \$1,500
+(pipeline output `outputs/pareto_knee.csv`).
+That design puts a single sample at each of a few sites and spends the rest on
+replicates, the same inner-level pattern `allocate()` returns.
+The agreement is expected: the closed-form rule is the exact optimum that the
+Pareto search approximates numerically.
+
+```{r knee}
+## The pipeline's Pareto knee, for reference.
+knee <- c(sites = 4, samples = 1, replicates = 10, cost = 1500)
+knee
+```
+
+## Designing for the assemblage
+
+A survey rarely targets one species.
+`allocate_assemblage()` sets the design by the whole set of target species, so
+the design serves the hardest-to-detect members rather than the average.
+Feed it the per-level detectabilities of all three example species.
+
+```{r assemblage}
+theta_mat <- as.matrix(marine_theta[, c("psi", "theta", "p")])
+rownames(theta_mat) <- marine_theta$species
+
+assemblage <- allocate_assemblage(
+  theta  = theta_mat,
+  cost   = marine_cost,
+  budget = 3000
+)
+assemblage
+```
+
+## Recap
+
+Starting from the pipeline's fitted per-level detectabilities and the per-level
+costs, the closed-form rule produced a sampling design that concentrates effort
+in the inexpensive molecular replicates, matching the design that the numerical
+Pareto analysis identified as the cost-efficient knee.
+The full occupancy fits, cost scenarios, accumulation curves, and Pareto
+analysis that produced these inputs live in `data-raw/analysis/marine/` and are
+reported in the accompanying manuscript.

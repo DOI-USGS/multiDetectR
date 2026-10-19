@@ -1,0 +1,47 @@
+Package: multiDetectR
+Title: Exact Allocation of Detection Effort Across Nested Survey Levels
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Kevin D.", "Lafferty", role = "aut",
+           comment = c(ORCID = "0000-0001-7583-4593")),
+    person("Danelle M.", "Larson", role = "aut",
+           comment = c(ORCID = "0000-0001-6349-6267")),
+    person("Stephen F.", "Spear", role = "aut",
+           comment = c(ORCID = "0000-0001-8351-9382")),
+    person("Nick", "Schulte", role = "aut"),
+    person("Jason A.", "Coombs", role = "aut"),
+    person("Patrick", "DeHaan", role = "aut"),
+    person("Cari-Ann", "Hayer", role = "aut"),
+    person("Aaron P.", "Maloy", role = "aut"),
+    person("Richard A.", "Erickson", role = c("aut", "cre"),
+           email = "rerickson@usgs.gov",
+           comment = c(ORCID = "0000-0003-4649-482X")))
+Description: Implements the closed-form rule for allocating detection effort
+    across the levels of a nested survey at any depth. A nested survey is
+    modeled as a cascade of conditional Bernoulli trials, with detection
+    measured on a log (nat) scale so that the design problem separates into a
+    chain of one-variable problems solved from the innermost level outward.
+    The package computes optimal per-level replication under a budget or a
+    required detection probability, serves both the detection and count goals,
+    handles integer replicate counts, and extends to multiple targets and to
+    multiple methods or places. Function and argument names mirror the
+    equations of the accompanying manuscript.
+License: CC0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends:
+    R (>= 4.1)
+Imports:
+    graphics,
+    stats
+Suggests:
+    shiny,
+    DT,
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+URL: https://code.usgs.gov/umesc/quant-ecology/multidetectr
+BugReports: https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/issues
+Config/roxygen2/version: 8.1.0

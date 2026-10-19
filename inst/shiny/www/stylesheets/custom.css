@@ -1,0 +1,25 @@
+/* Custom styles for the multiDetectR Shiny app
+   (adapted from the age-subsampling-simulation project) */
+.container-fluid {
+  padding: 15px 30px;
+}
+
+.well {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+h3 {
+  margin-top: 10px;
+  color: #333;
+}
+
+h4 {
+  color: #2c3e50;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
