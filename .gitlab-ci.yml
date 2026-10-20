@@ -19,22 +19,24 @@ default:
   timeout: 1 hour
   before_script:
     # System libraries for building packages and rendering vignettes.
-    - apt-get update -qq && apt-get install -y --no-install-recommends libcurl4-openssl-dev libssl-dev libxml2-dev pandoc
+    # Each command is a YAML double-quoted scalar so the parser does not try to
+    # read the colons (https://, "missing packages:") as nested mapping keys.
+    - "apt-get update -qq && apt-get install -y --no-install-recommends libcurl4-openssl-dev libssl-dev libxml2-dev pandoc"
     # Bootstrap the installer, then install the package's declared dependencies
     # (Imports + Suggests from DESCRIPTION, including knitr/rmarkdown for the
     # vignettes).
-    - Rscript -e 'install.packages(c("remotes", "rcmdcheck", "devtools"), repos = "https://cloud.r-project.org", Ncpus = 4)'
-    - Rscript -e 'remotes::install_deps(dependencies = TRUE, upgrade = "never", Ncpus = 4)'
+    - "Rscript -e 'install.packages(c(\"remotes\", \"rcmdcheck\", \"devtools\"), repos = \"https://cloud.r-project.org\", Ncpus = 4)'"
+    - "Rscript -e 'remotes::install_deps(dependencies = TRUE, upgrade = \"never\", Ncpus = 4)'"
     # Verify every tool the check needs actually installed, and abort with a
     # clear message if not -- rather than failing deep inside the vignette
     # rebuild (install.packages only warns on a failed install, it does not stop).
-    - Rscript -e 'need <- c("knitr", "rmarkdown", "rcmdcheck", "devtools", "remotes", "shiny", "DT", "testthat"); miss <- need[!vapply(need, requireNamespace, logical(1), quietly = TRUE)]; if (length(miss)) stop("missing packages: ", paste(miss, collapse = ", "))'
+    - "Rscript -e 'need <- c(\"knitr\", \"rmarkdown\", \"rcmdcheck\", \"devtools\", \"remotes\", \"shiny\", \"DT\", \"testthat\"); miss <- need[!vapply(need, requireNamespace, logical(1), quietly = TRUE)]; if (length(miss)) stop(paste(\"missing packages\", paste(miss, collapse = \", \")))'"
 
 # R CMD check (builds and checks the package, including vignettes)
 r-cmd-check:
   stage: check
   script:
-    - Rscript -e 'rcmdcheck::rcmdcheck(args = c("--no-manual"), error_on = "error", check_dir = "check")'
+    - "Rscript -e 'rcmdcheck::rcmdcheck(args = c(\"--no-manual\"), error_on = \"error\", check_dir = \"check\")'"
   artifacts:
     paths:
       - check/
