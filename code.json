@@ -1,0 +1,50 @@
+[
+    {
+    "name": "multiDetectR",
+    "organization": "U.S. Geological Survey",
+    "description": "An R package implementing the closed-form rule for allocating detection effort across the levels of a nested survey at any depth.",
+    "version": "0.1.0",
+    "status": "Development",
+
+    "permissions": {
+      "usageType": "openSource",
+      "licenses": [
+        {
+          "name": "Creative Commons Zero v1.0 Universal (CC0 1.0)",
+          "URL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/raw/main/LICENSE"
+        }
+      ]
+    },
+
+    "homepageURL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr",
+    "downloadURL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/archive/main/multidetectr-main.zip",
+    "disclaimerURL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/raw/main/DISCLAIMER.md",
+    "repositoryURL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr.git",
+    "vcs": "git",
+
+    "laborHours": 240,
+
+    "tags": [
+      "eDNA",
+      "environmental DNA",
+      "occupancy",
+      "survey design",
+      "detection probability",
+      "sampling optimization",
+      "usg-artificial-intelligence"
+    ],
+
+    "languages": [
+      "R"
+    ],
+
+    "contact": {
+      "name": "Richard A. Erickson",
+      "email": "rerickson@usgs.gov"
+    },
+
+    "date": {
+      "metadataLastUpdated": "2026-10-10"
+    }
+  }
+]

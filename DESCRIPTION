@@ -1,6 +1,6 @@
 Package: multiDetectR
 Title: Exact Allocation of Detection Effort Across Nested Survey Levels
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: c(
     person("Kevin D.", "Lafferty", role = "aut",
            comment = c(ORCID = "0000-0001-7583-4593")),

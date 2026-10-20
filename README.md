@@ -1,5 +1,44 @@
 # multiDetectR
 
+
+#### Authors: Kevin D. Lafferty, Danelle M. Larson, Stephen F. Spear, Nick Schulte, Jason A. Coombs, Patrick DeHaan, Cari-Ann Hayer, Aaron P. Maloy, Richard A. Erickson
+#### Point of contact: Richard A. Erickson (rerickson@usgs.gov)
+#### Repository Type: _R package_
+#### Year of Origin:   2026
+#### Year of Version:  2026
+#### Version: 0.1.0
+#### Digital Object Identifier (DOI): https://doi.org/10.5066/XXXXXXXXXX
+#### USGS Information Product Data System (IPDS) no.: IP-XXXXXXX (internal agency tracking)
+
+***
+
+_Suggested Citation:_
+
+Lafferty, KD; Larson, DM; Spear, SF; Schulte, N; Coombs, JA; DeHaan, P; Hayer, C-A; Maloy, AP; Erickson, RA.
+2026.
+multiDetectR.
+Version 0.1.0.
+U.S. Geological Survey software release. Reston, Va.
+https://doi.org/10.5066/XXXXXXXX
+
+
+_Authors' [ORCID](https://orcid.org) nos.:_
+
+- Kevin D. Lafferty [0000-0001-7583-4593](https://orcid.org/0000-0001-7583-4593)
+- Danelle M. Larson [0000-0001-6349-6267](https://orcid.org/0000-0001-6349-6267)
+- Stephen F. Spear [0000-0001-8351-9382](https://orcid.org/0000-0001-8351-9382)
+- Richard A. Erickson [0000-0003-4649-482X](https://orcid.org/0000-0003-4649-482X)
+
+
+***
+***
+
+GitLab Pipeline status:
+[![pipeline status](https://code.usgs.gov/umesc/quant-ecology/multidetectr/badges/main/pipeline.svg)](https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/pipelines)
+
+***
+***
+
 Exact allocation of detection effort across the levels of a nested survey, at
 any depth.
 
@@ -18,11 +57,9 @@ manuscript.
 
 ## Installation
 
-From source (development):
-
 ```r
-# install.packages("remotes")
-remotes::install_git("https://code.usgs.gov/umesc/quant-ecology/multidetectr")
+if (!require("remotes")) install.packages("remotes")
+remotes::install_gitlab("umesc/quant-ecology/multidetectr", host = "code.usgs.gov")
 ```
 
 ## Quick start
@@ -64,6 +101,23 @@ See `vignette("multiDetectR")` for a walkthrough.
 | `optimality_identity()` | audit a design (A = B) | Supplement S1.8 |
 | `allocate_branches()` | concentrate vs spread | Supplement S1.5 |
 
+## Repository organization
+
+This repository contains the code for an R package and the standard R repository files
+(see the official R documentation [_Writing R Extensions_][r_ext] or [_R Packages_][r_pkgs]).
+In addition to the R package source files, the main level of the repository contains:
+
+- `README.md`, which is this file.
+- `.gitignore`, a Git ignore file for the repository.
+- `.Rbuildignore`, the list of files ignored when building the R package.
+- `LICENSE`, the license for the software (CC0 1.0 Universal).
+- `Contributing.md`, which describes how to contribute to this project.
+- `DISCLAIMER.md`, the standard USGS disclaimer.
+- `code.json`, the required machine-readable metadata about the code.
+
+The reproducible analyses that feed the manuscript, the vignettes, and the Shiny app live under `data-raw/analysis/`.
+That directory is excluded from the built package by `.Rbuildignore`, so the installable package stands alone.
+
 ## Disclaimer
 
 See `DISCLAIMER.md`. This software is preliminary or provisional and is subject
@@ -72,3 +126,6 @@ to revision.
 ## License
 
 CC0 1.0 Universal (public domain dedication). See `LICENSE`.
+
+[r_ext]: https://cran.r-project.org/doc/manuals/r-release/R-exts.html
+[r_pkgs]: https://r-pkgs.org/
