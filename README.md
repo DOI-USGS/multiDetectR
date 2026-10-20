@@ -1,6 +1,7 @@
 # multiDetectR
 
 
+
 #### Authors: Kevin D. Lafferty, Danelle M. Larson, Stephen F. Spear, Nick Schulte, Jason A. Coombs, Patrick DeHaan, Cari-Ann Hayer, Aaron P. Maloy, Richard A. Erickson
 #### Point of contact: Richard A. Erickson (rerickson@usgs.gov)
 #### Repository Type: _R package_
