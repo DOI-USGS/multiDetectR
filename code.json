@@ -10,8 +10,8 @@
       "usageType": "openSource",
       "licenses": [
         {
-          "name": "Creative Commons Zero v1.0 Universal (CC0 1.0)",
-          "URL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/raw/main/LICENSE"
+          "name": "Public Domain, Unlicense",
+          "URL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/raw/main/LICENSE.md"
         }
       ]
     },

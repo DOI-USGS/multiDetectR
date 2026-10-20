@@ -26,7 +26,7 @@ Description: Implements the closed-form rule for allocating detection effort
     handles integer replicate counts, and extends to multiple targets and to
     multiple methods or places. Function and argument names mirror the
     equations of the accompanying manuscript.
-License: CC0
+License: file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Depends:

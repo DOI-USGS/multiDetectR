@@ -4,10 +4,7 @@
 ^\.RData$
 ^README\.Rmd$
 ^README\.md$
-^LICENSE$
 ^DISCLAIMER\.md$
-^CODE_OF_CONDUCT\.md$
-^CONTRIBUTING\.md$
 ^LICENSE\.md$
 ^\.gitlab-ci\.yml$
 ^Dockerfile$
