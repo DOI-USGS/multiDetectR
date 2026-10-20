@@ -1,53 +1,32 @@
 # GitLab CI/CD for multiDetectR
 # Runs on code.usgs.gov chs-shared runners.
-# Builds a custom Docker image from the Dockerfile in this repo, then runs
-# R CMD check and the testthat suite in that image.
-# Modeled on umesc/quant-ecology/aisGlobal.
+# Uses the public rocker/r-ver image and installs dependencies at job time, so
+# there is no project registry image to build or maintain (avoids the
+# "manifest unknown" chicken-and-egg problem of a self-hosted CI image).
 
 stages:
-  - build-image
   - check
   - test
 
 variables:
   _R_CHECK_FORCE_SUGGESTS_: "false"
   _R_CHECK_NO_STOP_ON_TEST_ERROR_: "true"
-
-# Build the CI image from the Dockerfile and push it to the project registry.
-# Uses Kaniko so no Docker daemon is required on the runner.
-build-image:
-  stage: build-image
-  image:
-    name: gcr.io/kaniko-project/executor:debug
-    entrypoint: [""]
-  tags:
-    - chs-shared
-  script:
-    - mkdir -p /kaniko/.docker
-    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"username\":\"${CI_REGISTRY_USER}\",\"password\":\"${CI_REGISTRY_PASSWORD}\"}}}" > /kaniko/.docker/config.json
-    - >-
-      /kaniko/executor
-      --context "${CI_PROJECT_DIR}"
-      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
-      --destination "${CI_REGISTRY_IMAGE}:latest"
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
-      changes:
-        - Dockerfile
-    - if: '$CI_PIPELINE_SOURCE == "web"'
+  # Suggests needed to build vignettes and run tests:
+  R_PKGS: "shiny DT testthat knitr rmarkdown devtools rcmdcheck remotes"
 
 default:
-  image: "${CI_REGISTRY_IMAGE}:latest"
+  image: rocker/r-ver:4.6.1
   tags:
     - chs-shared
-    - dind
   timeout: 1 hour
+  before_script:
+    # System libraries for building packages and rendering vignettes.
+    - apt-get update -qq && apt-get install -y --no-install-recommends libcurl4-openssl-dev libssl-dev libxml2-dev pandoc
+    - Rscript -e "install.packages(strsplit(Sys.getenv('R_PKGS'), ' ')[[1]], repos='https://cloud.r-project.org', Ncpus=4)"
 
 # R CMD check (builds and checks the package, including vignettes)
 r-cmd-check:
   stage: check
-  before_script:
-    - Rscript -e 'remotes::install_deps(dependencies = TRUE)'
   script:
     - Rscript -e 'rcmdcheck::rcmdcheck(args = c("--no-manual"), error_on = "error", check_dir = "check")'
   artifacts:
@@ -60,8 +39,6 @@ r-cmd-check:
 # Run the testthat suite
 run-tests:
   stage: test
-  before_script:
-    - Rscript -e 'remotes::install_deps(dependencies = TRUE)'
   script:
     - Rscript -e 'devtools::test()'
   artifacts:

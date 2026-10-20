@@ -1,5 +1,11 @@
-# Dockerfile for multiDetectR CI/CD testing
-# Based on rocker/r-ver (lightweight; no spatial libs needed)
+# Dockerfile for local reproducible testing of multiDetectR.
+# Based on rocker/r-ver (lightweight; no spatial libs needed).
+#
+# NOTE: CI (.gitlab-ci.yml) does NOT use this image. CI runs directly on the
+# public rocker/r-ver image and installs dependencies at job time, to avoid
+# maintaining a project registry image. This Dockerfile is kept for local use:
+#   docker build -t multidetectr-ci .
+#   docker run --rm -v "$(pwd):/pkg" multidetectr-ci
 
 FROM rocker/r-ver:4.6.1
 
