@@ -111,7 +111,7 @@ In addition to the R package source files, the main level of the repository cont
 - `README.md`, which is this file.
 - `.gitignore`, a Git ignore file for the repository.
 - `.Rbuildignore`, the list of files ignored when building the R package.
-- `LICENSE.md`, the license for the software (public domain / Unlicense).
+- `LICENSE`, the license for the software (CC0 1.0 Universal, public domain dedication).
 - `Contributing.md`, which describes how to contribute to this project.
 - `DISCLAIMER.md`, the standard USGS disclaimer.
 - `code.json`, the required machine-readable metadata about the code.
@@ -126,8 +126,7 @@ to revision.
 
 ## License
 
-This project is in the public domain in the United States and is additionally
-released worldwide under the Unlicense. See `LICENSE.md`.
+CC0 1.0 Universal (public domain dedication). See `LICENSE`.
 
 [r_ext]: https://cran.r-project.org/doc/manuals/r-release/R-exts.html
 [r_pkgs]: https://r-pkgs.org/

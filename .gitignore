@@ -5,6 +5,7 @@
 *.RDS
 *.rds
 Rplots.pdf
+..Rcheck/*
 
 # targets run stores (contain absolute machine paths; regenerable)
 data-raw/analysis/**/_targets/

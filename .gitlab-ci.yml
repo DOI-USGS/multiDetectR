@@ -25,12 +25,15 @@ default:
     # Bootstrap the installer, then install the package's declared dependencies
     # (Imports + Suggests from DESCRIPTION, including knitr/rmarkdown for the
     # vignettes).
-    - "Rscript -e 'install.packages(c(\"remotes\", \"rcmdcheck\", \"devtools\"), repos = \"https://cloud.r-project.org\", Ncpus = 4)'"
+    - "Rscript -e 'install.packages(c(\"remotes\", \"rcmdcheck\"), repos = \"https://cloud.r-project.org\", Ncpus = 4)'"
     - "Rscript -e 'remotes::install_deps(dependencies = TRUE, upgrade = \"never\", Ncpus = 4)'"
     # Verify every tool the check needs actually installed, and abort with a
     # clear message if not -- rather than failing deep inside the vignette
     # rebuild (install.packages only warns on a failed install, it does not stop).
-    - "Rscript -e 'need <- c(\"knitr\", \"rmarkdown\", \"rcmdcheck\", \"devtools\", \"remotes\", \"shiny\", \"DT\", \"testthat\"); miss <- need[!vapply(need, requireNamespace, logical(1), quietly = TRUE)]; if (length(miss)) stop(paste(\"missing packages\", paste(miss, collapse = \", \")))'"
+    # Note: devtools is intentionally NOT required -- it drags in a large,
+    # system-library-heavy dependency tree (gert/libgit2, pkgdown, ragg) that we
+    # do not need; rcmdcheck runs the check and testthat runs the tests.
+    - "Rscript -e 'need <- c(\"knitr\", \"rmarkdown\", \"rcmdcheck\", \"remotes\", \"shiny\", \"DT\", \"testthat\"); miss <- need[!vapply(need, requireNamespace, logical(1), quietly = TRUE)]; if (length(miss)) stop(paste(\"missing packages\", paste(miss, collapse = \", \")))'"
 
 # R CMD check (builds and checks the package, including vignettes)
 r-cmd-check:
@@ -48,7 +51,7 @@ r-cmd-check:
 run-tests:
   stage: test
   script:
-    - Rscript -e 'devtools::test()'
+    - "Rscript -e 'testthat::test_local(stop_on_failure = TRUE)'"
   artifacts:
     paths:
       - tests/

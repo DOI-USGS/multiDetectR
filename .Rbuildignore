@@ -4,8 +4,9 @@
 ^\.RData$
 ^README\.Rmd$
 ^README\.md$
-^DISCLAIMER\.md$
+^LICENSE$
 ^LICENSE\.md$
+^DISCLAIMER\.md$
 ^\.gitlab-ci\.yml$
 ^Dockerfile$
 ^code\.json$
