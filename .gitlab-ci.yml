@@ -1,0 +1,71 @@
+# GitLab CI/CD for multiDetectR
+# Runs on code.usgs.gov chs-shared runners.
+# Builds a custom Docker image from the Dockerfile in this repo, then runs
+# R CMD check and the testthat suite in that image.
+# Modeled on umesc/quant-ecology/aisGlobal.
+
+stages:
+  - build-image
+  - check
+  - test
+
+variables:
+  _R_CHECK_FORCE_SUGGESTS_: "false"
+  _R_CHECK_NO_STOP_ON_TEST_ERROR_: "true"
+
+# Build the CI image from the Dockerfile and push it to the project registry.
+# Uses Kaniko so no Docker daemon is required on the runner.
+build-image:
+  stage: build-image
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  tags:
+    - chs-shared
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"username\":\"${CI_REGISTRY_USER}\",\"password\":\"${CI_REGISTRY_PASSWORD}\"}}}" > /kaniko/.docker/config.json
+    - >-
+      /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${CI_REGISTRY_IMAGE}:latest"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      changes:
+        - Dockerfile
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+
+default:
+  image: "${CI_REGISTRY_IMAGE}:latest"
+  tags:
+    - chs-shared
+    - dind
+  timeout: 1 hour
+
+# R CMD check (builds and checks the package, including vignettes)
+r-cmd-check:
+  stage: check
+  before_script:
+    - Rscript -e 'remotes::install_deps(dependencies = TRUE)'
+  script:
+    - Rscript -e 'rcmdcheck::rcmdcheck(args = c("--no-manual"), error_on = "error", check_dir = "check")'
+  artifacts:
+    paths:
+      - check/
+    when: always
+    expire_in: 1 week
+  allow_failure: false
+
+# Run the testthat suite
+run-tests:
+  stage: test
+  before_script:
+    - Rscript -e 'remotes::install_deps(dependencies = TRUE)'
+  script:
+    - Rscript -e 'devtools::test()'
+  artifacts:
+    paths:
+      - tests/
+    when: always
+    expire_in: 1 week
