@@ -1,5 +1,5 @@
-<multidetect_assemblage> 90 targets, depth 3, integer counts
-  shared per-level n: 6, 7, 7
-  weighted detection D: 0.9548
-  total cost C:         2628
-  binding target:       Alosa (largest miss-weight)
+<multidetect_assemblage> 93 targets, depth 3, integer counts
+  shared per-level n: 6, 8, 8
+  weighted detection D: 0.9537
+  total cost C:         2928
+  binding target:       Notropis (largest miss-weight)

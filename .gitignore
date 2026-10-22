@@ -21,3 +21,5 @@ _targets.yaml
 # OS cruft
 .DS_Store
 Thumbs.db
+
+*.bak

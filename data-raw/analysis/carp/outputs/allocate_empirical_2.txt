@@ -1,5 +1,5 @@
-<multidetect_assemblage> 90 targets, depth 2, integer counts
-  shared per-level n:  8, 15
-  weighted detection D: 0.9578
-  total cost C:         4000
-  binding target:       Coregonus clupeaformis (largest miss-weight)
+<multidetect_assemblage> 93 targets, depth 2, integer counts
+  shared per-level n:  9, 17
+  weighted detection D: 0.9611
+  total cost C:         4860
+  binding target:       Prosopium cylindraceum (largest miss-weight)

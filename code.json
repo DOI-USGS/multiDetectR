@@ -3,7 +3,7 @@
     "name": "multiDetectR",
     "organization": "U.S. Geological Survey",
     "description": "An R package implementing the closed-form rule for allocating detection effort across the levels of a nested survey at any depth.",
-    "version": "0.1.0",
+    "version": "main",
     "status": "Development",
 
     "permissions": {
