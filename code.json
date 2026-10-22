@@ -11,15 +11,15 @@
       "licenses": [
         {
           "name": "Creative Commons Zero v1.0 Universal (CC0 1.0)",
-          "URL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/raw/main/LICENSE.md"
+          "URL": "https://https://github.com/DOI-USGS/multidetectr/-/raw/main/LICENSE.md"
         }
       ]
     },
 
-    "homepageURL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr",
-    "downloadURL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/archive/main/multidetectr-main.zip",
-    "disclaimerURL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/raw/main/DISCLAIMER.md",
-    "repositoryURL": "https://code.usgs.gov/umesc/quant-ecology/multidetectr.git",
+    "homepageURL": "https://https://github.com/DOI-USGS/multidetectr",
+    "downloadURL": "https://https://github.com/DOI-USGS/multidetectr/-/archive/main/multidetectr-main.zip",
+    "disclaimerURL": "https://https://github.com/DOI-USGS/multidetectr/-/raw/main/DISCLAIMER.md",
+    "repositoryURL": "https://https://github.com/DOI-USGS/multidetectr.git",
     "vcs": "git",
 
     "laborHours": 240,
