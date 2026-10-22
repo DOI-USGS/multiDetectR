@@ -2,7 +2,7 @@
 
 
 
-#### Authors: Kevin D. Lafferty, Danelle M. Larson, Stephen F. Spear, Nick Schulte, Jason A. Coombs, Patrick DeHaan, Cari-Ann Hayer, Aaron P. Maloy, Richard A. Erickson
+#### Authors: Richard A. Erickson, Danelle M. Larson, Kevin D. Lafferty
 #### Point of contact: Richard A. Erickson (rerickson@usgs.gov)
 #### Repository Type: _R package_
 #### Year of Origin:   2026
@@ -15,7 +15,7 @@
 
 _Suggested Citation:_
 
-Lafferty, KD; Larson, DM; Spear, SF; Schulte, N; Coombs, JA; DeHaan, P; Hayer, C-A; Maloy, AP; Erickson, RA.
+Erickson, RA; Larson, DM; Lafferty, KD.
 2026.
 multiDetectR.
 Version 0.1.0.
@@ -25,10 +25,9 @@ https://doi.org/10.5066/XXXXXXXX
 
 _Authors' [ORCID](https://orcid.org) nos.:_
 
-- Kevin D. Lafferty [0000-0001-7583-4593](https://orcid.org/0000-0001-7583-4593)
-- Danelle M. Larson [0000-0001-6349-6267](https://orcid.org/0000-0001-6349-6267)
-- Stephen F. Spear [0000-0001-8351-9382](https://orcid.org/0000-0001-8351-9382)
 - Richard A. Erickson [0000-0003-4649-482X](https://orcid.org/0000-0003-4649-482X)
+- Danelle M. Larson [0000-0001-6349-6267](https://orcid.org/0000-0001-6349-6267)
+- Kevin D. Lafferty [0000-0001-7583-4593](https://orcid.org/0000-0001-7583-4593)
 
 
 ***

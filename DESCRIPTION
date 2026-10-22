@@ -2,20 +2,13 @@ Package: multiDetectR
 Title: Exact Allocation of Detection Effort Across Nested Survey Levels
 Version: 0.1.0
 Authors@R: c(
-    person("Kevin D.", "Lafferty", role = "aut",
-           comment = c(ORCID = "0000-0001-7583-4593")),
-    person("Danelle M.", "Larson", role = "aut",
-           comment = c(ORCID = "0000-0001-6349-6267")),
-    person("Stephen F.", "Spear", role = "aut",
-           comment = c(ORCID = "0000-0001-8351-9382")),
-    person("Nick", "Schulte", role = "aut"),
-    person("Jason A.", "Coombs", role = "aut"),
-    person("Patrick", "DeHaan", role = "aut"),
-    person("Cari-Ann", "Hayer", role = "aut"),
-    person("Aaron P.", "Maloy", role = "aut"),
     person("Richard A.", "Erickson", role = c("aut", "cre"),
            email = "rerickson@usgs.gov",
-           comment = c(ORCID = "0000-0003-4649-482X")))
+           comment = c(ORCID = "0000-0003-4649-482X")),
+    person("Danelle M.", "Larson", role = "aut",
+           comment = c(ORCID = "0000-0001-6349-6267")),
+    person("Kevin D.", "Lafferty", role = "aut",
+           comment = c(ORCID = "0000-0001-7583-4593")))
 Description: Implements the closed-form rule for allocating detection effort
     across the levels of a nested survey at any depth. A nested survey is
     modeled as a cascade of conditional Bernoulli trials, with detection
