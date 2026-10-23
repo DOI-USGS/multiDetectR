@@ -23,3 +23,14 @@ _targets.yaml
 Thumbs.db
 
 *.bak
+
+# Analysis input/output data is maintained in the separate data-release
+# repository, not here (sensitive USFWS data; see the DGEC review). Ignore
+# everything under the analysis data/ dirs except the README pointers.
+data-raw/analysis/carp/data/*
+!data-raw/analysis/carp/data/README.md
+data-raw/analysis/marine/data/*
+!data-raw/analysis/marine/data/README.md
+
+# Scratch/debug working files.
+data-raw/analysis/scratch/

@@ -35,6 +35,6 @@ Suggests:
     rmarkdown
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-URL: https://code.usgs.gov/umesc/quant-ecology/multidetectr
-BugReports: https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/issues
+URL: https://github.com/DOI-USGS/multiDetectR
+BugReports: https://github.com/DOI-USGS/multiDetectR/issues
 Config/roxygen2/version: 8.1.0

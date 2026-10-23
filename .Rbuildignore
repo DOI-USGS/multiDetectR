@@ -10,7 +10,7 @@
 ^\.gitlab-ci\.yml$
 ^Dockerfile$
 ^code\.json$
-^Contributing\.md$
+^CONTRIBUTING\.md$
 ^doc$
 ^Meta$
 ^\.github$

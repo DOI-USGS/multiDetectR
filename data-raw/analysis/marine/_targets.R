@@ -11,8 +11,17 @@ library(here)
 #     the Dryad release's Government Point subset is a single site and cannot
 #     reconstruct the X x N x K design grid the cost model needs (see
 #     notes/plan-marine-coastwide-pipeline.md, decision A2).
+# The input data (Dryad reads + the Lafferty Pareto design table) lives outside
+# the package repo. By default we read it from the `data-release` repo checked
+# out alongside the package; override with MULTIDETECTR_DATA. The coastwide
+# Dryad reads are read in place from the release to avoid duplicating ~70 MB.
+# See data-raw/analysis/marine/data/README.md.
+release_dir <- Sys.getenv(
+  "MULTIDETECTR_DATA",
+  unset = file.path(dirname(here::here()), "data-release")
+)
 dryad_dir <- file.path(dirname(here::here()), "marine_dryad", "dryad_2026-10-13")
-data_dir <- here::here("data-raw", "analysis", "marine", "data")
+data_dir <- file.path(release_dir, "input", "marine")
 r_dir <- here::here("data-raw", "analysis", "marine", "R")
 
 samples_path <- file.path(dryad_dir, "samples.csv")

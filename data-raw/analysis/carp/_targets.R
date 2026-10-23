@@ -2,7 +2,18 @@ library(targets)
 library(tarchetypes)
 library(here)
 
-data_dir <- here::here("data-raw", "analysis", "carp", "data")
+# Input data lives in the separate data-release repository, not in this package
+# repo (the raw USFWS eDNA data is sensitive and is removed from the public
+# package per the DGEC review). By default we read it from the `data-release`
+# repo checked out alongside the package (a sibling of the package root that
+# here::here() anchors to). Override with the MULTIDETECTR_DATA environment
+# variable to point at the data wherever it is obtained (e.g. a released DOI
+# archive). See data-raw/analysis/carp/data/README.md.
+release_dir <- Sys.getenv(
+  "MULTIDETECTR_DATA",
+  unset = file.path(dirname(here::here()), "data-release")
+)
+data_dir <- file.path(release_dir, "input", "carp")
 r_dir <- here::here("data-raw", "analysis", "carp", "R")
 
 all_species_path <- file.path(data_dir, "all_species.csv")

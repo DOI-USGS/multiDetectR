@@ -33,8 +33,7 @@ _Authors' [ORCID](https://orcid.org) nos.:_
 ***
 ***
 
-GitLab Pipeline status:
-[![pipeline status](https://code.usgs.gov/umesc/quant-ecology/multidetectr/badges/main/pipeline.svg)](https://code.usgs.gov/umesc/quant-ecology/multidetectr/-/pipelines)
+Repository: [github.com/DOI-USGS/multiDetectR](https://github.com/DOI-USGS/multiDetectR)
 
 ***
 ***
@@ -59,7 +58,7 @@ manuscript.
 
 ```r
 if (!require("remotes")) install.packages("remotes")
-remotes::install_gitlab("umesc/quant-ecology/multidetectr", host = "code.usgs.gov")
+remotes::install_github("DOI-USGS/multiDetectR")
 ```
 
 ## Quick start
@@ -111,7 +110,7 @@ In addition to the R package source files, the main level of the repository cont
 - `.gitignore`, a Git ignore file for the repository.
 - `.Rbuildignore`, the list of files ignored when building the R package.
 - `LICENSE`, the license for the software (CC0 1.0 Universal, public domain dedication).
-- `Contributing.md`, which describes how to contribute to this project.
+- `CONTRIBUTING.md`, which describes how to contribute to this project.
 - `DISCLAIMER.md`, the standard USGS disclaimer.
 - `code.json`, the required machine-readable metadata about the code.
 

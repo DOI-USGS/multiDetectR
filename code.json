@@ -3,7 +3,7 @@
     "name": "multiDetectR",
     "organization": "U.S. Geological Survey",
     "description": "An R package implementing the closed-form rule for allocating detection effort across the levels of a nested survey at any depth.",
-    "version": "main",
+    "version": "0.1.0",
     "status": "Development",
 
     "permissions": {
@@ -11,15 +11,15 @@
       "licenses": [
         {
           "name": "Creative Commons Zero v1.0 Universal (CC0 1.0)",
-          "URL": "https://https://github.com/DOI-USGS/multidetectr/-/raw/main/LICENSE.md"
+          "URL": "https://github.com/DOI-USGS/multiDetectR/raw/main/LICENSE.md"
         }
       ]
     },
 
-    "homepageURL": "https://https://github.com/DOI-USGS/multidetectr",
-    "downloadURL": "https://https://github.com/DOI-USGS/multidetectr/-/archive/main/multidetectr-main.zip",
-    "disclaimerURL": "https://https://github.com/DOI-USGS/multidetectr/-/raw/main/DISCLAIMER.md",
-    "repositoryURL": "https://https://github.com/DOI-USGS/multidetectr.git",
+    "homepageURL": "https://github.com/DOI-USGS/multiDetectR",
+    "downloadURL": "https://github.com/DOI-USGS/multiDetectR/archive/refs/heads/main.zip",
+    "disclaimerURL": "https://github.com/DOI-USGS/multiDetectR/raw/main/DISCLAIMER.md",
+    "repositoryURL": "https://github.com/DOI-USGS/multiDetectR.git",
     "vcs": "git",
 
     "laborHours": 240,
