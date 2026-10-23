@@ -1,0 +1,9 @@
+# Code owners for multiDetectR.
+# Used by GitHub's "Require review from Code Owners" branch-protection setting
+# to enforce review before merge to main.
+#
+# Replace @DOI-USGS/multidetectr-maintainers with the actual GitHub team (or
+# individual @usernames) that should approve changes. A team must have write
+# access to the repository to be a valid code owner.
+
+* @rerickson-usgs

@@ -7,7 +7,14 @@ fit_cw_2 <- function(marine_data, label) {
 
   rstan::rstan_options(threads_per_chain = 1)
 
-  data_dir_out <- here::here("data-raw", "analysis", "marine", "data")
+  # Write regenerated summaries to the data-release repo (output/), not the
+  # package repo. Mirrors the MULTIDETECTR_DATA convention used by _targets.R.
+  release_dir <- Sys.getenv(
+    "MULTIDETECTR_DATA",
+    unset = file.path(dirname(here::here()), "data-release")
+  )
+  data_dir_out <- file.path(release_dir, "output", "marine")
+  dir.create(data_dir_out, recursive = TRUE, showWarnings = FALSE)
 
   # Two-level occupancy for one marker/subset: unit (Site) -> sample (Barcode
   # filter), collapsing PCR libraries to a single sample-level detection

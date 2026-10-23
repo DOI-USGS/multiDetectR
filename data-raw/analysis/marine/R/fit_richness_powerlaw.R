@@ -1,5 +1,12 @@
 fit_richness_powerlaw <- function(richness_file, cost_grid, seed = 20260101) {
-  data_dir_out <- here::here("data-raw", "analysis", "marine", "data")
+  # Write the regenerated parameter table to the data-release repo (output/),
+  # not the package repo. Mirrors the MULTIDETECTR_DATA convention in _targets.R.
+  release_dir <- Sys.getenv(
+    "MULTIDETECTR_DATA",
+    unset = file.path(dirname(here::here()), "data-release")
+  )
+  data_dir_out <- file.path(release_dir, "output", "marine")
+  dir.create(data_dir_out, recursive = TRUE, showWarnings = FALSE)
   txt_dir <- here::here("data-raw", "analysis", "marine", "outputs")
 
   X_sites <- N_samples <- K_subsamples <- richness <- #nolint

@@ -1,0 +1,65 @@
+# GitHub Actions CI for multiDetectR (DGEC standards).
+#
+# Mirrors the previous GitLab pipeline: R CMD check (including vignettes) and
+# the testthat suite, on a public rocker/r-ver image.
+#
+# DGEC GitHub Actions conformance:
+#   - Third-party actions are pinned to a full commit SHA (not a moving tag),
+#     with the human-readable version in a trailing comment.
+#   - GITHUB_TOKEN is granted the minimum permission (contents: read).
+#   - No secrets are referenced; no self-hosted runners are used.
+name: R-CMD-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Least-privilege token: the workflow only needs to read the repository.
+permissions:
+  contents: read
+
+jobs:
+  R-CMD-check:
+    runs-on: ubuntu-latest
+    container:
+      image: rocker/r-ver:4.6.1
+    env:
+      _R_CHECK_FORCE_SUGGESTS_: "false"
+      _R_CHECK_NO_STOP_ON_TEST_ERROR_: "true"
+      R_KEEP_PKG_SOURCE: "yes"
+    steps:
+      # actions/checkout@v4.2.2
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Install system dependencies
+        run: |
+          apt-get update -qq
+          apt-get install -y --no-install-recommends \
+            libcurl4-openssl-dev libssl-dev libxml2-dev pandoc git
+
+      - name: Install R package dependencies
+        run: |
+          Rscript -e 'install.packages(c("remotes", "rcmdcheck"), repos = "https://cloud.r-project.org", Ncpus = 4)'
+          Rscript -e 'remotes::install_deps(dependencies = TRUE, upgrade = "never", Ncpus = 4)'
+          Rscript -e 'need <- c("knitr", "rmarkdown", "rcmdcheck", "remotes", "shiny", "DT", "testthat"); miss <- need[!vapply(need, requireNamespace, logical(1), quietly = TRUE)]; if (length(miss)) stop(paste("missing packages", paste(miss, collapse = ", ")))'
+
+      - name: R CMD check
+        run: |
+          Rscript -e 'rcmdcheck::rcmdcheck(args = c("--no-manual"), error_on = "error", check_dir = "check")'
+
+      - name: Run testthat suite
+        run: |
+          Rscript -e 'testthat::test_local(stop_on_failure = TRUE)'
+
+      # actions/upload-artifact@v4.4.3
+      - name: Upload check results
+        if: always()
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882
+        with:
+          name: r-cmd-check-results
+          path: check/
+          retention-days: 7
