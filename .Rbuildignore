@@ -17,3 +17,4 @@
 ^Rplots\.pdf$
 ^_targets\.yaml$
 ^detect_plot\.jpg$
+^\.lintr$

@@ -63,3 +63,30 @@ jobs:
           name: r-cmd-check-results
           path: check/
           retention-days: 7
+
+  # Lint is a recommendation, not a gate (per DGEC): it reports style issues but
+  # does not fail the workflow (continue-on-error). Runs lintr in the same
+  # rocker container, reusing the already-pinned checkout action.
+  lint:
+    runs-on: ubuntu-latest
+    container:
+      image: rocker/r-ver:4.6.1
+    steps:
+      # actions/checkout@v5.0.1 (runs on Node 24)
+      - name: Check out repository
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
+
+      - name: Install system dependencies
+        run: |
+          apt-get update -qq
+          apt-get install -y --no-install-recommends \
+            libcurl4-openssl-dev libssl-dev libxml2-dev git
+
+      - name: Install lintr
+        run: |
+          Rscript -e 'install.packages("lintr", repos = "https://cloud.r-project.org", Ncpus = 4)'
+
+      - name: Lint package
+        continue-on-error: true
+        run: |
+          Rscript -e 'lintr::lint_package()'

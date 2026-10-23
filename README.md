@@ -1,5 +1,13 @@
 # multiDetectR
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/DOI-USGS/multiDetectR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DOI-USGS/multiDetectR/actions/workflows/R-CMD-check.yaml)
+[![License: CC0-1.0](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![code size](https://img.shields.io/github/languages/code-size/DOI-USGS/multiDetectR.svg)](https://github.com/DOI-USGS/multiDetectR)
+[![last commit](https://img.shields.io/github/last-commit/DOI-USGS/multiDetectR.svg)](https://github.com/DOI-USGS/multiDetectR/commits/main)
+<!-- badges: end -->
+
 
 
 #### Authors: Richard A. Erickson, Danelle M. Larson, Kevin D. Lafferty
