@@ -31,9 +31,9 @@ jobs:
       _R_CHECK_NO_STOP_ON_TEST_ERROR_: "true"
       R_KEEP_PKG_SOURCE: "yes"
     steps:
-      # actions/checkout@v4.2.2
+      # actions/checkout@v5.0.1 (runs on Node 24)
       - name: Check out repository
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
 
       - name: Install system dependencies
         run: |
@@ -55,10 +55,10 @@ jobs:
         run: |
           Rscript -e 'testthat::test_local(stop_on_failure = TRUE)'
 
-      # actions/upload-artifact@v4.4.3
+      # actions/upload-artifact@v5.0.0 (runs on Node 24)
       - name: Upload check results
         if: always()
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: r-cmd-check-results
           path: check/
