@@ -1,0 +1,59 @@
+"marker","step","data","alpha","w_low","rho","ll","U"
+"12S","alpha, multipliers held","all",Inf,,,-9686.56841332928,11.6972822901867
+"12S","alpha, multipliers held","all",8,,,-9517.26290269474,11.9311135092801
+"12S","alpha, multipliers held","all",4,,,-9448.38454409686,12.2167252832001
+"12S","alpha, multipliers held","all",2,,,-9416.53393201384,12.7101564991491
+"12S","alpha, multipliers held","all",1,,,-9470.40166698612,12.3721611706122
+"12S","alpha, multipliers held","all",0.5,,,-9748.52827845672,12.2905385828794
+"12S","alpha, multipliers held","all",0.25,,,-10479.8376881601,11.9339942343428
+"12S","alpha, multipliers held","all",0.1,,,-12408.5533289807,11.1214963483437
+"12S","two-class, multipliers held","all",,0.3,0.02,-9964.00238962509,12.2457667517459
+"12S","two-class, multipliers held","all",,0.5,0.02,-10431.566544879,11.5854862427447
+"12S","two-class, multipliers held","all",,0.7,0.02,-10653.5109576474,11.739009506267
+"12S","two-class, multipliers held","all",,0.3,0.1,-9543.15006684307,12.5296246548945
+"12S","two-class, multipliers held","all",,0.5,0.1,-9528.70373478246,11.9292059840712
+"12S","two-class, multipliers held","all",,0.7,0.1,-9513.5798982154,11.861788636815
+"12S","two-class, multipliers held","all",,0.3,0.3,-9478.15593789574,12.3130747406253
+"12S","two-class, multipliers held","all",,0.5,0.3,-9441.55020977929,12.4962915959431
+"12S","two-class, multipliers held","all",,0.7,0.3,-9437.20905212567,12.43844977184
+"12S","alpha, multipliers re-chosen","all",Inf,,,-9599.23001683517,10.1097980103341
+"12S","alpha, multipliers re-chosen","all",8,,,-9425.89209730858,10.150137519729
+"12S","alpha, multipliers re-chosen","all",4,,,-9357.14279391145,10.2109861636012
+"12S","alpha, multipliers re-chosen","all",2,,,-9322.5456074858,10.3003969307769
+"12S","alpha, multipliers re-chosen","all",1,,,-9351.42999187284,10.4070873966799
+"12S","alpha, multipliers re-chosen","all",0.5,,,-9560.7664096913,10.5681962434251
+"12S","alpha, multipliers re-chosen","all",0.25,,,-10169.3358296972,10.7293600977339
+"12S","alpha, multipliers re-chosen","all",0.1,,,-11907.2870337199,10.7670414778616
+"COI","alpha, multipliers held","all",Inf,,,-15458.9172023014,257.400827946293
+"COI","alpha, multipliers held","all",8,,,-14972.9582051535,254.012820923612
+"COI","alpha, multipliers held","all",4,,,-14823.0344987234,253.929506246313
+"COI","alpha, multipliers held","all",2,,,-14714.6258114489,256.520212156755
+"COI","alpha, multipliers held","all",1,,,-14670.4287955695,255.268104431086
+"COI","alpha, multipliers held","all",0.5,,,-14750.0573424296,251.925444838719
+"COI","alpha, multipliers held","all",0.25,,,-15071.3237187591,240.100537846887
+"COI","alpha, multipliers held","all",0.1,,,-16061.4360733233,230.204088120388
+"COI","two-class, multipliers held","all",,0.3,0.02,-14929.1878344156,257.767474800929
+"COI","two-class, multipliers held","all",,0.5,0.02,-15170.8591512337,254.04924026924
+"COI","two-class, multipliers held","all",,0.7,0.02,-15556.4473687982,261.034399795901
+"COI","two-class, multipliers held","all",,0.3,0.1,-14701.6460379004,261.738035964227
+"COI","two-class, multipliers held","all",,0.5,0.1,-14741.785315336,256.984244649377
+"COI","two-class, multipliers held","all",,0.7,0.1,-14843.3475441774,257.516941371028
+"COI","two-class, multipliers held","all",,0.3,0.3,-14840.4294748037,253.71475338696
+"COI","two-class, multipliers held","all",,0.5,0.3,-14864.0732046147,253.75623157626
+"COI","two-class, multipliers held","all",,0.7,0.3,-14951.4330832267,253.326324181785
+"COI","alpha, multipliers held","without JVB3506",Inf,,,-11211.1725175058,228.457833821128
+"COI","alpha, multipliers held","without JVB3506",8,,,-11216.3247367625,227.993336104133
+"COI","alpha, multipliers held","without JVB3506",4,,,-11214.1791856716,228.197726577381
+"COI","alpha, multipliers held","without JVB3506",2,,,-11227.5777626137,227.218192276305
+"COI","alpha, multipliers held","without JVB3506",1,,,-11269.7937985549,231.473923493784
+"COI","alpha, multipliers held","without JVB3506",0.5,,,-11373.6315956518,235.030276703538
+"COI","alpha, multipliers held","without JVB3506",0.25,,,-11659.5238735974,229.653660089749
+"COI","alpha, multipliers held","without JVB3506",0.1,,,-12525.0618613334,209.719977990971
+"COI","alpha, multipliers re-chosen","all",Inf,,,-15588.7770239483,243.153511933611
+"COI","alpha, multipliers re-chosen","all",8,,,-15025.9505538858,242.568720323093
+"COI","alpha, multipliers re-chosen","all",4,,,-14819.61523148,241.895822336503
+"COI","alpha, multipliers re-chosen","all",2,,,-14664.3050975417,243.598777463396
+"COI","alpha, multipliers re-chosen","all",1,,,-14574.2570142103,238.645121356001
+"COI","alpha, multipliers re-chosen","all",0.5,,,-14609.6348162128,238.285436495745
+"COI","alpha, multipliers re-chosen","all",0.25,,,-14928.9792213674,217.962579586648
+"COI","alpha, multipliers re-chosen","all",0.1,,,-15953.2062976557,196.752465919452

@@ -1,0 +1,22 @@
+"marker","data","alpha","ll","dll_vs_no_heterogeneity","detections_dropped"
+"12S","12S without JVB3105 and JVB3506 (pooled libraries only)",Inf,-6132.00453309728,0,
+"12S","12S without JVB3105 and JVB3506 (pooled libraries only)",8,-6123.27255971938,8.73197337789952,
+"12S","12S without JVB3105 and JVB3506 (pooled libraries only)",4,-6119.69469549972,12.3098375975551,
+"12S","12S without JVB3105 and JVB3506 (pooled libraries only)",2,-6125.48003529855,6.52449779873041,
+"12S","12S without JVB3105 and JVB3506 (pooled libraries only)",1,-6175.646756707,-43.642223609726,
+"12S","12S without JVB3105 and JVB3506 (pooled libraries only)",0.5,-6407.21844500348,-275.213911906208,
+"12S","12S without JVB3105 and JVB3506 (pooled libraries only)",0.25,-7051.05730630754,-919.052773210263,
+"COI","COI, JVB3506 detections need >= 20 reads",Inf,-13909.8982246721,0,1614
+"COI","COI, JVB3506 detections need >= 20 reads",8,-13574.8359393643,335.062285307797,1614
+"COI","COI, JVB3506 detections need >= 20 reads",4,-13471.6917534642,438.206471207834,1614
+"COI","COI, JVB3506 detections need >= 20 reads",2,-13400.4374678671,509.460756804992,1614
+"COI","COI, JVB3506 detections need >= 20 reads",1,-13378.8827300219,531.01549465021,1614
+"COI","COI, JVB3506 detections need >= 20 reads",0.5,-13454.4201238668,455.478100805294,1614
+"COI","COI, JVB3506 detections need >= 20 reads",0.25,-13749.6038735619,160.29435111016,1614
+"COI","COI, JVB3506 detections need >= 50 reads",Inf,-12787.4133808588,0,2834
+"COI","COI, JVB3506 detections need >= 50 reads",8,-12546.568961592,240.844419266752,2834
+"COI","COI, JVB3506 detections need >= 50 reads",4,-12474.1340437084,313.279337150314,2834
+"COI","COI, JVB3506 detections need >= 50 reads",2,-12431.3711248281,356.042256030691,2834
+"COI","COI, JVB3506 detections need >= 50 reads",1,-12439.4126147778,348.000766080968,2834
+"COI","COI, JVB3506 detections need >= 50 reads",0.5,-12523.5163470127,263.897033846031,2834
+"COI","COI, JVB3506 detections need >= 50 reads",0.25,-12824.1083351024,-36.694954243696,2834

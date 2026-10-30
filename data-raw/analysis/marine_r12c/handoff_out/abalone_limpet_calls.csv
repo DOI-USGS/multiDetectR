@@ -1,0 +1,7 @@
+"marker","taxon","rank","n_libraries","n_filters","n_esvs","reads","n_libraries_in_design_fit","sites","batches"
+"COI","Lottiidae","family",22,2,1,22579,22,"Government Point","JVB3506"
+"COI","Lottia","genus",6,6,5,8685,6,"Carmel Point; Davenport Landing; Government Point","JVB3105/JVB3735/JVB6097"
+"COI","Lottia austrodigitalis","species",14,13,12,1752,12,"Fraser, Santa Cruz I.; Government Point","JVB3105/JVB6164"
+"COI","Lottia digitalis","species",2,2,1,37,2,"Duxbury Reef","JVB3735"
+"COI","Lottia fenestrata","species",6,5,3,109,5,"Government Point","JVB3105"
+"COI","Lottia paradigitalis","species",89,32,6,28757,88,"Davenport Landing; Government Point","JVB3105/JVB3506/JVB3735/JVB5059/JVB5060/JVB5061/JVB6097"

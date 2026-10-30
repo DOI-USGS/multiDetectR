@@ -18,3 +18,5 @@
 ^_targets\.yaml$
 ^detect_plot\.jpg$
 ^\.lintr$
+^deploy\.R$
+^inst/shiny/rsconnect$

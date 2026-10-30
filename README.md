@@ -125,6 +125,22 @@ In addition to the R package source files, the main level of the repository cont
 The reproducible analyses that feed the manuscript, the vignettes, and the Shiny app live under `data-raw/analysis/`.
 That directory is excluded from the built package by `.Rbuildignore`, so the installable package stands alone.
 
+## Data sources
+
+The two worked examples draw on external data releases, not on data committed to
+this repository:
+
+- **Marine (Point Conception rocky intertidal eDNA).** California Intertidal
+  Dryad data package, DOI
+  [10.5061/dryad.1rn8pk1bx](https://doi.org/10.5061/dryad.1rn8pk1bx).
+- **Freshwater (Burns Harbor, Lake Michigan eDNA).** U.S. Fish and Wildlife
+  Service metabarcoding data, to be released by the USFWS on ScienceBase; DOI
+  pending (this citation will be updated once the release is published).
+
+Obtain the data from the release above and point the analysis pipelines at it
+with the `MULTIDETECTR_DATA` environment variable (see the per-analysis READMEs
+under `data-raw/analysis/`).
+
 ## Disclaimer
 
 See `DISCLAIMER.md`. This software is preliminary or provisional and is subject

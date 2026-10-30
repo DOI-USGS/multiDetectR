@@ -1,0 +1,3 @@
+"marker","a","species_observed","species_est_total","kappa_capsule","ll","ll_no_run_multipliers","dll_run_multipliers","n_run_params","BIC_supports"
+"12S",0.0833,61,70.8684530193196,0.125,-9658.82538920046,-10006.6847976057,347.859408405282,10,TRUE
+"COI",0.0833,265,608.434069352206,0.25,-15481.0957166223,-15984.4047679813,503.309051359036,10,TRUE

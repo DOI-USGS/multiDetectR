@@ -1,0 +1,8 @@
+item,unit,hours,cost_usd,source,note
+travel_location,per location per visit,4.5,135,"Lafferty 2024 PeerJ Table 1: visit to location V = 4 h + gear G = 0.5 h",technician hours at US$30/h
+travel_site,per extra site within a location per visit,0.5,15,"Lafferty 2024 Table 1: visit to site v = 0.5 h; Kevin Lafferty 2026-10-11 confirmed",a complementary strategy (new site at the same location)
+sample,per water sample beyond its filters,0.5,15,"Lafferty 2024 Table 1: time per sample t = 0.3 h + data entry D = 0.2 h",t includes collecting and filtering the sample
+filter_disc,per disc filter (filter + extraction),0.833,25,"derived: Lafferty 2024 sequencing per sample q = 3.5 h ($105) minus one marker ($50) minus 6 pooled PCRs ($30); Schulte et al. 2026: disc < US$1",so one sample with one marker and 6 PCRs costs exactly t + D + q = 4 h ($120) as in Lafferty 2024
+filter_capsule,per capsule filter (filter + extraction),1.333,40,"disc + Schulte et al. 2026 capsule premium (capsule US$15-150; low end used)",high end would be US$175
+library,per marker per library,1.667,50,"Kevin Lafferty 2026-10-11",a complementary strategy (new marker)
+pcr,per PCR replicate (pooled),0.167,5,"assumed (Kevin Lafferty 2026-10-10); not in Schulte or Lafferty 2024",at most 33 PCRs of 3 uL per 100 uL extract across all markers (Jonah Ventures 2026-10-11)

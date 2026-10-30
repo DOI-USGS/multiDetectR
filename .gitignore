@@ -34,3 +34,9 @@ data-raw/analysis/marine/data/*
 
 # Scratch/debug working files.
 data-raw/analysis/scratch/
+
+
+# Log files from the targets workflow (tar_make runs, overnight runs, verify,
+# and crew/worker logs). Regenerable; not source.
+*.log
+data-raw/analysis/**/*.log

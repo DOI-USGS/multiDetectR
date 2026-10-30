@@ -1,0 +1,7 @@
+"marker","sites","shared_visits","species_detected_at_both_sometime","same_visit_codetections","expected_if_independent","ratio_observed_to_expected"
+"12S","GP-CJ",6,23,68,69.5,0.97841726618705
+"12S","GP-JB",6,19,56,52.3333333333333,1.07006369426752
+"12S","CJ-JB",6,16,42,43.3333333333333,0.969230769230769
+"COI","GP-CJ",7,52,87,68.1428571428571,1.27672955974843
+"COI","GP-JB",6,28,40,32.5,1.23076923076923
+"COI","CJ-JB",6,20,26,20.3333333333333,1.27868852459016

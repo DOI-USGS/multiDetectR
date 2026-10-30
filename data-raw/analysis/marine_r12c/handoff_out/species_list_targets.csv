@@ -1,0 +1,487 @@
+"taxon","marker","intertidal","habitat_class","n_libraries","n_locations","kingdom","phylum","class","order","family","genus","rocky_intertidal","rocky_intertidal_class","habitat_confidence","target"
+"Alloclinus holderi","12S",TRUE,"rocky intertidal",42,3,"Animalia","Chordata","Actinopteri","Perciformes","Labrisomidae","Alloclinus",0.5,"rocky intertidal","low",TRUE
+"Anarrhichthys ocellatus","12S",TRUE,"partly",10,3,"Animalia","Chordata","Actinopteri","Perciformes","Anarhichadidae","Anarrhichthys",0.3,"partly","medium",TRUE
+"Anisotremus davidsonii","12S",TRUE,"partly",175,13,"Animalia","Chordata","Actinopteri","Perciformes","Haemulidae","Anisotremus",0.2,"partly","high",TRUE
+"Anoplarchus purpurescens","12S",TRUE,"rocky intertidal",42,6,"Animalia","Chordata","Actinopteri","Perciformes","Stichaeidae","Anoplarchus",0.9,"rocky intertidal","high",TRUE
+"Apodichthys flavidus","12S",TRUE,"rocky intertidal",15,3,"Animalia","Chordata","Actinopteri","Perciformes","Pholidae","Apodichthys",0.8,"rocky intertidal","high",TRUE
+"Apodichthys fucorum","12S",TRUE,"rocky intertidal",3,1,"Animalia","Chordata","Actinopteri","Perciformes","Pholidae","Apodichthys",0.8,"rocky intertidal","high",TRUE
+"Artedius corallinus","12S",TRUE,"partly",8,2,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Artedius",0.4,"partly","medium",TRUE
+"Artedius harringtoni","12S",TRUE,"partly",22,3,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Artedius",0.3,"partly","medium",TRUE
+"Artedius lateralis","12S",TRUE,"rocky intertidal",69,5,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Artedius",0.8,"rocky intertidal","high",TRUE
+"Artedius notospilotus","12S",TRUE,"rocky intertidal",16,3,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Artedius",0.7,"rocky intertidal","medium",TRUE
+"Atherinops affinis","12S",TRUE,"partly",688,21,"Animalia","Chordata","Actinopteri","Atheriniformes","Atherinopsidae","Atherinops",0.2,"partly","low",TRUE
+"Brachygenys californiensis","12S",TRUE,"rocky intertidal",56,7,"Animalia","Chordata","Actinopteri","Perciformes","Haemulidae","Brachygenys",0.6,"rocky intertidal","medium",TRUE
+"Cebidichthys violaceus","12S",TRUE,"rocky intertidal",314,9,"Animalia","Chordata","Actinopteri","Perciformes","Stichaeidae","Cebidichthys",0.9,"rocky intertidal","high",TRUE
+"Chaenopsis alepidota","12S",TRUE,"partly",5,1,"Animalia","Chordata","Actinopteri","Perciformes","Chaenopsidae","Chaenopsis",0.286,"partly","low",TRUE
+"Clinocottus analis","12S",TRUE,"rocky intertidal",705,22,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Clinocottus",1,"rocky intertidal","high",TRUE
+"Clinocottus globiceps","12S",TRUE,"rocky intertidal",22,2,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Clinocottus",1,"rocky intertidal","high",TRUE
+"Clinocottus recalvus","12S",TRUE,"rocky intertidal",646,11,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Clinocottus",1,"rocky intertidal","high",TRUE
+"Cosmocampus arctus","12S",TRUE,"partly",2,2,"Animalia","Chordata","Actinopteri","Syngnathiformes","Syngnathidae","Cosmocampus",0.286,"partly","low",TRUE
+"Enophrys bison","12S",TRUE,"partly",1,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Enophrys",0.375,"partly","low",TRUE
+"Ernogrammus walkeri","12S",TRUE,"rocky intertidal",5,2,"Animalia","Chordata","Actinopteri","Perciformes","Stichaeidae","Ernogrammus",0.5,"rocky intertidal","low",TRUE
+"Fundulus parvipinnis","12S",TRUE,"partly",16,4,"Animalia","Chordata","Actinopteri","Cyprinodontiformes","Fundulidae","Fundulus",1,"partly","low",TRUE
+"Gibbonsia elegans","12S",TRUE,"rocky intertidal",60,4,"Animalia","Chordata","Actinopteri","Perciformes","Clinidae","Gibbonsia",0.5,"rocky intertidal","low",TRUE
+"Gibbonsia montereyensis","12S",TRUE,"rocky intertidal",29,1,"Animalia","Chordata","Actinopteri","Perciformes","Clinidae","Gibbonsia",0.8,"rocky intertidal","high",TRUE
+"Girella nigricans","12S",TRUE,"rocky intertidal",566,21,"Animalia","Chordata","Actinopteri","Centrarchiformes","Girellidae","Girella",0.5,"rocky intertidal","low",TRUE
+"Gobiesox maeandricus","12S",TRUE,"rocky intertidal",63,5,"Animalia","Chordata","Actinopteri","Gobiesociformes","Gobiesocidae","Gobiesox",0.9,"rocky intertidal","high",TRUE
+"Gobiesox rhessodon","12S",TRUE,"rocky intertidal",192,18,"Animalia","Chordata","Actinopteri","Gobiesociformes","Gobiesocidae","Gobiesox",0.8,"rocky intertidal","high",TRUE
+"Gymnothorax mordax","12S",TRUE,"partly",179,14,"Animalia","Chordata","Actinopteri","Anguilliformes","Muraenidae","Gymnothorax",0.4,"partly","medium",TRUE
+"Halichoeres notospilus","12S",TRUE,"partly",18,1,"Animalia","Chordata","Actinopteri","Perciformes","Labridae","Halichoeres",0.3,"partly","medium",TRUE
+"Halichoeres semicinctus","12S",TRUE,"partly",152,13,"Animalia","Chordata","Actinopteri","Perciformes","Labridae","Halichoeres",0.3,"partly","medium",TRUE
+"Hemilepidotus hemilepidotus","12S",TRUE,"partly",2,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Hemilepidotus",0.4,"partly","medium",TRUE
+"Heterostichus rostratus","12S",TRUE,"partly",322,19,"Animalia","Chordata","Actinopteri","Perciformes","Clinidae","Heterostichus",0.2,"partly","high",TRUE
+"Hypsoblennius gentilis","12S",TRUE,"rocky intertidal",30,6,"Animalia","Chordata","Actinopteri","Perciformes","Blenniidae","Hypsoblennius",0.6,"rocky intertidal","medium",TRUE
+"Hypsoblennius gilberti","12S",TRUE,"rocky intertidal",337,18,"Animalia","Chordata","Actinopteri","Perciformes","Blenniidae","Hypsoblennius",0.8,"rocky intertidal","high",TRUE
+"Hypsoblennius jenkinsi","12S",TRUE,"rocky intertidal",273,18,"Animalia","Chordata","Actinopteri","Perciformes","Blenniidae","Hypsoblennius",1,"rocky intertidal","low",TRUE
+"Jordania zonope","12S",TRUE,"partly",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Jordaniidae","Jordania",0.4,"partly","medium",TRUE
+"Labrisomus multiporosus","12S",TRUE,"rocky intertidal",53,4,"Animalia","Chordata","Actinopteri","Perciformes","Labrisomidae","Labrisomus",0.6,"rocky intertidal","medium",TRUE
+"Labrisomus xanti","12S",TRUE,"rocky intertidal",15,2,"Animalia","Chordata","Actinopteri","Perciformes","Labrisomidae","Labrisomus",0.5,"rocky intertidal","low",TRUE
+"Leiocottus hirundo","12S",TRUE,"rocky intertidal",32,7,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Leiocottus",0.5,"rocky intertidal","low",TRUE
+"Liparis adiastolus","12S",TRUE,"partly",5,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Liparidae","Liparis",0.4,"partly","low",TRUE
+"Liparis florae","12S",TRUE,"partly",8,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Liparidae","Liparis",0.3,"partly","low",TRUE
+"Liparis mucosus","12S",TRUE,"rocky intertidal",120,4,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Liparidae","Liparis",0.6,"rocky intertidal","medium",TRUE
+"Micrometrus aurora","12S",TRUE,"partly",290,9,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Micrometrus",0.3,"partly","medium",TRUE
+"Micrometrus minimus","12S",TRUE,"rocky intertidal",500,17,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Micrometrus",0.6,"rocky intertidal","medium",TRUE
+"Muraena argus","12S",TRUE,"partly",6,1,"Animalia","Chordata","Actinopteri","Anguilliformes","Muraenidae","Muraena",0.3,"partly","medium",TRUE
+"Neoclinus blanchardi","12S",TRUE,"partly",20,5,"Animalia","Chordata","Actinopteri","Perciformes","Labrisomidae","Neoclinus",0.375,"partly","low",TRUE
+"Oligocottus maculosus","12S",TRUE,"rocky intertidal",4,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Oligocottus",1,"rocky intertidal","high",TRUE
+"Oligocottus rubellio","12S",TRUE,"rocky intertidal",1,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Oligocottus",1,"rocky intertidal","high",TRUE
+"Oligocottus snyderi","12S",TRUE,"rocky intertidal",7,2,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Oligocottus",1,"rocky intertidal","high",TRUE
+"Orthonopias triacis","12S",TRUE,"rocky intertidal",25,6,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Orthonopias",0.6,"rocky intertidal","medium",TRUE
+"Oxylebius pictus","12S",TRUE,"partly",315,15,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Hexagrammidae","Oxylebius",0.3,"partly","medium",TRUE
+"Paraclinus integripinnis","12S",TRUE,"rocky intertidal",197,12,"Animalia","Chordata","Actinopteri","Perciformes","Labrisomidae","Paraclinus",0.8,"rocky intertidal","high",TRUE
+"Pomacanthus zonipectus","12S",TRUE,"partly",3,2,"Animalia","Chordata","Actinopteri","Perciformes","Pomacanthidae","Pomacanthus",0.3,"partly","medium",TRUE
+"Rimicola eigenmanni","12S",TRUE,"partly",135,10,"Animalia","Chordata","Actinopteri","Gobiesociformes","Gobiesocidae","Rimicola",0.2,"partly","high",TRUE
+"Rimicola muscarum","12S",TRUE,"partly",12,2,"Animalia","Chordata","Actinopteri","Gobiesociformes","Gobiesocidae","Rimicola",0.2,"partly","high",TRUE
+"Ruscarius creaseri","12S",TRUE,"rocky intertidal",130,11,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Ruscarius",0.8,"rocky intertidal","high",TRUE
+"Scorpaena guttata","12S",TRUE,"partly",84,11,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Scorpaenidae","Scorpaena",0.2,"partly","medium",TRUE
+"Scorpaena mystes","12S",TRUE,"partly",21,2,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Scorpaenidae","Scorpaena",0.2,"partly","medium",TRUE
+"Scorpaenichthys marmoratus","12S",TRUE,"partly",832,20,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Scorpaenichthys",0.4,"partly","medium",TRUE
+"Syngnathus euchrous","12S",TRUE,"partly",1,1,"Animalia","Chordata","Actinopteri","Syngnathiformes","Syngnathidae","Syngnathus",0.333,"partly","low",TRUE
+"Typhlogobius californiensis","12S",TRUE,"rocky intertidal",196,16,"Animalia","Chordata","Actinopteri","Perciformes","Gobiidae","Typhlogobius",0.9,"rocky intertidal","high",TRUE
+"Xiphister atropurpureus","12S",TRUE,"rocky intertidal",30,2,"Animalia","Chordata","Actinopteri","Perciformes","Stichaeidae","Xiphister",1,"rocky intertidal","high",TRUE
+"Alosa sapidissima","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Clupeiformes","Clupeidae","Alosa",0,"not","low",FALSE
+"Ammodytes hexapterus","12S",FALSE,"not",8,3,"Animalia","Chordata","Actinopteri","Perciformes","Ammodytidae","Ammodytes",0,"not","medium",FALSE
+"Amphistichus argenteus","12S",FALSE,"not",43,5,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Amphistichus",0,"not","high",FALSE
+"Anchoa compressa","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Clupeiformes","Engraulidae","Anchoa",0,"not","medium",FALSE
+"Anoplopoma fimbria","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Anoplopomatidae","Anoplopoma",0,"not","high",FALSE
+"Argentina sialis","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Osmeriformes","Argentinidae","Argentina",0,"not","medium",FALSE
+"Atherinopsis californiensis","12S",FALSE,"not",670,21,"Animalia","Chordata","Actinopteri","Atheriniformes","Atherinopsidae","Atherinopsis",0.1,"not","low",FALSE
+"Atractoscion nobilis","12S",FALSE,"not",137,16,"Animalia","Chordata","Actinopteri","Perciformes","Sciaenidae","Atractoscion",0,"not","low",FALSE
+"Aulorhynchus flavidus","12S",FALSE,"not",83,9,"Animalia","Chordata","Actinopteri","Gasterosteiformes","Aulorhynchidae","Aulorhynchus",0.1,"not","medium",FALSE
+"Balistes polylepis","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Tetraodontiformes","Balistidae","Balistes",0,"not","low",FALSE
+"Bathygobius ramosus","12S",FALSE,"not",20,1,"Animalia","Chordata","Actinopteri","Perciformes","Gobiidae","Bathygobius",,"not","low",FALSE
+"Brachyistius frenatus","12S",FALSE,"not",169,14,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Brachyistius",0.1,"not","high",FALSE
+"Brosmophycis marginata","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Ophidiiformes","Bythitidae","Brosmophycis",0.1,"not","low",FALSE
+"Calamus brachysomus","12S",FALSE,"not",17,4,"Animalia","Chordata","Actinopteri","Perciformes","Sparidae","Calamus",,"not","low",FALSE
+"Cataetyx rubrirostris","12S",FALSE,"not",4,1,"Animalia","Chordata","Actinopteri","Ophidiiformes","Bythitidae","Cataetyx",0,"not","high",FALSE
+"Caulolatilus princeps","12S",FALSE,"not",62,10,"Animalia","Chordata","Actinopteri","Perciformes","Malacanthidae","Caulolatilus",0,"not","medium",FALSE
+"Cephaloscyllium ventriosum","12S",FALSE,"not",7,1,"Animalia","Chordata","Elasmobranchii","Carcharhiniformes","Scyliorhinidae","Cephaloscyllium",0.05,"not","high",FALSE
+"Cheilotrema saturnum","12S",FALSE,"not",84,12,"Animalia","Chordata","Actinopteri","Perciformes","Sciaenidae","Cheilotrema",0,"not","high",FALSE
+"Chilara taylori","12S",FALSE,"not",137,13,"Animalia","Chordata","Actinopteri","Ophidiiformes","Ophidiidae","Chilara",0,"not","low",FALSE
+"Chitonotus pugetensis","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Chitonotus",0,"not","low",FALSE
+"Chromis punctipinnis","12S",FALSE,"not",67,9,"Animalia","Chordata","Actinopteri","Perciformes","Pomacentridae","Chromis",0,"not","high",FALSE
+"Citharichthys fragilis","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Cyclopsettidae","Citharichthys",,"not","low",FALSE
+"Citharichthys sordidus","12S",FALSE,"not",27,5,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Cyclopsettidae","Citharichthys",0,"not","low",FALSE
+"Citharichthys stigmaeus","12S",FALSE,"not",24,4,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Cyclopsettidae","Citharichthys",0,"not","medium",FALSE
+"Clevelandia ios","12S",FALSE,"not",4,2,"Animalia","Chordata","Actinopteri","Perciformes","Gobiidae","Clevelandia",0.333,"not","low",FALSE
+"Cololabis saira","12S",FALSE,"not",14,2,"Animalia","Chordata","Actinopteri","Beloniformes","Belonidae","Cololabis",0,"not","high",FALSE
+"Cottus asper","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Cottus",0,"not","high",FALSE
+"Cryptacanthodes giganteus","12S",FALSE,"not",2,2,"Animalia","Chordata","Actinopteri","Perciformes","Cryptacanthodidae","Cryptacanthodes",,"not","low",FALSE
+"Cymatogaster aggregata","12S",FALSE,"not",129,11,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Cymatogaster",0.125,"not","low",FALSE
+"Cynoscion parvipinnis","12S",FALSE,"not",12,2,"Animalia","Chordata","Actinopteri","Perciformes","Sciaenidae","Cynoscion",0,"not","low",FALSE
+"Diaphus theta","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Myctophiformes","Myctophidae","Diaphus",0,"not","low",FALSE
+"Diogenichthys laternatus","12S",FALSE,"not",9,1,"Animalia","Chordata","Actinopteri","Myctophiformes","Myctophidae","Diogenichthys",0,"not","low",FALSE
+"Dorosoma cepedianum","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Clupeiformes","Clupeidae","Dorosoma",0,"not","high",FALSE
+"Embiotoca jacksoni","12S",FALSE,"not",684,21,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Embiotoca",0.1,"not","high",FALSE
+"Embiotoca lateralis","12S",FALSE,"not",11,3,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Embiotoca",0.15,"not","high",FALSE
+"Engraulis mordax","12S",FALSE,"not",857,22,"Animalia","Chordata","Actinopteri","Clupeiformes","Engraulidae","Engraulis",0,"not","high",FALSE
+"Eopsetta jordani","12S",FALSE,"not",3,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Eopsetta",0,"not","low",FALSE
+"Etropus crossotus","12S",FALSE,"not",4,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Cyclopsettidae","Etropus",0,"not","low",FALSE
+"Eucinostomus dowii","12S",FALSE,"not",17,2,"Animalia","Chordata","Actinopteri","Perciformes","Gerreidae","Eucinostomus",0,"not","low",FALSE
+"Fowlerichthys avalonis","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Lophiiformes","Antennariidae","Fowlerichthys",0,"not","low",FALSE
+"Gambusia affinis","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Cyprinodontiformes","Poeciliidae","Gambusia",0,"not","high",FALSE
+"Gasterosteus aculeatus","12S",FALSE,"not",11,6,"Animalia","Chordata","Actinopteri","Gasterosteiformes","Gasterosteidae","Gasterosteus",0.125,"not","low",FALSE
+"Genyonemus lineatus","12S",FALSE,"not",215,13,"Animalia","Chordata","Actinopteri","Perciformes","Sciaenidae","Genyonemus",0,"not","medium",FALSE
+"Haemulon flaviguttatum","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Haemulidae","Haemulon",,"not","low",FALSE
+"Heterodontus francisci","12S",FALSE,"not",4,2,"Animalia","Chordata","Elasmobranchii","Heterodontiformes","Heterodontidae","Heterodontus",0.111,"not","medium",FALSE
+"Hippoglossina stomata","12S",FALSE,"not",9,4,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Paralichthyidae","Hippoglossina",0,"not","low",FALSE
+"Hydrolagus colliei","12S",FALSE,"not",1,1,"Animalia","Chordata","Holocephali","Chimaeriformes","Chimaeridae","Hydrolagus",0,"not","high",FALSE
+"Hyperprosopon argenteum","12S",FALSE,"not",2,2,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Hyperprosopon",0.1,"not","medium",FALSE
+"Hyporhamphus rosae","12S",FALSE,"not",20,1,"Animalia","Chordata","Actinopteri","Beloniformes","Hemiramphidae","Hyporhamphus",0,"not","high",FALSE
+"Hypsopsetta guttulata","12S",FALSE,"not",37,4,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Hypsopsetta",0,"not","low",FALSE
+"Hypsurus caryi","12S",FALSE,"not",31,5,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Hypsurus",0.111,"not","high",FALSE
+"Hypsypops rubicundus","12S",FALSE,"not",200,16,"Animalia","Chordata","Actinopteri","Perciformes","Pomacentridae","Hypsypops",0.05,"not","high",FALSE
+"Icelinus cavifrons","12S",FALSE,"not",2,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Icelinus",0,"not","low",FALSE
+"Icichthys lockingtoni","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Centrolophidae","Icichthys",0,"not","high",FALSE
+"Kathetostoma averruncus","12S",FALSE,"not",2,2,"Animalia","Chordata","Actinopteri","Perciformes","Uranoscopidae","Kathetostoma",0,"not","high",FALSE
+"Kyphosus azureus","12S",FALSE,"not",199,17,"Animalia","Chordata","Actinopteri","Perciformes","Kyphosidae","Kyphosus",0.1,"not","medium",FALSE
+"Lepidogobius lepidus","12S",FALSE,"not",6,2,"Animalia","Chordata","Actinopteri","Perciformes","Gobiidae","Lepidogobius",0,"not","low",FALSE
+"Leptocottus armatus","12S",FALSE,"not",20,4,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Leptocottus",0.167,"not","low",FALSE
+"Lethops connectens","12S",FALSE,"not",15,5,"Animalia","Chordata","Actinopteri","Perciformes","Gobiidae","Lethops",,"not","low",FALSE
+"Leuresthes tenuis","12S",FALSE,"not",179,16,"Animalia","Chordata","Actinopteri","Atheriniformes","Atherinopsidae","Leuresthes",0,"not","medium",FALSE
+"Leuroglossus stilbius","12S",FALSE,"not",39,3,"Animalia","Chordata","Actinopteri","Osmeriformes","Bathylagidae","Leuroglossus",0,"not","medium",FALSE
+"Lyopsetta exilis","12S",FALSE,"not",2,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Lyopsetta",0,"not","high",FALSE
+"Medialuna californiensis","12S",FALSE,"not",182,15,"Animalia","Chordata","Actinopteri","Perciformes","Kyphosidae","Medialuna",0.1,"not","high",FALSE
+"Menticirrhus undulatus","12S",FALSE,"not",159,13,"Animalia","Chordata","Actinopteri","Perciformes","Sciaenidae","Menticirrhus",0,"not","high",FALSE
+"Merluccius productus","12S",FALSE,"not",26,3,"Animalia","Chordata","Actinopteri","Gadiformes","Merlucciidae","Merluccius",0,"not","medium",FALSE
+"Microgadus proximus","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Gadiformes","Gadidae","Microgadus",0,"not","low",FALSE
+"Microstomus pacificus","12S",FALSE,"not",2,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Microstomus",0,"not","high",FALSE
+"Mola mola","12S",FALSE,"not",5,2,"Animalia","Chordata","Actinopteri","Tetraodontiformes","Molidae","Mola",0,"not","high",FALSE
+"Morone saxatilis","12S",FALSE,"not",14,4,"Animalia","Chordata","Actinopteri","Perciformes","Moronidae","Morone",0,"not","low",FALSE
+"Mugil cephalus","12S",FALSE,"not",43,7,"Animalia","Chordata","Actinopteri","Mugiliformes","Mugilidae","Mugil",0,"not","low",FALSE
+"Mustelus californicus","12S",FALSE,"not",1,1,"Animalia","Chordata","Elasmobranchii","Carcharhiniformes","Triakidae","Mustelus",0,"not","low",FALSE
+"Mycteroperca xenarcha","12S",FALSE,"not",4,2,"Animalia","Chordata","Actinopteri","Perciformes","Serranidae","Mycteroperca",0,"not","high",FALSE
+"Notorynchus cepedianus","12S",FALSE,"not",5,2,"Animalia","Chordata","Elasmobranchii","Hexanchiformes","Hexanchidae","Notorynchus",0.05,"not","low",FALSE
+"Oncorhynchus tshawytscha","12S",FALSE,"not",2,1,"Animalia","Chordata","Actinopteri","Salmoniformes","Salmonidae","Oncorhynchus",0,"not","low",FALSE
+"Ophidion scrippsae","12S",FALSE,"not",23,8,"Animalia","Chordata","Actinopteri","Ophidiiformes","Ophidiidae","Ophidion",0,"not","low",FALSE
+"Ophiodon elongatus","12S",FALSE,"not",71,7,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Hexagrammidae","Ophiodon",0.176,"not","low",FALSE
+"Orthopristis reddingi","12S",FALSE,"not",13,2,"Animalia","Chordata","Actinopteri","Perciformes","Haemulidae","Orthopristis",0,"not","low",FALSE
+"Oxyjulis californica","12S",FALSE,"not",146,14,"Animalia","Chordata","Actinopteri","Perciformes","Labridae","Oxyjulis",0.1,"not","high",FALSE
+"Paralabrax clathratus","12S",FALSE,"not",15,2,"Animalia","Chordata","Actinopteri","Perciformes","Serranidae","Paralabrax",0.05,"not","high",FALSE
+"Paralabrax maculatofasciatus","12S",FALSE,"not",16,3,"Animalia","Chordata","Actinopteri","Perciformes","Serranidae","Paralabrax",0.25,"not","low",FALSE
+"Paralabrax nebulifer","12S",FALSE,"not",2,1,"Animalia","Chordata","Actinopteri","Perciformes","Serranidae","Paralabrax",0.077,"not","low",FALSE
+"Paralichthys californicus","12S",FALSE,"not",255,20,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Paralichthyidae","Paralichthys",0,"not","low",FALSE
+"Paranthias colonus","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Serranidae","Paranthias",,"not","low",FALSE
+"Parophrys vetulus","12S",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Parophrys",0,"not","low",FALSE
+"Peprilus simillimus","12S",FALSE,"not",120,12,"Animalia","Chordata","Actinopteri","Perciformes","Stromateidae","Peprilus",0,"not","high",FALSE
+"Phanerodon furcatus","12S",FALSE,"not",15,4,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Phanerodon",0.05,"not","high",FALSE
+"Platichthys stellatus","12S",FALSE,"not",3,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Platichthys",0.188,"not","low",FALSE
+"Pleuronichthys coenosus","12S",FALSE,"not",75,10,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Pleuronichthys",0,"not","low",FALSE
+"Pleuronichthys decurrens","12S",FALSE,"not",25,6,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Pleuronichthys",0,"not","low",FALSE
+"Pleuronichthys ocellatus","12S",FALSE,"not",12,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Pleuronichthys",0,"not","low",FALSE
+"Pleuronichthys verticalis","12S",FALSE,"not",14,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Pleuronichthys",0,"not","low",FALSE
+"Pseudobatos productus","12S",FALSE,"not",1,1,"Animalia","Chordata","Elasmobranchii","Rhinopristiformes","Rhinobatidae","Pseudobatos",0,"not","low",FALSE
+"Rhacochilus toxotes","12S",FALSE,"not",205,14,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Rhacochilus",0.15,"not","high",FALSE
+"Rhacochilus vacca","12S",FALSE,"not",15,1,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Rhacochilus",0.1,"not","high",FALSE
+"Rhinogobiops nicholsii","12S",FALSE,"not",7,5,"Animalia","Chordata","Actinopteri","Perciformes","Gobiidae","Rhinogobiops",0.25,"not","low",FALSE
+"Roncador stearnsii","12S",FALSE,"not",58,8,"Animalia","Chordata","Actinopteri","Perciformes","Sciaenidae","Roncador",0,"not","low",FALSE
+"Sarda chiliensis","12S",FALSE,"not",36,5,"Animalia","Chordata","Actinopteri","Perciformes","Scombridae","Sarda",0,"not","high",FALSE
+"Sardinops sagax","12S",FALSE,"not",921,20,"Animalia","Chordata","Actinopteri","Clupeiformes","Clupeidae","Sardinops",0,"not","high",FALSE
+"Scomber japonicus","12S",FALSE,"not",195,15,"Animalia","Chordata","Actinopteri","Perciformes","Scombridae","Scomber",0,"not","high",FALSE
+"Semicossyphus pulcher","12S",FALSE,"not",304,17,"Animalia","Chordata","Actinopteri","Perciformes","Labridae","Semicossyphus",0.1,"not","high",FALSE
+"Seriola lalandi","12S",FALSE,"not",69,9,"Animalia","Chordata","Actinopteri","Perciformes","Carangidae","Seriola",0,"not","medium",FALSE
+"Seriphus politus","12S",FALSE,"not",165,15,"Animalia","Chordata","Actinopteri","Perciformes","Sciaenidae","Seriphus",0,"not","low",FALSE
+"Sphoeroides annulatus","12S",FALSE,"not",86,7,"Animalia","Chordata","Actinopteri","Tetraodontiformes","Tetraodontidae","Sphoeroides",0.25,"not","low",FALSE
+"Sphyraena argentea","12S",FALSE,"not",99,14,"Animalia","Chordata","Actinopteri","Perciformes","Sphyraenidae","Sphyraena",0,"not","medium",FALSE
+"Stegastes flavilatus","12S",FALSE,"not",16,1,"Animalia","Chordata","Actinopteri","Perciformes","Pomacentridae","Stegastes",,"not","low",FALSE
+"Stenobrachius leucopsarus","12S",FALSE,"not",10,3,"Animalia","Chordata","Actinopteri","Myctophiformes","Myctophidae","Stenobrachius",0,"not","medium",FALSE
+"Stereolepis gigas","12S",FALSE,"not",20,7,"Animalia","Chordata","Actinopteri","Perciformes","Polyprionidae","Stereolepis",0,"not","high",FALSE
+"Strongylura exilis","12S",FALSE,"not",13,2,"Animalia","Chordata","Actinopteri","Beloniformes","Belonidae","Strongylura",0,"not","low",FALSE
+"Symbolophorus californiensis","12S",FALSE,"not",2,1,"Animalia","Chordata","Actinopteri","Myctophiformes","Myctophidae","Symbolophorus",0,"not","medium",FALSE
+"Symphurus atricaudus","12S",FALSE,"not",51,11,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Cynoglossidae","Symphurus",0,"not","medium",FALSE
+"Syngnathus californiensis","12S",FALSE,"not",60,7,"Animalia","Chordata","Actinopteri","Syngnathiformes","Syngnathidae","Syngnathus",0,"not","low",FALSE
+"Synodus lucioceps","12S",FALSE,"not",80,10,"Animalia","Chordata","Actinopteri","Aulopiformes","Synodontidae","Synodus",0,"not","medium",FALSE
+"Thalassoma lucasanum","12S",FALSE,"not",5,1,"Animalia","Chordata","Actinopteri","Perciformes","Labridae","Thalassoma",1,"not","low",FALSE
+"Trachinotus paitensis","12S",FALSE,"not",5,1,"Animalia","Chordata","Actinopteri","Perciformes","Carangidae","Trachinotus",0,"not","medium",FALSE
+"Trachipterus altivelis","12S",FALSE,"not",3,1,"Animalia","Chordata","Actinopteri","Lampriformes","Trachipteridae","Trachipterus",0,"not","low",FALSE
+"Trachurus symmetricus","12S",FALSE,"not",144,14,"Animalia","Chordata","Actinopteri","Perciformes","Carangidae","Trachurus",0,"not","high",FALSE
+"Triakis semifasciata","12S",FALSE,"not",2,2,"Animalia","Chordata","Elasmobranchii","Carcharhiniformes","Triakidae","Triakis",0.111,"not","low",FALSE
+"Triphoturus mexicanus","12S",FALSE,"not",15,2,"Animalia","Chordata","Actinopteri","Myctophiformes","Myctophidae","Triphoturus",0,"not","low",FALSE
+"Umbrina roncador","12S",FALSE,"not",82,12,"Animalia","Chordata","Actinopteri","Perciformes","Sciaenidae","Umbrina",0,"not","medium",FALSE
+"Vinciguerria lucetia","12S",FALSE,"not",2,1,"Animalia","Chordata","Actinopteri","Stomiiformes","Phosichthyidae","Vinciguerria",0,"not","medium",FALSE
+"Xystreurys liolepis","12S",FALSE,"not",13,9,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Paralichthyidae","Xystreurys",0,"not","low",FALSE
+"Etrumeus acuminatus","12S",FALSE,"",18,3,,,,,,,,,,FALSE
+"Arabella semimaculata","COI",TRUE,"partly",1,1,"Animalia","Annelida","Polychaeta","Eunicida","Oenonidae","Arabella",0.3,"partly","low",TRUE
+"Boccardia proboscidea","COI",TRUE,"rocky intertidal",11,3,"Animalia","Annelida","Polychaeta","Spionida","Spionidae","Boccardia",0.556,"rocky intertidal","low",TRUE
+"Eulalia aviculiseta","COI",TRUE,"rocky intertidal",1,1,"Animalia","Annelida","Polychaeta","Phyllodocida","Phyllodocidae","Eulalia",0.6,"rocky intertidal","medium",TRUE
+"Eupolymnia heterobranchia","COI",TRUE,"rocky intertidal",1,1,"Animalia","Annelida","Polychaeta","Terebellida","Terebellidae","Eupolymnia",0.7,"rocky intertidal","medium",TRUE
+"Halosydna brevisetosa","COI",TRUE,"rocky intertidal",4,1,"Animalia","Annelida","Polychaeta","Phyllodocida","Polynoidae","Halosydna",0.85,"rocky intertidal","high",TRUE
+"Marphysa californica","COI",TRUE,"partly",15,3,"Animalia","Annelida","Polychaeta","Eunicida","Eunicidae","Marphysa",0.375,"partly","low",TRUE
+"Micropodarke dubia","COI",TRUE,"rocky intertidal",1,1,"Animalia","Annelida","Polychaeta","Phyllodocida","Hesionidae","Micropodarke",0.7,"rocky intertidal","medium",TRUE
+"Naineris dendritica","COI",TRUE,"partly",109,11,"Animalia","Annelida","Polychaeta","","Orbiniidae","Naineris",0.375,"partly","low",TRUE
+"Neosabellaria cementarium","COI",TRUE,"rocky intertidal",2,2,"Animalia","Annelida","Polychaeta","Sabellida","Sabellariidae","Neosabellaria",0.7,"rocky intertidal","medium",TRUE
+"Pholoides asperus","COI",TRUE,"partly",1,1,"Animalia","Annelida","Polychaeta","Phyllodocida","Pholoidae","Pholoides",0.5,"partly","low",TRUE
+"Phragmatopoma californica","COI",TRUE,"rocky intertidal",247,16,"Animalia","Annelida","Polychaeta","Sabellida","Sabellariidae","Phragmatopoma",0.8,"rocky intertidal","high",TRUE
+"Phyllochaetopterus prolifica","COI",TRUE,"partly",2,2,"Animalia","Annelida","Polychaeta","","Chaetopteridae","Phyllochaetopterus",0.333,"partly","low",TRUE
+"Phyllodoce medipapillata","COI",TRUE,"rocky intertidal",1,1,"Animalia","Annelida","Polychaeta","Phyllodocida","Phyllodocidae","Phyllodoce",0.7,"rocky intertidal","medium",TRUE
+"Platynereis bicanaliculata","COI",TRUE,"rocky intertidal",4,2,"Animalia","Annelida","Polychaeta","Phyllodocida","Nereididae","Platynereis",0.5,"rocky intertidal","low",TRUE
+"Polycirrus californicus","COI",TRUE,"rocky intertidal",8,4,"Animalia","Annelida","Polychaeta","Terebellida","Terebellidae","Polycirrus",0.6,"rocky intertidal","medium",TRUE
+"Proceraea nigropunctata","COI",TRUE,"rocky intertidal",1,1,"Animalia","Annelida","Polychaeta","Phyllodocida","Syllidae","Proceraea",0.6,"rocky intertidal","medium",TRUE
+"Schistomeringos annulata","COI",TRUE,"rocky intertidal",2,1,"Animalia","Annelida","Polychaeta","Eunicida","Dorvilleidae","Schistomeringos",0.684,"rocky intertidal","medium",TRUE
+"Balanus glandula","COI",TRUE,"rocky intertidal",23,3,"Animalia","Arthropoda","Maxillopoda","Sessilia","Balanidae","Balanus",1,"rocky intertidal","high",TRUE
+"Balanus nubilus","COI",TRUE,"partly",1,1,"Animalia","Arthropoda","Maxillopoda","Sessilia","Balanidae","Balanus",0.3,"partly","medium",TRUE
+"Balanus trigonus","COI",TRUE,"partly",4,2,"Animalia","Arthropoda","Maxillopoda","Sessilia","Balanidae","Balanus",0.2,"partly","low",TRUE
+"Chthamalus alani","COI",TRUE,"rocky intertidal",2,1,"Animalia","Arthropoda","Maxillopoda","Sessilia","Chthamalidae","Chthamalus",1,"rocky intertidal","high",TRUE
+"Chthamalus dalli","COI",TRUE,"rocky intertidal",21,5,"Animalia","Arthropoda","Maxillopoda","Sessilia","Chthamalidae","Chthamalus",1,"rocky intertidal","high",TRUE
+"Chthamalus fissus","COI",TRUE,"rocky intertidal",122,15,"Animalia","Arthropoda","Maxillopoda","Sessilia","Chthamalidae","Chthamalus",1,"rocky intertidal","high",TRUE
+"Megabalanus californicus","COI",TRUE,"rocky intertidal",1,1,"Animalia","Arthropoda","Maxillopoda","Sessilia","Balanidae","Megabalanus",0.55,"rocky intertidal","low",TRUE
+"Pachygrapsus crassipes","COI",TRUE,"rocky intertidal",30,12,"Animalia","Arthropoda","Malacostraca","Decapoda","Grapsidae","Pachygrapsus",1,"rocky intertidal","high",TRUE
+"Parallorchestes cowani","COI",TRUE,"rocky intertidal",1,1,"Animalia","Arthropoda","Malacostraca","Amphipoda","Hyalidae","Parallorchestes",0.8,"rocky intertidal","high",TRUE
+"Pollicipes polymerus","COI",TRUE,"rocky intertidal",51,6,"Animalia","Arthropoda","Maxillopoda","Pedunculata","Pollicipedidae","Pollicipes",1,"rocky intertidal","high",TRUE
+"Pontogeneia rostrata","COI",TRUE,"rocky intertidal",2,2,"Animalia","Arthropoda","Malacostraca","Amphipoda","Pontogeneiidae","Pontogeneia",0.5,"rocky intertidal","low",TRUE
+"Protohyale frequens","COI",TRUE,"rocky intertidal",20,2,"Animalia","Arthropoda","Malacostraca","Amphipoda","Hyalidae","Protohyale",0.8,"rocky intertidal","high",TRUE
+"Pugettia producta","COI",TRUE,"partly",10,2,"Animalia","Arthropoda","Malacostraca","Decapoda","Epialtidae","Pugettia",0.35,"partly","medium",TRUE
+"Pugettia richii","COI",TRUE,"partly",2,1,"Animalia","Arthropoda","Malacostraca","Decapoda","Epialtidae","Pugettia",0.45,"partly","low",TRUE
+"Romaleon antennarium","COI",TRUE,"partly",6,2,"Animalia","Arthropoda","Malacostraca","Decapoda","Cancridae","Romaleon",0.3,"partly","medium",TRUE
+"Tetraclita rubescens","COI",TRUE,"rocky intertidal",12,4,"Animalia","Arthropoda","Maxillopoda","Sessilia","Tetraclitidae","Tetraclita",1,"rocky intertidal","high",TRUE
+"Amathia verticillata","COI",TRUE,"partly",8,4,"Animalia","Bryozoa","Gymnolaemata","Ctenostomatida","Vesiculariidae","Amathia",0.6,"partly","low",TRUE
+"Bugula neritina","COI",TRUE,"partly",6,3,"Animalia","Bryozoa","Gymnolaemata","Cheilostomatida","Bugulidae","Bugula",0.571,"partly","low",TRUE
+"Celleporaria brunnea","COI",TRUE,"partly",1,1,"Animalia","Bryozoa","Gymnolaemata","Cheilostomatida","Lepraliellidae","Celleporaria",0.3,"partly","medium",TRUE
+"Membranipora membranacea","COI",TRUE,"partly",305,17,"Animalia","Bryozoa","Gymnolaemata","Cheilostomatida","Membraniporidae","Membranipora",0.2,"partly","high",TRUE
+"Membranipora villosa","COI",TRUE,"partly",3,2,"Animalia","Bryozoa","Gymnolaemata","Cheilostomatida","Membraniporidae","Membranipora",0.3,"partly","medium",TRUE
+"Watersipora arcuata","COI",TRUE,"rocky intertidal",27,2,"Animalia","Bryozoa","Gymnolaemata","Cheilostomatida","Watersiporidae","Watersipora",0.714,"rocky intertidal","low",TRUE
+"Codium cuneatum","COI",TRUE,"rocky intertidal",20,1,"Plantae","Chlorophyta","Ulvophyceae","Bryopsidales","Codiaceae","Codium",0.7,"rocky intertidal","medium",TRUE
+"Oltmannsiellopsis viridis","COI",TRUE,"rocky intertidal",1,1,"Plantae","Chlorophyta","Ulvophyceae","Oltmannsiellopsidales","Oltmannsiellopsidaceae","Oltmannsiellopsis",1,"rocky intertidal","medium",TRUE
+"Atherinops affinis","COI",TRUE,"partly",58,7,"Animalia","Chordata","Actinopteri","Atheriniformes","Atherinopsidae","Atherinops",0.2,"partly","low",TRUE
+"Brachygenys californiensis","COI",TRUE,"rocky intertidal",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Haemulidae","Brachygenys",0.6,"rocky intertidal","medium",TRUE
+"Cebidichthys violaceus","COI",TRUE,"rocky intertidal",15,5,"Animalia","Chordata","Actinopteri","Perciformes","Stichaeidae","Cebidichthys",0.9,"rocky intertidal","high",TRUE
+"Clinocottus analis","COI",TRUE,"rocky intertidal",6,3,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Clinocottus",1,"rocky intertidal","high",TRUE
+"Clinocottus recalvus","COI",TRUE,"rocky intertidal",5,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Clinocottus",1,"rocky intertidal","high",TRUE
+"Eudistoma psammion","COI",TRUE,"partly",17,3,"Animalia","Chordata","Ascidiacea","Aplousobranchia","Polycitoridae","Eudistoma",0.2,"partly","high",TRUE
+"Gibbonsia metzi","COI",TRUE,"rocky intertidal",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Clinidae","Gibbonsia",0.7,"rocky intertidal","medium",TRUE
+"Girella nigricans","COI",TRUE,"rocky intertidal",2,1,"Animalia","Chordata","Actinopteri","Centrarchiformes","Girellidae","Girella",0.5,"rocky intertidal","low",TRUE
+"Gymnothorax mordax","COI",TRUE,"partly",2,1,"Animalia","Chordata","Actinopteri","Anguilliformes","Muraenidae","Gymnothorax",0.4,"partly","medium",TRUE
+"Hypsoblennius jenkinsi","COI",TRUE,"rocky intertidal",2,1,"Animalia","Chordata","Actinopteri","Perciformes","Blenniidae","Hypsoblennius",1,"rocky intertidal","low",TRUE
+"Labrisomus multiporosus","COI",TRUE,"rocky intertidal",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Labrisomidae","Labrisomus",0.6,"rocky intertidal","medium",TRUE
+"Labrisomus xanti","COI",TRUE,"rocky intertidal",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Labrisomidae","Labrisomus",0.5,"rocky intertidal","low",TRUE
+"Micrometrus minimus","COI",TRUE,"rocky intertidal",5,2,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Micrometrus",0.6,"rocky intertidal","medium",TRUE
+"Oligocottus maculosus","COI",TRUE,"rocky intertidal",1,1,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Oligocottus",1,"rocky intertidal","high",TRUE
+"Oxylebius pictus","COI",TRUE,"partly",3,2,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Hexagrammidae","Oxylebius",0.3,"partly","medium",TRUE
+"Scorpaenichthys marmoratus","COI",TRUE,"partly",81,6,"Animalia","Chordata","Actinopteri","Scorpaeniformes","Cottidae","Scorpaenichthys",0.4,"partly","medium",TRUE
+"Typhlogobius californiensis","COI",TRUE,"rocky intertidal",11,3,"Animalia","Chordata","Actinopteri","Perciformes","Gobiidae","Typhlogobius",0.9,"rocky intertidal","high",TRUE
+"Aiptasiogeton eruptaurantia","COI",TRUE,"rocky intertidal",11,2,"Animalia","Cnidaria","Anthozoa","Actiniaria","Aiptasiidae","Aiptasiogeton",0.8,"rocky intertidal","high",TRUE
+"Campanularia volubilis","COI",TRUE,"partly",1,1,"Animalia","Cnidaria","Hydrozoa","Leptothecata","Campanulariidae","Campanularia",0.4,"partly","low",TRUE
+"Corynactis californica","COI",TRUE,"partly",18,4,"Animalia","Cnidaria","Anthozoa","Corallimorpharia","Corallimorphidae","Corynactis",0.3,"partly","medium",TRUE
+"Coryne eximia","COI",TRUE,"rocky intertidal",16,1,"Animalia","Cnidaria","Hydrozoa","Anthoathecata","Corynidae","Coryne",0.8,"rocky intertidal","high",TRUE
+"Ectopleura marina","COI",TRUE,"partly",45,4,"Animalia","Cnidaria","Hydrozoa","Anthoathecata","Tubulariidae","Ectopleura",0.5,"partly","low",TRUE
+"Eudendrium californicum","COI",TRUE,"rocky intertidal",43,1,"Animalia","Cnidaria","Hydrozoa","Anthoathecata","Eudendriidae","Eudendrium",0.5,"rocky intertidal","low",TRUE
+"Haliclystus inabai","COI",TRUE,"rocky intertidal",1,1,"Animalia","Cnidaria","Staurozoa","Stauromedusae","Haliclystidae","Haliclystus",0.5,"rocky intertidal","low",TRUE
+"Kirchenpaueria goodei","COI",TRUE,"partly",32,2,"Animalia","Cnidaria","Hydrozoa","Leptothecata","Kirchenpaueriidae","Kirchenpaueria",0.444,"partly","low",TRUE
+"Manania handi","COI",TRUE,"rocky intertidal",10,1,"Animalia","Cnidaria","Staurozoa","Stauromedusae","Haliclystidae","Manania",0.8,"rocky intertidal","high",TRUE
+"Obelia dichotoma","COI",TRUE,"rocky intertidal",34,8,"Animalia","Cnidaria","Hydrozoa","Leptothecata","Obeliidae","Obelia",0.625,"rocky intertidal","low",TRUE
+"Orthopyxis caliculata","COI",TRUE,"rocky intertidal",16,2,"Animalia","Cnidaria","Hydrozoa","Leptothecata","Campanulariidae","Orthopyxis",0.5,"rocky intertidal","low",TRUE
+"Orthopyxis everta","COI",TRUE,"rocky intertidal",201,5,"Animalia","Cnidaria","Hydrozoa","Leptothecata","Campanulariidae","Orthopyxis",0.5,"rocky intertidal","low",TRUE
+"Orthopyxis integra","COI",TRUE,"rocky intertidal",6,1,"Animalia","Cnidaria","Hydrozoa","Leptothecata","Campanulariidae","Orthopyxis",0.5,"rocky intertidal","low",TRUE
+"Plumularia setacea","COI",TRUE,"partly",6,1,"Animalia","Cnidaria","Hydrozoa","Leptothecata","Plumulariidae","Plumularia",0.444,"partly","low",TRUE
+"Sagartiogeton laceratus","COI",TRUE,"partly",32,2,"Animalia","Cnidaria","Anthozoa","Actiniaria","Sagartiidae","Sagartiogeton",0.375,"partly","low",TRUE
+"Stauridiosarsia cliffordi","COI",TRUE,"partly",6,1,"Animalia","Cnidaria","Hydrozoa","Anthoathecata","Corynidae","Stauridiosarsia",0.3,"partly","medium",TRUE
+"Turritopsis nutricula","COI",TRUE,"partly",1,1,"Animalia","Cnidaria","Hydrozoa","Anthoathecata","Oceaniidae","Turritopsis",0.429,"partly","low",TRUE
+"Amphipholis squamata","COI",TRUE,"rocky intertidal",1,1,"Animalia","Echinodermata","Ophiuroidea","Amphilepidida","Amphiuridae","Amphipholis",0.6,"rocky intertidal","medium",TRUE
+"Cucumaria salma","COI",TRUE,"rocky intertidal",1,1,"Animalia","Echinodermata","Holothuroidea","Dendrochirotida","Cucumariidae","Cucumaria",0.8,"rocky intertidal","high",TRUE
+"Dermasterias imbricata","COI",TRUE,"rocky intertidal",1,1,"Animalia","Echinodermata","Asteroidea","Valvatida","Poraniidae","Dermasterias",0.55,"rocky intertidal","low",TRUE
+"Holothuria lubrica","COI",TRUE,"rocky intertidal",18,1,"Animalia","Echinodermata","Holothuroidea","Holothuriida","Holothuriidae","Holothuria",0.6,"rocky intertidal","medium",TRUE
+"Lissothuria nutriens","COI",TRUE,"rocky intertidal",1,1,"Animalia","Echinodermata","Holothuroidea","Dendrochirotida","Psolidae","Lissothuria",0.8,"rocky intertidal","high",TRUE
+"Ophiactis simplex","COI",TRUE,"rocky intertidal",1,1,"Animalia","Echinodermata","Ophiuroidea","Amphilepidida","Ophiactidae","Ophiactis",0.5,"rocky intertidal","low",TRUE
+"Ophioderma panamense","COI",TRUE,"partly",5,1,"Animalia","Echinodermata","Ophiuroidea","Ophiacanthida","Ophiodermatidae","Ophioderma",0.4,"partly","medium",TRUE
+"Ophioplocus esmarki","COI",TRUE,"rocky intertidal",1,1,"Animalia","Echinodermata","Ophiuroidea","Amphilepidida","Ophiolepididae","Ophioplocus",0.6,"rocky intertidal","medium",TRUE
+"Ophiopteris papillosa","COI",TRUE,"rocky intertidal",7,2,"Animalia","Echinodermata","Ophiuroidea","Ophiacanthida","Ophiocomidae","Ophiopteris",0.7,"rocky intertidal","medium",TRUE
+"Ophiothrix spiculata","COI",TRUE,"partly",13,4,"Animalia","Echinodermata","Ophiuroidea","Amphilepidida","Ophiotrichidae","Ophiothrix",0.333,"partly","medium",TRUE
+"Patiria miniata","COI",TRUE,"rocky intertidal",18,4,"Animalia","Echinodermata","Asteroidea","Valvatida","Asterinidae","Patiria",0.55,"rocky intertidal","low",TRUE
+"Pisaster ochraceus","COI",TRUE,"rocky intertidal",78,7,"Animalia","Echinodermata","Asteroidea","Forcipulatida","Asteriidae","Pisaster",0.85,"rocky intertidal","high",TRUE
+"Pseudocnus californicus","COI",TRUE,"rocky intertidal",5,1,"Animalia","Echinodermata","Holothuroidea","Dendrochirotida","Cucumariidae","Pseudocnus",0.7,"rocky intertidal","medium",TRUE
+"Pseudocnus lubricus","COI",TRUE,"rocky intertidal",20,1,"Animalia","Echinodermata","Holothuroidea","Dendrochirotida","Cucumariidae","Pseudocnus",0.8,"rocky intertidal","high",TRUE
+"Strongylocentrotus purpuratus","COI",TRUE,"rocky intertidal",251,12,"Animalia","Echinodermata","Echinoidea","Camarodonta","Strongylocentrotidae","Strongylocentrotus",0.75,"rocky intertidal","medium",TRUE
+"Acanthodoris rhodoceras","COI",TRUE,"rocky intertidal",1,1,"Animalia","Mollusca","Gastropoda","Nudibranchia","Onchidorididae","Acanthodoris",0.6,"rocky intertidal","medium",TRUE
+"Amphissa reticulata","COI",TRUE,"rocky intertidal",1,1,"Animalia","Mollusca","Gastropoda","Neogastropoda","Columbellidae","Amphissa",0.5,"rocky intertidal","low",TRUE
+"Anteaeolidiella oliviae","COI",TRUE,"rocky intertidal",3,2,"Animalia","Mollusca","Gastropoda","Nudibranchia","Aeolidiidae","Anteaeolidiella",0.7,"rocky intertidal","medium",TRUE
+"Aplysia californica","COI",TRUE,"rocky intertidal",7,3,"Animalia","Mollusca","Gastropoda","Aplysiida","Aplysiidae","Aplysia",0.5,"rocky intertidal","low",TRUE
+"Aplysia vaccaria","COI",TRUE,"partly",1,1,"Animalia","Mollusca","Gastropoda","Aplysiida","Aplysiidae","Aplysia",0.2,"partly","high",TRUE
+"Aplysiopsis enteromorphae","COI",TRUE,"rocky intertidal",1,1,"Animalia","Mollusca","Gastropoda","","Limapontiidae","Aplysiopsis",1,"rocky intertidal","high",TRUE
+"Bermudella angelensis","COI",TRUE,"rocky intertidal",1,1,"Animalia","Mollusca","Gastropoda","Nudibranchia","Goniodorididae","Bermudella",0.6,"rocky intertidal","medium",TRUE
+"Californiconus californicus","COI",TRUE,"partly",1,1,"Animalia","Mollusca","Gastropoda","Neogastropoda","Conidae","Californiconus",0.3,"partly","low",TRUE
+"Corambe pacifica","COI",TRUE,"rocky intertidal",1,1,"Animalia","Mollusca","Gastropoda","Nudibranchia","Onchidorididae","Corambe",0.6,"rocky intertidal","medium",TRUE
+"Corambe steinbergae","COI",TRUE,"partly",5,3,"Animalia","Mollusca","Gastropoda","Nudibranchia","Onchidorididae","Corambe",0.4,"partly","medium",TRUE
+"Crepidula perforans","COI",TRUE,"rocky intertidal",1,1,"Animalia","Mollusca","Gastropoda","Littorinimorpha","Calyptraeidae","Crepidula",0.7,"rocky intertidal","medium",TRUE
+"Cyanoplax hartwegii","COI",TRUE,"rocky intertidal",7,2,"Animalia","Mollusca","Polyplacophora","Chitonida","Tonicellidae","Cyanoplax",1,"rocky intertidal","high",TRUE
+"Cyanoplax keepiana","COI",TRUE,"rocky intertidal",20,1,"Animalia","Mollusca","Polyplacophora","Chitonida","Tonicellidae","Cyanoplax",1,"rocky intertidal","high",TRUE
+"Dendrochiton thamnoporus","COI",TRUE,"rocky intertidal",1,1,"Animalia","Mollusca","Polyplacophora","Chitonida","Mopaliidae","Dendrochiton",0.6,"rocky intertidal","medium",TRUE
+"Diaphorodoris lirulatocauda","COI",TRUE,"rocky intertidal",1,1,"Animalia","Mollusca","Gastropoda","Nudibranchia","Onchidorididae","Diaphorodoris",0.6,"rocky intertidal","medium",TRUE
+"Diaulula sandiegensis","COI",TRUE,"rocky intertidal",4,3,"Animalia","Mollusca","Gastropoda","Nudibranchia","Discodorididae","Diaulula",0.6,"rocky intertidal","medium",TRUE
+"Doris montereyensis","COI",TRUE,"rocky intertidal",2,1,"Animalia","Mollusca","Gastropoda","Nudibranchia","Dorididae","Doris",0.6,"rocky intertidal","medium",TRUE
+"Haminoea virescens","COI",TRUE,"partly",17,3,"Animalia","Mollusca","Gastropoda","Cephalaspidea","Haminoeidae","Haminoea",0.6,"partly","low",TRUE
+"Hermissenda opalescens","COI",TRUE,"rocky intertidal",14,7,"Animalia","Mollusca","Gastropoda","Nudibranchia","Glaucidae","Hermissenda",0.7,"rocky intertidal","medium",TRUE
+"Littorina keenae","COI",TRUE,"rocky intertidal",10,3,"Animalia","Mollusca","Gastropoda","Littorinimorpha","Littorinidae","Littorina",1,"rocky intertidal","high",TRUE
+"Littorina plena","COI",TRUE,"rocky intertidal",8,1,"Animalia","Mollusca","Gastropoda","Littorinimorpha","Littorinidae","Littorina",1,"rocky intertidal","high",TRUE
+"Lottia austrodigitalis","COI",TRUE,"rocky intertidal",12,2,"Animalia","Mollusca","Gastropoda","","Lottiidae","Lottia",1,"rocky intertidal","high",TRUE
+"Lottia digitalis","COI",TRUE,"rocky intertidal",2,1,"Animalia","Mollusca","Gastropoda","","Lottiidae","Lottia",1,"rocky intertidal","high",TRUE
+"Lottia fenestrata","COI",TRUE,"rocky intertidal",5,1,"Animalia","Mollusca","Gastropoda","","Lottiidae","Lottia",1,"rocky intertidal","high",TRUE
+"Lottia paradigitalis","COI",TRUE,"rocky intertidal",88,2,"Animalia","Mollusca","Gastropoda","","Lottiidae","Lottia",1,"rocky intertidal","high",TRUE
+"Mopalia ciliata","COI",TRUE,"rocky intertidal",2,1,"Animalia","Mollusca","Polyplacophora","Chitonida","Mopaliidae","Mopalia",1,"rocky intertidal","high",TRUE
+"Mopalia hindsii","COI",TRUE,"rocky intertidal",1,1,"Animalia","Mollusca","Polyplacophora","Chitonida","Mopaliidae","Mopalia",1,"rocky intertidal","high",TRUE
+"Mytilus californianus","COI",TRUE,"rocky intertidal",27,2,"Animalia","Mollusca","Bivalvia","Mytilida","Mytilidae","Mytilus",0.95,"rocky intertidal","high",TRUE
+"Mytilus edulis complex sp. DC-2011","COI",TRUE,"rocky intertidal",7,1,"Animalia","Mollusca","Bivalvia","Mytilida","Mytilidae","Mytilus",0.889,"rocky intertidal","high",TRUE
+"Mytilus galloprovincialis","COI",TRUE,"rocky intertidal",20,2,"Animalia","Mollusca","Bivalvia","Mytilida","Mytilidae","Mytilus",0.941,"rocky intertidal","high",TRUE
+"Nerita funiculata","COI",TRUE,"rocky intertidal",13,1,"Animalia","Mollusca","Gastropoda","Cycloneritida","Neritidae","Nerita",1,"rocky intertidal","high",TRUE
+"Nuttallina californica","COI",TRUE,"rocky intertidal",3,2,"Animalia","Mollusca","Polyplacophora","Chitonida","Tonicellidae","Nuttallina",1,"rocky intertidal","high",TRUE
+"Nuttallina fluxa","COI",TRUE,"rocky intertidal",4,3,"Animalia","Mollusca","Polyplacophora","Chitonida","Tonicellidae","Nuttallina",1,"rocky intertidal","high",TRUE
+"Octopus bimaculoides","COI",TRUE,"rocky intertidal",10,4,"Animalia","Mollusca","Cephalopoda","Octopoda","Octopodidae","Octopus",0.6,"rocky intertidal","medium",TRUE
+"Orienthella trilineata","COI",TRUE,"partly",3,1,"Animalia","Mollusca","Gastropoda","Nudibranchia","Flabellinidae","Orienthella",0.4,"partly","medium",TRUE
+"Ostrea lurida","COI",TRUE,"rocky intertidal",10,3,"Animalia","Mollusca","Bivalvia","Ostreida","Ostreidae","Ostrea",1,"rocky intertidal","low",TRUE
+"Rostanga pulchra","COI",TRUE,"rocky intertidal",7,4,"Animalia","Mollusca","Gastropoda","Nudibranchia","Dorididae","Rostanga",0.7,"rocky intertidal","medium",TRUE
+"Stenoplax conspicua","COI",TRUE,"rocky intertidal",11,1,"Animalia","Mollusca","Polyplacophora","Chitonida","Ischnochitonidae","Stenoplax",0.9,"rocky intertidal","high",TRUE
+"Stiliger fuscovittatus","COI",TRUE,"rocky intertidal",1,1,"Animalia","Mollusca","Gastropoda","","Limapontiidae","Stiliger",0.8,"rocky intertidal","high",TRUE
+"Tegula funebralis","COI",TRUE,"rocky intertidal",5,2,"Animalia","Mollusca","Gastropoda","Trochida","Tegulidae","Tegula",1,"rocky intertidal","high",TRUE
+"Thylacodes squamigerus","COI",TRUE,"rocky intertidal",24,4,"Animalia","Mollusca","Gastropoda","Littorinimorpha","Vermetidae","Thylacodes",0.6,"rocky intertidal","medium",TRUE
+"Trimusculus reticulatus","COI",TRUE,"rocky intertidal",13,3,"Animalia","Mollusca","Gastropoda","Ellobiida","Trimusculidae","Trimusculus",0.9,"rocky intertidal","high",TRUE
+"Triopha maculata","COI",TRUE,"partly",3,3,"Animalia","Mollusca","Gastropoda","Nudibranchia","Polyceridae","Triopha",0.4,"partly","medium",TRUE
+"Carinomella lactea","COI",TRUE,"rocky intertidal",4,1,"Animalia","Nemertea","Palaeonemertea","Carinomiformes","Carinomidae","Carinomella",0.6,"rocky intertidal","medium",TRUE
+"Emplectonema viride","COI",TRUE,"rocky intertidal",17,3,"Animalia","Nemertea","Hoplonemertea","Monostilifera","Emplectonematidae","Emplectonema",1,"rocky intertidal","high",TRUE
+"Hubrechtella juliae","COI",TRUE,"rocky intertidal",2,2,"Animalia","Nemertea","Pilidiophora","","Hubrechtidae","Hubrechtella",0.6,"rocky intertidal","medium",TRUE
+"Paranemertes peregrina","COI",TRUE,"rocky intertidal",2,1,"Animalia","Nemertea","Hoplonemertea","Monostilifera","Emplectonematidae","Paranemertes",0.778,"rocky intertidal","medium",TRUE
+"Analipus japonicus","COI",TRUE,"rocky intertidal",260,3,"Chromista","Ochrophyta","Phaeophyceae","Ralfsiales","Ralfsiaceae","Analipus",1,"rocky intertidal","high",TRUE
+"Colpomenia peregrina","COI",TRUE,"rocky intertidal",11,6,"Chromista","Ochrophyta","Phaeophyceae","Scytosiphonales","Scytosiphonaceae","Colpomenia",0.8,"rocky intertidal","high",TRUE
+"Colpomenia sinuosa","COI",TRUE,"rocky intertidal",1,1,"Chromista","Ochrophyta","Phaeophyceae","Scytosiphonales","Scytosiphonaceae","Colpomenia",0.8,"rocky intertidal","high",TRUE
+"Dactylosiphon bullosus","COI",TRUE,"rocky intertidal",7,2,"Chromista","Ochrophyta","Phaeophyceae","Scytosiphonales","Scytosiphonaceae","Dactylosiphon",1,"rocky intertidal","high",TRUE
+"Dictyota flabellata","COI",TRUE,"rocky intertidal",101,6,"Chromista","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Dictyota",0.7,"rocky intertidal","medium",TRUE
+"Ectocarpus commensalis","COI",TRUE,"rocky intertidal",12,3,"Chromista","Ochrophyta","Phaeophyceae","Ectocarpales","Ectocarpaceae","Ectocarpus",0.8,"rocky intertidal","high",TRUE
+"Egregia menziesii","COI",TRUE,"rocky intertidal",356,9,"Chromista","Ochrophyta","Phaeophyceae","Laminariales","Lessoniaceae","Egregia",0.5,"rocky intertidal","low",TRUE
+"Haplogloia andersonii","COI",TRUE,"rocky intertidal",274,3,"Chromista","Ochrophyta","Phaeophyceae","Ectocarpales","Chordariaceae","Haplogloia",0.7,"rocky intertidal","medium",TRUE
+"Hecatonema terminale","COI",TRUE,"rocky intertidal",19,2,"Chromista","Ochrophyta","Phaeophyceae","Ectocarpales","Chordariaceae","Hecatonema",0.5,"rocky intertidal","low",TRUE
+"Laminarionema elsbetiae","COI",TRUE,"rocky intertidal",2,2,"Chromista","Ochrophyta","Phaeophyceae","Ectocarpales","Chordariaceae","Laminarionema",0.6,"rocky intertidal","medium",TRUE
+"Leathesia marina","COI",TRUE,"rocky intertidal",17,4,"Chromista","Ochrophyta","Phaeophyceae","Ectocarpales","Chordariaceae","Leathesia",0.9,"rocky intertidal","high",TRUE
+"Mesogloia japonica","COI",TRUE,"rocky intertidal",1,1,"Chromista","Ochrophyta","Phaeophyceae","Ectocarpales","Chordariaceae","Mesogloia",0.5,"rocky intertidal","low",TRUE
+"Myrionema balticum","COI",TRUE,"rocky intertidal",33,8,"Chromista","Ochrophyta","Phaeophyceae","Ectocarpales","Chordariaceae","Myrionema",0.6,"rocky intertidal","medium",TRUE
+"Myrionema strangulans","COI",TRUE,"rocky intertidal",10,1,"Chromista","Ochrophyta","Phaeophyceae","Ectocarpales","Chordariaceae","Myrionema",0.8,"rocky intertidal","high",TRUE
+"Pachydictyon coriaceum","COI",TRUE,"partly",2,1,"Chromista","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Pachydictyon",0.4,"partly","medium",TRUE
+"Padina boergesenii","COI",TRUE,"rocky intertidal",2,2,"Chromista","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Padina",0.6,"rocky intertidal","medium",TRUE
+"Papenfussiella kuromo","COI",TRUE,"rocky intertidal",23,3,"Chromista","Ochrophyta","Phaeophyceae","Ectocarpales","Chordariaceae","Papenfussiella",0.5,"rocky intertidal","low",TRUE
+"Petalonia binghamiae","COI",TRUE,"rocky intertidal",71,7,"Chromista","Ochrophyta","Phaeophyceae","Scytosiphonales","Scytosiphonaceae","Petalonia",1,"rocky intertidal","high",TRUE
+"Petalonia fascia","COI",TRUE,"rocky intertidal",2,1,"Chromista","Ochrophyta","Phaeophyceae","Scytosiphonales","Scytosiphonaceae","Petalonia",0.9,"rocky intertidal","high",TRUE
+"Petrospongium rugosum","COI",TRUE,"rocky intertidal",243,12,"Chromista","Ochrophyta","Phaeophyceae","Ectocarpales","Chordariaceae","Petrospongium",0.9,"rocky intertidal","high",TRUE
+"Planosiphon gracilis","COI",TRUE,"rocky intertidal",23,1,"Chromista","Ochrophyta","Phaeophyceae","Scytosiphonales","Scytosiphonaceae","Planosiphon",0.5,"rocky intertidal","low",TRUE
+"Sargassum horneri","COI",TRUE,"partly",1,1,"Chromista","Ochrophyta","Phaeophyceae","Fucales","Sargassaceae","Sargassum",0.2,"partly","high",TRUE
+"Scytosiphon lomentaria","COI",TRUE,"rocky intertidal",222,3,"Chromista","Ochrophyta","Phaeophyceae","Scytosiphonales","Scytosiphonaceae","Scytosiphon",0.9,"rocky intertidal","high",TRUE
+"Stephanocystis osmundacea","COI",TRUE,"partly",95,11,"Chromista","Ochrophyta","Phaeophyceae","Fucales","Sargassaceae","Stephanocystis",0.4,"partly","medium",TRUE
+"Zonaria farlowii","COI",TRUE,"partly",1,1,"Chromista","Ochrophyta","Phaeophyceae","Dictyotales","Dictyotaceae","Zonaria",0.444,"partly","low",TRUE
+"Phoronis ijimai","COI",TRUE,"rocky intertidal",1,1,"Animalia","Phoronida","","","Phoronidae","Phoronis",0.5,"rocky intertidal","low",TRUE
+"Acarnus erithacus","COI",TRUE,"rocky intertidal",12,2,"Animalia","Porifera","Demospongiae","Poecilosclerida","Acarnidae","Acarnus",0.6,"rocky intertidal","medium",TRUE
+"Endectyon hispitumulus","COI",TRUE,"partly",3,1,"Animalia","Porifera","Demospongiae","Axinellida","Raspailiidae","Endectyon",0.3,"partly","medium",TRUE
+"Halichondria bowerbanki","COI",TRUE,"rocky intertidal",23,9,"Animalia","Porifera","Demospongiae","Suberitida","Halichondriidae","Halichondria",0.833,"rocky intertidal","low",TRUE
+"Halichondria panicea","COI",TRUE,"rocky intertidal",83,8,"Animalia","Porifera","Demospongiae","Suberitida","Halichondriidae","Halichondria",0.8,"rocky intertidal","high",TRUE
+"Halisarca sacra","COI",TRUE,"rocky intertidal",5,2,"Animalia","Porifera","Demospongiae","Chondrillida","Halisarcidae","Halisarca",0.6,"rocky intertidal","medium",TRUE
+"Hymeniacidon perlevis","COI",TRUE,"rocky intertidal",38,6,"Animalia","Porifera","Demospongiae","Suberitida","Halichondriidae","Hymeniacidon",0.8,"rocky intertidal","high",TRUE
+"Oscarella carmela","COI",TRUE,"rocky intertidal",7,2,"Animalia","Porifera","Homoscleromorpha","Homosclerophorida","Oscarellidae","Oscarella",0.5,"rocky intertidal","low",TRUE
+"Pachychalina tenera","COI",TRUE,"partly",5,1,"Animalia","Porifera","Demospongiae","Haplosclerida","Niphatidae","Pachychalina",0.4,"partly","medium",TRUE
+"Pione carpenteri","COI",TRUE,"rocky intertidal",7,2,"Animalia","Porifera","Demospongiae","Clionaida","Clionaidae","Pione",0.8,"rocky intertidal","high",TRUE
+"Protosuberites denhartogi","COI",TRUE,"rocky intertidal",8,1,"Animalia","Porifera","Demospongiae","Suberitida","Suberitidae","Protosuberites",0.6,"rocky intertidal","medium",TRUE
+"Acrochaetium arcuatum","COI",TRUE,"rocky intertidal",4,1,"Plantae","Rhodophyta","Florideophyceae","Acrochaetiales","Acrochaetiaceae","Acrochaetium",0.6,"rocky intertidal","medium",TRUE
+"Acrochaetium catenulatum","COI",TRUE,"rocky intertidal",12,1,"Plantae","Rhodophyta","Florideophyceae","Acrochaetiales","Acrochaetiaceae","Acrochaetium",0.7,"rocky intertidal","medium",TRUE
+"Ahnfeltiopsis linearis","COI",TRUE,"rocky intertidal",7,1,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Phyllophoraceae","Ahnfeltiopsis",0.8,"rocky intertidal","high",TRUE
+"Amphiroa beauvoisii","COI",TRUE,"rocky intertidal",6,2,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Lithophyllaceae","Amphiroa",0.6,"rocky intertidal","medium",TRUE
+"Besa leptophylla","COI",TRUE,"partly",8,2,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Phyllophoraceae","Besa",0.4,"partly","medium",TRUE
+"Bossiella chiloensis","COI",TRUE,"rocky intertidal",50,4,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Corallinaceae","Bossiella",0.6,"rocky intertidal","medium",TRUE
+"Bossiella frondescens","COI",TRUE,"rocky intertidal",29,2,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Corallinaceae","Bossiella",0.6,"rocky intertidal","medium",TRUE
+"Bossiella orbigniana","COI",TRUE,"rocky intertidal",1,1,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Corallinaceae","Bossiella",0.7,"rocky intertidal","medium",TRUE
+"Calliarthron cheilosporioides","COI",TRUE,"rocky intertidal",2,1,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Corallinaceae","Calliarthron",0.5,"rocky intertidal","low",TRUE
+"Calliarthron tuberculosum","COI",TRUE,"rocky intertidal",44,5,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Corallinaceae","Calliarthron",0.55,"rocky intertidal","low",TRUE
+"Callithamnion pikeanum","COI",TRUE,"rocky intertidal",1,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Callithamniaceae","Callithamnion",0.6,"rocky intertidal","medium",TRUE
+"Callophyllis edentata","COI",TRUE,"partly",3,2,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Kallymeniaceae","Callophyllis",0.4,"partly","medium",TRUE
+"Callophyllis pinnata","COI",TRUE,"partly",3,1,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Kallymeniaceae","Callophyllis",0.4,"partly","medium",TRUE
+"Caulacanthus ustulatus","COI",TRUE,"rocky intertidal",16,2,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Caulacanthaceae","Caulacanthus",1,"rocky intertidal","high",TRUE
+"Centroceras clavulatum","COI",TRUE,"rocky intertidal",17,4,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Ceramiaceae","Centroceras",0.7,"rocky intertidal","medium",TRUE
+"Chondracanthus canaliculatus","COI",TRUE,"rocky intertidal",514,15,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Chondracanthus",0.8,"rocky intertidal","high",TRUE
+"Chondracanthus corymbiferus","COI",TRUE,"partly",46,2,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Chondracanthus",0.3,"partly","medium",TRUE
+"Chondracanthus exasperatus","COI",TRUE,"rocky intertidal",162,11,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Chondracanthus",0.6,"rocky intertidal","medium",TRUE
+"Corallina officinalis","COI",TRUE,"rocky intertidal",237,12,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Corallinaceae","Corallina",0.9,"rocky intertidal","high",TRUE
+"Corallina polysticha","COI",TRUE,"rocky intertidal",7,2,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Corallinaceae","Corallina",0.85,"rocky intertidal","high",TRUE
+"Corallina vancouveriensis","COI",TRUE,"rocky intertidal",3,2,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Corallinaceae","Corallina",0.9,"rocky intertidal","high",TRUE
+"Cryptonemia obovata","COI",TRUE,"partly",1,1,"Plantae","Rhodophyta","Florideophyceae","Halymeniales","Halymeniaceae","Cryptonemia",0.4,"partly","medium",TRUE
+"Cryptopleura ruprechtiana","COI",TRUE,"partly",5,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Delesseriaceae","Cryptopleura",0.4,"partly","medium",TRUE
+"Cryptosiphonia woodii","COI",TRUE,"rocky intertidal",6,2,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Dumontiaceae","Cryptosiphonia",1,"rocky intertidal","high",TRUE
+"Cumagloia andersonii","COI",TRUE,"rocky intertidal",14,2,"Plantae","Rhodophyta","Florideophyceae","Nemaliales","Liagoraceae","Cumagloia",1,"rocky intertidal","high",TRUE
+"Dasya sinicola","COI",TRUE,"rocky intertidal",2,2,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Dasyaceae","Dasya",0.5,"rocky intertidal","low",TRUE
+"Endocladia muricata","COI",TRUE,"rocky intertidal",189,7,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Endocladiaceae","Endocladia",1,"rocky intertidal","high",TRUE
+"Erythrocystis saccata","COI",TRUE,"rocky intertidal",21,4,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Erythrocystis",0.5,"rocky intertidal","low",TRUE
+"Erythrophyllum delesserioides","COI",TRUE,"partly",2,1,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Kallymeniaceae","Erythrophyllum",0.3,"partly","medium",TRUE
+"Eutrichosiphonia confusa","COI",TRUE,"rocky intertidal",5,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Eutrichosiphonia",0.6,"rocky intertidal","medium",TRUE
+"Fredericqia chiton","COI",TRUE,"rocky intertidal",7,2,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Phyllophoraceae","Fredericqia",0.6,"rocky intertidal","medium",TRUE
+"Gelidium coulteri","COI",TRUE,"rocky intertidal",273,17,"Plantae","Rhodophyta","Florideophyceae","Gelidiales","Gelidiaceae","Gelidium",0.8,"rocky intertidal","high",TRUE
+"Gelidium kathyanniae","COI",TRUE,"rocky intertidal",16,4,"Plantae","Rhodophyta","Florideophyceae","Gelidiales","Gelidiaceae","Gelidium",0.7,"rocky intertidal","medium",TRUE
+"Gelidium robustum","COI",TRUE,"rocky intertidal",74,8,"Plantae","Rhodophyta","Florideophyceae","Gelidiales","Gelidiaceae","Gelidium",0.5,"rocky intertidal","low",TRUE
+"Gelidium vagum","COI",TRUE,"rocky intertidal",3,1,"Plantae","Rhodophyta","Florideophyceae","Gelidiales","Gelidiaceae","Gelidium",0.7,"rocky intertidal","medium",TRUE
+"Gloiocladia laciniata","COI",TRUE,"rocky intertidal",13,1,"Plantae","Rhodophyta","Florideophyceae","Rhodymeniales","Faucheaceae","Gloiocladia",0.6,"rocky intertidal","medium",TRUE
+"Gloiosiphonia verticillaris","COI",TRUE,"rocky intertidal",2,1,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gloiosiphoniaceae","Gloiosiphonia",0.7,"rocky intertidal","medium",TRUE
+"Gracilariophila oryzoides","COI",TRUE,"rocky intertidal",2,1,"Plantae","Rhodophyta","Florideophyceae","Gracilariales","Gracilariaceae","Gracilariophila",0.9,"rocky intertidal","high",TRUE
+"Gracilariopsis andersonii","COI",TRUE,"rocky intertidal",322,4,"Plantae","Rhodophyta","Florideophyceae","Gracilariales","Gracilariaceae","Gracilariopsis",0.8,"rocky intertidal","high",TRUE
+"Grateloupia californica","COI",TRUE,"rocky intertidal",300,9,"Plantae","Rhodophyta","Florideophyceae","Halymeniales","Halymeniaceae","Grateloupia",0.9,"rocky intertidal","high",TRUE
+"Herposiphonia littoralis","COI",TRUE,"rocky intertidal",4,2,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Herposiphonia",0.8,"rocky intertidal","high",TRUE
+"Herposiphonia secunda","COI",TRUE,"rocky intertidal",9,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Herposiphonia",0.7,"rocky intertidal","medium",TRUE
+"Herposiphonia verticillata","COI",TRUE,"rocky intertidal",1,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Herposiphonia",0.7,"rocky intertidal","medium",TRUE
+"Hypnea johnstonii","COI",TRUE,"rocky intertidal",2,1,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Hypneaceae","Hypnea",0.6,"rocky intertidal","medium",TRUE
+"Kallymenicola penetrans","COI",TRUE,"partly",2,1,"Plantae","Rhodophyta","Florideophyceae","Palmariales","Meiodiscaceae","Kallymenicola",0.4,"partly","medium",TRUE
+"Laurencia pacifica","COI",TRUE,"rocky intertidal",3,2,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Laurencia",0.7,"rocky intertidal","medium",TRUE
+"Lithophyllum grumosum","COI",TRUE,"rocky intertidal",2,1,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Lithophyllaceae","Lithophyllum",0.5,"rocky intertidal","low",TRUE
+"Lithothrix aspergillum","COI",TRUE,"rocky intertidal",6,4,"Plantae","Rhodophyta","Florideophyceae","Corallinales","Lithophyllaceae","Lithothrix",1,"rocky intertidal","high",TRUE
+"Lomentaria hakodatensis","COI",TRUE,"rocky intertidal",10,4,"Plantae","Rhodophyta","Florideophyceae","Rhodymeniales","Lomentariaceae","Lomentaria",0.8,"rocky intertidal","high",TRUE
+"Mastocarpus agardhii","COI",TRUE,"rocky intertidal",19,1,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Phyllophoraceae","Mastocarpus",1,"rocky intertidal","high",TRUE
+"Mastocarpus cristatus","COI",TRUE,"rocky intertidal",20,1,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Phyllophoraceae","Mastocarpus",1,"rocky intertidal","high",TRUE
+"Mastocarpus intermedius","COI",TRUE,"rocky intertidal",159,5,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Phyllophoraceae","Mastocarpus",1,"rocky intertidal","high",TRUE
+"Mastocarpus papillatus","COI",TRUE,"rocky intertidal",38,5,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Phyllophoraceae","Mastocarpus",1,"rocky intertidal","high",TRUE
+"Mazzaella affinis","COI",TRUE,"rocky intertidal",174,11,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Mazzaella",1,"rocky intertidal","high",TRUE
+"Mazzaella californica","COI",TRUE,"rocky intertidal",30,2,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Mazzaella",0.9,"rocky intertidal","high",TRUE
+"Mazzaella coriacea","COI",TRUE,"rocky intertidal",20,1,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Mazzaella",0.85,"rocky intertidal","high",TRUE
+"Mazzaella flaccida","COI",TRUE,"rocky intertidal",367,7,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Mazzaella",0.9,"rocky intertidal","high",TRUE
+"Mazzaella leptorhynchos","COI",TRUE,"rocky intertidal",378,9,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Mazzaella",0.85,"rocky intertidal","high",TRUE
+"Mazzaella oregona","COI",TRUE,"rocky intertidal",11,2,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Mazzaella",0.9,"rocky intertidal","high",TRUE
+"Mazzaella rosea","COI",TRUE,"rocky intertidal",38,3,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Mazzaella",0.9,"rocky intertidal","high",TRUE
+"Mazzaella splendens","COI",TRUE,"rocky intertidal",357,5,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Gigartinaceae","Mazzaella",0.85,"rocky intertidal","high",TRUE
+"Microcladia coulteri","COI",TRUE,"rocky intertidal",96,8,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Ceramiaceae","Microcladia",0.6,"rocky intertidal","medium",TRUE
+"Neogastroclonium subarticulatum","COI",TRUE,"rocky intertidal",39,7,"Plantae","Rhodophyta","Florideophyceae","Rhodymeniales","Champiaceae","Neogastroclonium",0.5,"rocky intertidal","low",TRUE
+"Neoporphyra perforata","COI",TRUE,"rocky intertidal",309,7,"Plantae","Rhodophyta","Bangiophyceae","Bangiales","Bangiaceae","Neoporphyra",1,"rocky intertidal","high",TRUE
+"Neorhodomela larix","COI",TRUE,"rocky intertidal",35,2,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Neorhodomela",1,"rocky intertidal","high",TRUE
+"Neorhodomela oregona","COI",TRUE,"rocky intertidal",1,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Neorhodomela",1,"rocky intertidal","high",TRUE
+"Nienburgia andersoniana","COI",TRUE,"partly",45,7,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Delesseriaceae","Nienburgia",0.4,"partly","medium",TRUE
+"Odonthalia floccosa","COI",TRUE,"rocky intertidal",7,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Odonthalia",0.7,"rocky intertidal","medium",TRUE
+"Osmundea spectabilis","COI",TRUE,"rocky intertidal",32,5,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Osmundea",0.85,"rocky intertidal","high",TRUE
+"Pachymeniopsis lanceolata","COI",TRUE,"rocky intertidal",5,1,"Plantae","Rhodophyta","Florideophyceae","Halymeniales","Halymeniaceae","Pachymeniopsis",0.9,"rocky intertidal","high",TRUE
+"Pikea californica","COI",TRUE,"rocky intertidal",2,1,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Dumontiaceae","Pikea",0.8,"rocky intertidal","high",TRUE
+"Plocamium pacificum","COI",TRUE,"rocky intertidal",3,2,"Plantae","Rhodophyta","Florideophyceae","Plocamiales","Plocamiaceae","Plocamium",0.5,"rocky intertidal","low",TRUE
+"Polyneura latissima","COI",TRUE,"partly",45,3,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Delesseriaceae","Polyneura",0.2,"partly","high",TRUE
+"Polysiphonia hendryi","COI",TRUE,"rocky intertidal",26,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Polysiphonia",0.9,"rocky intertidal","high",TRUE
+"Prionitis lanceolata","COI",TRUE,"rocky intertidal",123,8,"Plantae","Rhodophyta","Florideophyceae","Halymeniales","Halymeniaceae","Prionitis",0.8,"rocky intertidal","high",TRUE
+"Pterochondria woodii","COI",TRUE,"rocky intertidal",1,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Pterochondria",0.7,"rocky intertidal","medium",TRUE
+"Pterocladiella capillacea","COI",TRUE,"rocky intertidal",40,5,"Plantae","Rhodophyta","Florideophyceae","Gelidiales","Pterocladiaceae","Pterocladiella",0.8,"rocky intertidal","high",TRUE
+"Ptilota densa","COI",TRUE,"partly",1,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Ceramiaceae","Ptilota",0.4,"partly","medium",TRUE
+"Pyropia perforata","COI",TRUE,"rocky intertidal",11,1,"Plantae","Rhodophyta","Bangiophyceae","Bangiales","Bangiaceae","Pyropia",1,"rocky intertidal","high",TRUE
+"Rhodymenia californica","COI",TRUE,"rocky intertidal",8,3,"Plantae","Rhodophyta","Florideophyceae","Rhodymeniales","Rhodymeniaceae","Rhodymenia",0.55,"rocky intertidal","low",TRUE
+"Rhodymenia pacifica","COI",TRUE,"rocky intertidal",7,1,"Plantae","Rhodophyta","Florideophyceae","Rhodymeniales","Rhodymeniaceae","Rhodymenia",0.55,"rocky intertidal","low",TRUE
+"Salishia firma","COI",TRUE,"rocky intertidal",1,1,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Kallymeniaceae","Salishia",0.8,"rocky intertidal","high",TRUE
+"Savoiea robusta","COI",TRUE,"rocky intertidal",8,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Savoiea",0.6,"rocky intertidal","medium",TRUE
+"Schimmelmannia plumosa","COI",TRUE,"rocky intertidal",1,1,"Plantae","Rhodophyta","Florideophyceae","Acrosymphytales","Schimmelmanniaceae","Schimmelmannia",0.5,"rocky intertidal","low",TRUE
+"Scinaia johnstoniae","COI",TRUE,"rocky intertidal",1,1,"Plantae","Rhodophyta","Florideophyceae","Nemaliales","Scinaiaceae","Scinaia",0.5,"rocky intertidal","low",TRUE
+"Smithora naiadum","COI",TRUE,"rocky intertidal",355,7,"Plantae","Rhodophyta","Compsopogonophyceae","Erythropeltidales","Erythropeltidaceae","Smithora",0.8,"rocky intertidal","high",TRUE
+"Stenogramma californicum","COI",TRUE,"rocky intertidal",40,2,"Plantae","Rhodophyta","Florideophyceae","Gigartinales","Phyllophoraceae","Stenogramma",0.8,"rocky intertidal","high",TRUE
+"Symphyocladiella baileyi","COI",TRUE,"rocky intertidal",2,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Symphyocladiella",0.7,"rocky intertidal","medium",TRUE
+"Symphyocladiella dendroidea","COI",TRUE,"rocky intertidal",1,1,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Rhodomelaceae","Symphyocladiella",0.7,"rocky intertidal","medium",TRUE
+"Wildemania occidentalis","COI",TRUE,"rocky intertidal",248,2,"Plantae","Rhodophyta","Bangiophyceae","Bangiales","Bangiaceae","Wildemania",0.8,"rocky intertidal","high",TRUE
+"Phascolosoma agassizii","COI",TRUE,"rocky intertidal",16,3,"Animalia","Sipuncula","Phascolosomatidea","Phascolosomatiformes","Phascolosomatidae","Phascolosoma",0.85,"rocky intertidal","high",TRUE
+"Themiste dyscrita","COI",TRUE,"rocky intertidal",12,1,"Animalia","Sipuncula","","Golfingiida","Themistidae","Themiste",0.8,"rocky intertidal","high",TRUE
+"Chaetopterus dewysee","COI",FALSE,"not",26,5,"Animalia","Annelida","Polychaeta","","Chaetopteridae","Chaetopterus",0,"not","low",FALSE
+"Diopatra ornata","COI",FALSE,"not",31,2,"Animalia","Annelida","Polychaeta","Eunicida","Onuphidae","Diopatra",0,"not","low",FALSE
+"Pectinaria californiensis","COI",FALSE,"not",1,1,"Animalia","Annelida","Polychaeta","Terebellida","Pectinariidae","Pectinaria",0,"not","low",FALSE
+"Tumidotheres margarita","COI",FALSE,"not",1,1,"Animalia","Arthropoda","Malacostraca","Decapoda","Pinnotheridae","Tumidotheres",,"not","low",FALSE
+"Amphistichus argenteus","COI",FALSE,"not",2,1,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Amphistichus",0,"not","high",FALSE
+"Atherinopsis californiensis","COI",FALSE,"not",4,3,"Animalia","Chordata","Actinopteri","Atheriniformes","Atherinopsidae","Atherinopsis",0.1,"not","low",FALSE
+"Carcharodon carcharias","COI",FALSE,"not",1,1,"Animalia","Chordata","Elasmobranchii","Lamniformes","Alopiidae","Carcharodon",0,"not","medium",FALSE
+"Citharichthys stigmaeus","COI",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Cyclopsettidae","Citharichthys",0,"not","medium",FALSE
+"Embiotoca jacksoni","COI",FALSE,"not",9,2,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Embiotoca",0.1,"not","high",FALSE
+"Embiotoca lateralis","COI",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Embiotocidae","Embiotoca",0.15,"not","high",FALSE
+"Genyonemus lineatus","COI",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Sciaenidae","Genyonemus",0,"not","medium",FALSE
+"Heterodontus francisci","COI",FALSE,"not",4,1,"Animalia","Chordata","Elasmobranchii","Heterodontiformes","Heterodontidae","Heterodontus",0.111,"not","medium",FALSE
+"Hypsypops rubicundus","COI",FALSE,"not",10,3,"Animalia","Chordata","Actinopteri","Perciformes","Pomacentridae","Hypsypops",0.05,"not","high",FALSE
+"Myliobatis californica","COI",FALSE,"not",2,2,"Animalia","Chordata","Elasmobranchii","Myliobatiformes","Myliobatidae","Myliobatis",0,"not","low",FALSE
+"Paralabrax clathratus","COI",FALSE,"not",20,3,"Animalia","Chordata","Actinopteri","Perciformes","Serranidae","Paralabrax",0.05,"not","high",FALSE
+"Paralichthys californicus","COI",FALSE,"not",5,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Paralichthyidae","Paralichthys",0,"not","low",FALSE
+"Pleuronichthys decurrens","COI",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Pleuronectiformes","Pleuronectidae","Pleuronichthys",0,"not","low",FALSE
+"Pseudobatos productus","COI",FALSE,"not",1,1,"Animalia","Chordata","Elasmobranchii","Rhinopristiformes","Rhinobatidae","Pseudobatos",0,"not","low",FALSE
+"Sardinops sagax","COI",FALSE,"not",9,2,"Animalia","Chordata","Actinopteri","Clupeiformes","Clupeidae","Sardinops",0,"not","high",FALSE
+"Scomber japonicus","COI",FALSE,"not",1,1,"Animalia","Chordata","Actinopteri","Perciformes","Scombridae","Scomber",0,"not","high",FALSE
+"Seriphus politus","COI",FALSE,"not",2,1,"Animalia","Chordata","Actinopteri","Perciformes","Sciaenidae","Seriphus",0,"not","low",FALSE
+"Urobatis halleri","COI",FALSE,"not",22,1,"Animalia","Chordata","Elasmobranchii","Myliobatiformes","Urotrygonidae","Urobatis",0.083,"not","low",FALSE
+"Amphinema dinema","COI",FALSE,"not",26,3,"Animalia","Cnidaria","Hydrozoa","Anthoathecata","Pandeidae","Amphinema",0.1,"not","high",FALSE
+"Ptilosarcus gurneyi","COI",FALSE,"not",1,1,"Animalia","Cnidaria","Anthozoa","Scleralcyonacea","Pennatulidae","Ptilosarcus",0,"not","low",FALSE
+"Astropecten armatus","COI",FALSE,"not",1,1,"Animalia","Echinodermata","Asteroidea","Paxillosida","Astropectinidae","Astropecten",0,"not","medium",FALSE
+"Dendraster excentricus","COI",FALSE,"not",10,2,"Animalia","Echinodermata","Echinoidea","Echinolampadacea","Dendrasteridae","Dendraster",0,"not","medium",FALSE
+"Echinometra vanbrunti","COI",FALSE,"not",2,1,"Animalia","Echinodermata","Echinoidea","Camarodonta","Echinometridae","Echinometra",,"not","low",FALSE
+"Leptosynapta clarki","COI",FALSE,"not",1,1,"Animalia","Echinodermata","Holothuroidea","Apodida","Synaptidae","Leptosynapta",0.125,"not","medium",FALSE
+"Lovenia cordiformis","COI",FALSE,"not",3,2,"Animalia","Echinodermata","Echinoidea","Spatangoida","Loveniidae","Lovenia",0,"not","high",FALSE
+"Mesocentrotus franciscanus","COI",FALSE,"not",4,3,"Animalia","Echinodermata","Echinoidea","Camarodonta","Strongylocentrotidae","Mesocentrotus",0.1,"not","high",FALSE
+"Panopea generosa","COI",FALSE,"not",2,2,"Animalia","Mollusca","Bivalvia","Adapedonta","Hiatellidae","Panopea",0,"not","low",FALSE
+"Laminaria farlowii","COI",FALSE,"not",24,2,"Chromista","Ochrophyta","Phaeophyceae","Laminariales","Laminariaceae","Laminaria",0.05,"not","high",FALSE
+"Macrocystis pyrifera","COI",FALSE,"not",173,11,"Chromista","Ochrophyta","Phaeophyceae","Laminariales","Laminariaceae","Macrocystis",0,"not","high",FALSE
+"Nereocystis luetkeana","COI",FALSE,"not",2,1,"Chromista","Ochrophyta","Phaeophyceae","Laminariales","Laminariaceae","Nereocystis",0.05,"not","high",FALSE
+"Pterygophora californica","COI",FALSE,"not",4,1,"Chromista","Ochrophyta","Phaeophyceae","Laminariales","Alariaceae","Pterygophora",0.05,"not","high",FALSE
+"Clionaopsis platei","COI",FALSE,"not",13,2,"Animalia","Porifera","Demospongiae","Clionaida","Clionaidae","Clionaopsis",,"not","low",FALSE
+"Corallophila eatoniana","COI",FALSE,"not",14,3,"Plantae","Rhodophyta","Florideophyceae","Ceramiales","Ceramiaceae","Corallophila",,"not","low",FALSE
+"Rhodonematella subimmersa","COI",FALSE,"not",6,2,"Plantae","Rhodophyta","Florideophyceae","Palmariales","Rhodophysemataceae","Rhodonematella",,"not","low",FALSE

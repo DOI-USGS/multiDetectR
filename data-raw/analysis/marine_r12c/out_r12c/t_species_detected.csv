@@ -1,0 +1,487 @@
+"taxon","marker","intertidal","habitat_class","n_libraries","n_locations"
+"Alloclinus holderi","12S",TRUE,"rocky intertidal",42,3
+"Alosa sapidissima","12S",FALSE,"not",1,1
+"Ammodytes hexapterus","12S",FALSE,"not",8,3
+"Amphistichus argenteus","12S",FALSE,"not",43,5
+"Anarrhichthys ocellatus","12S",TRUE,"partly",10,3
+"Anchoa compressa","12S",FALSE,"not",1,1
+"Anisotremus davidsonii","12S",TRUE,"partly",175,13
+"Anoplarchus purpurescens","12S",TRUE,"rocky intertidal",42,6
+"Anoplopoma fimbria","12S",FALSE,"not",1,1
+"Apodichthys flavidus","12S",TRUE,"rocky intertidal",15,3
+"Apodichthys fucorum","12S",TRUE,"rocky intertidal",3,1
+"Argentina sialis","12S",FALSE,"not",1,1
+"Artedius corallinus","12S",TRUE,"partly",8,2
+"Artedius harringtoni","12S",TRUE,"partly",22,3
+"Artedius lateralis","12S",TRUE,"rocky intertidal",69,5
+"Artedius notospilotus","12S",TRUE,"rocky intertidal",16,3
+"Atherinops affinis","12S",TRUE,"partly",688,21
+"Atherinopsis californiensis","12S",FALSE,"not",670,21
+"Atractoscion nobilis","12S",FALSE,"not",137,16
+"Aulorhynchus flavidus","12S",FALSE,"not",83,9
+"Balistes polylepis","12S",FALSE,"not",1,1
+"Bathygobius ramosus","12S",FALSE,"not",20,1
+"Brachygenys californiensis","12S",TRUE,"rocky intertidal",56,7
+"Brachyistius frenatus","12S",FALSE,"not",169,14
+"Brosmophycis marginata","12S",FALSE,"not",1,1
+"Calamus brachysomus","12S",FALSE,"not",17,4
+"Cataetyx rubrirostris","12S",FALSE,"not",4,1
+"Caulolatilus princeps","12S",FALSE,"not",62,10
+"Cebidichthys violaceus","12S",TRUE,"rocky intertidal",314,9
+"Cephaloscyllium ventriosum","12S",FALSE,"not",7,1
+"Chaenopsis alepidota","12S",TRUE,"partly",5,1
+"Cheilotrema saturnum","12S",FALSE,"not",84,12
+"Chilara taylori","12S",FALSE,"not",137,13
+"Chitonotus pugetensis","12S",FALSE,"not",1,1
+"Chromis punctipinnis","12S",FALSE,"not",67,9
+"Citharichthys fragilis","12S",FALSE,"not",1,1
+"Citharichthys sordidus","12S",FALSE,"not",27,5
+"Citharichthys stigmaeus","12S",FALSE,"not",24,4
+"Clevelandia ios","12S",FALSE,"not",4,2
+"Clinocottus analis","12S",TRUE,"rocky intertidal",705,22
+"Clinocottus globiceps","12S",TRUE,"rocky intertidal",22,2
+"Clinocottus recalvus","12S",TRUE,"rocky intertidal",646,11
+"Cololabis saira","12S",FALSE,"not",14,2
+"Cosmocampus arctus","12S",TRUE,"partly",2,2
+"Cottus asper","12S",FALSE,"not",1,1
+"Cryptacanthodes giganteus","12S",FALSE,"not",2,2
+"Cymatogaster aggregata","12S",FALSE,"not",129,11
+"Cynoscion parvipinnis","12S",FALSE,"not",12,2
+"Diaphus theta","12S",FALSE,"not",1,1
+"Diogenichthys laternatus","12S",FALSE,"not",9,1
+"Dorosoma cepedianum","12S",FALSE,"not",1,1
+"Embiotoca jacksoni","12S",FALSE,"not",684,21
+"Embiotoca lateralis","12S",FALSE,"not",11,3
+"Engraulis mordax","12S",FALSE,"not",857,22
+"Enophrys bison","12S",TRUE,"partly",1,1
+"Eopsetta jordani","12S",FALSE,"not",3,1
+"Ernogrammus walkeri","12S",TRUE,"rocky intertidal",5,2
+"Etropus crossotus","12S",FALSE,"not",4,1
+"Etrumeus acuminatus","12S",FALSE,,18,3
+"Eucinostomus dowii","12S",FALSE,"not",17,2
+"Fowlerichthys avalonis","12S",FALSE,"not",1,1
+"Fundulus parvipinnis","12S",TRUE,"partly",16,4
+"Gambusia affinis","12S",FALSE,"not",1,1
+"Gasterosteus aculeatus","12S",FALSE,"not",11,6
+"Genyonemus lineatus","12S",FALSE,"not",215,13
+"Gibbonsia elegans","12S",TRUE,"rocky intertidal",60,4
+"Gibbonsia montereyensis","12S",TRUE,"rocky intertidal",29,1
+"Girella nigricans","12S",TRUE,"rocky intertidal",566,21
+"Gobiesox maeandricus","12S",TRUE,"rocky intertidal",63,5
+"Gobiesox rhessodon","12S",TRUE,"rocky intertidal",192,18
+"Gymnothorax mordax","12S",TRUE,"partly",179,14
+"Haemulon flaviguttatum","12S",FALSE,"not",1,1
+"Halichoeres notospilus","12S",TRUE,"partly",18,1
+"Halichoeres semicinctus","12S",TRUE,"partly",152,13
+"Hemilepidotus hemilepidotus","12S",TRUE,"partly",2,1
+"Heterodontus francisci","12S",FALSE,"not",4,2
+"Heterostichus rostratus","12S",TRUE,"partly",322,19
+"Hippoglossina stomata","12S",FALSE,"not",9,4
+"Hydrolagus colliei","12S",FALSE,"not",1,1
+"Hyperprosopon argenteum","12S",FALSE,"not",2,2
+"Hyporhamphus rosae","12S",FALSE,"not",20,1
+"Hypsoblennius gentilis","12S",TRUE,"rocky intertidal",30,6
+"Hypsoblennius gilberti","12S",TRUE,"rocky intertidal",337,18
+"Hypsoblennius jenkinsi","12S",TRUE,"rocky intertidal",273,18
+"Hypsopsetta guttulata","12S",FALSE,"not",37,4
+"Hypsurus caryi","12S",FALSE,"not",31,5
+"Hypsypops rubicundus","12S",FALSE,"not",200,16
+"Icelinus cavifrons","12S",FALSE,"not",2,1
+"Icichthys lockingtoni","12S",FALSE,"not",1,1
+"Jordania zonope","12S",TRUE,"partly",1,1
+"Kathetostoma averruncus","12S",FALSE,"not",2,2
+"Kyphosus azureus","12S",FALSE,"not",199,17
+"Labrisomus multiporosus","12S",TRUE,"rocky intertidal",53,4
+"Labrisomus xanti","12S",TRUE,"rocky intertidal",15,2
+"Leiocottus hirundo","12S",TRUE,"rocky intertidal",32,7
+"Lepidogobius lepidus","12S",FALSE,"not",6,2
+"Leptocottus armatus","12S",FALSE,"not",20,4
+"Lethops connectens","12S",FALSE,"not",15,5
+"Leuresthes tenuis","12S",FALSE,"not",179,16
+"Leuroglossus stilbius","12S",FALSE,"not",39,3
+"Liparis adiastolus","12S",TRUE,"partly",5,1
+"Liparis florae","12S",TRUE,"partly",8,1
+"Liparis mucosus","12S",TRUE,"rocky intertidal",120,4
+"Lyopsetta exilis","12S",FALSE,"not",2,1
+"Medialuna californiensis","12S",FALSE,"not",182,15
+"Menticirrhus undulatus","12S",FALSE,"not",159,13
+"Merluccius productus","12S",FALSE,"not",26,3
+"Microgadus proximus","12S",FALSE,"not",1,1
+"Micrometrus aurora","12S",TRUE,"partly",290,9
+"Micrometrus minimus","12S",TRUE,"rocky intertidal",500,17
+"Microstomus pacificus","12S",FALSE,"not",2,1
+"Mola mola","12S",FALSE,"not",5,2
+"Morone saxatilis","12S",FALSE,"not",14,4
+"Mugil cephalus","12S",FALSE,"not",43,7
+"Muraena argus","12S",TRUE,"partly",6,1
+"Mustelus californicus","12S",FALSE,"not",1,1
+"Mycteroperca xenarcha","12S",FALSE,"not",4,2
+"Neoclinus blanchardi","12S",TRUE,"partly",20,5
+"Notorynchus cepedianus","12S",FALSE,"not",5,2
+"Oligocottus maculosus","12S",TRUE,"rocky intertidal",4,1
+"Oligocottus rubellio","12S",TRUE,"rocky intertidal",1,1
+"Oligocottus snyderi","12S",TRUE,"rocky intertidal",7,2
+"Oncorhynchus tshawytscha","12S",FALSE,"not",2,1
+"Ophidion scrippsae","12S",FALSE,"not",23,8
+"Ophiodon elongatus","12S",FALSE,"not",71,7
+"Orthonopias triacis","12S",TRUE,"rocky intertidal",25,6
+"Orthopristis reddingi","12S",FALSE,"not",13,2
+"Oxyjulis californica","12S",FALSE,"not",146,14
+"Oxylebius pictus","12S",TRUE,"partly",315,15
+"Paraclinus integripinnis","12S",TRUE,"rocky intertidal",197,12
+"Paralabrax clathratus","12S",FALSE,"not",15,2
+"Paralabrax maculatofasciatus","12S",FALSE,"not",16,3
+"Paralabrax nebulifer","12S",FALSE,"not",2,1
+"Paralichthys californicus","12S",FALSE,"not",255,20
+"Paranthias colonus","12S",FALSE,"not",1,1
+"Parophrys vetulus","12S",FALSE,"not",1,1
+"Peprilus simillimus","12S",FALSE,"not",120,12
+"Phanerodon furcatus","12S",FALSE,"not",15,4
+"Platichthys stellatus","12S",FALSE,"not",3,1
+"Pleuronichthys coenosus","12S",FALSE,"not",75,10
+"Pleuronichthys decurrens","12S",FALSE,"not",25,6
+"Pleuronichthys ocellatus","12S",FALSE,"not",12,1
+"Pleuronichthys verticalis","12S",FALSE,"not",14,1
+"Pomacanthus zonipectus","12S",TRUE,"partly",3,2
+"Pseudobatos productus","12S",FALSE,"not",1,1
+"Rhacochilus toxotes","12S",FALSE,"not",205,14
+"Rhacochilus vacca","12S",FALSE,"not",15,1
+"Rhinogobiops nicholsii","12S",FALSE,"not",7,5
+"Rimicola eigenmanni","12S",TRUE,"partly",135,10
+"Rimicola muscarum","12S",TRUE,"partly",12,2
+"Roncador stearnsii","12S",FALSE,"not",58,8
+"Ruscarius creaseri","12S",TRUE,"rocky intertidal",130,11
+"Sarda chiliensis","12S",FALSE,"not",36,5
+"Sardinops sagax","12S",FALSE,"not",921,20
+"Scomber japonicus","12S",FALSE,"not",195,15
+"Scorpaena guttata","12S",TRUE,"partly",84,11
+"Scorpaena mystes","12S",TRUE,"partly",21,2
+"Scorpaenichthys marmoratus","12S",TRUE,"partly",832,20
+"Semicossyphus pulcher","12S",FALSE,"not",304,17
+"Seriola lalandi","12S",FALSE,"not",69,9
+"Seriphus politus","12S",FALSE,"not",165,15
+"Sphoeroides annulatus","12S",FALSE,"not",86,7
+"Sphyraena argentea","12S",FALSE,"not",99,14
+"Stegastes flavilatus","12S",FALSE,"not",16,1
+"Stenobrachius leucopsarus","12S",FALSE,"not",10,3
+"Stereolepis gigas","12S",FALSE,"not",20,7
+"Strongylura exilis","12S",FALSE,"not",13,2
+"Symbolophorus californiensis","12S",FALSE,"not",2,1
+"Symphurus atricaudus","12S",FALSE,"not",51,11
+"Syngnathus californiensis","12S",FALSE,"not",60,7
+"Syngnathus euchrous","12S",TRUE,"partly",1,1
+"Synodus lucioceps","12S",FALSE,"not",80,10
+"Thalassoma lucasanum","12S",FALSE,"not",5,1
+"Trachinotus paitensis","12S",FALSE,"not",5,1
+"Trachipterus altivelis","12S",FALSE,"not",3,1
+"Trachurus symmetricus","12S",FALSE,"not",144,14
+"Triakis semifasciata","12S",FALSE,"not",2,2
+"Triphoturus mexicanus","12S",FALSE,"not",15,2
+"Typhlogobius californiensis","12S",TRUE,"rocky intertidal",196,16
+"Umbrina roncador","12S",FALSE,"not",82,12
+"Vinciguerria lucetia","12S",FALSE,"not",2,1
+"Xiphister atropurpureus","12S",TRUE,"rocky intertidal",30,2
+"Xystreurys liolepis","12S",FALSE,"not",13,9
+"Acanthodoris rhodoceras","COI",TRUE,"rocky intertidal",1,1
+"Acarnus erithacus","COI",TRUE,"rocky intertidal",12,2
+"Acrochaetium arcuatum","COI",TRUE,"rocky intertidal",4,1
+"Acrochaetium catenulatum","COI",TRUE,"rocky intertidal",12,1
+"Ahnfeltiopsis linearis","COI",TRUE,"rocky intertidal",7,1
+"Aiptasiogeton eruptaurantia","COI",TRUE,"rocky intertidal",11,2
+"Amathia verticillata","COI",TRUE,"partly",8,4
+"Amphinema dinema","COI",FALSE,"not",26,3
+"Amphipholis squamata","COI",TRUE,"rocky intertidal",1,1
+"Amphiroa beauvoisii","COI",TRUE,"rocky intertidal",6,2
+"Amphissa reticulata","COI",TRUE,"rocky intertidal",1,1
+"Amphistichus argenteus","COI",FALSE,"not",2,1
+"Analipus japonicus","COI",TRUE,"rocky intertidal",260,3
+"Anteaeolidiella oliviae","COI",TRUE,"rocky intertidal",3,2
+"Aplysia californica","COI",TRUE,"rocky intertidal",7,3
+"Aplysia vaccaria","COI",TRUE,"partly",1,1
+"Aplysiopsis enteromorphae","COI",TRUE,"rocky intertidal",1,1
+"Arabella semimaculata","COI",TRUE,"partly",1,1
+"Astropecten armatus","COI",FALSE,"not",1,1
+"Atherinops affinis","COI",TRUE,"partly",58,7
+"Atherinopsis californiensis","COI",FALSE,"not",4,3
+"Balanus glandula","COI",TRUE,"rocky intertidal",23,3
+"Balanus nubilus","COI",TRUE,"partly",1,1
+"Balanus trigonus","COI",TRUE,"partly",4,2
+"Bermudella angelensis","COI",TRUE,"rocky intertidal",1,1
+"Besa leptophylla","COI",TRUE,"partly",8,2
+"Boccardia proboscidea","COI",TRUE,"rocky intertidal",11,3
+"Bossiella chiloensis","COI",TRUE,"rocky intertidal",50,4
+"Bossiella frondescens","COI",TRUE,"rocky intertidal",29,2
+"Bossiella orbigniana","COI",TRUE,"rocky intertidal",1,1
+"Brachygenys californiensis","COI",TRUE,"rocky intertidal",1,1
+"Bugula neritina","COI",TRUE,"partly",6,3
+"Californiconus californicus","COI",TRUE,"partly",1,1
+"Calliarthron cheilosporioides","COI",TRUE,"rocky intertidal",2,1
+"Calliarthron tuberculosum","COI",TRUE,"rocky intertidal",44,5
+"Callithamnion pikeanum","COI",TRUE,"rocky intertidal",1,1
+"Callophyllis edentata","COI",TRUE,"partly",3,2
+"Callophyllis pinnata","COI",TRUE,"partly",3,1
+"Campanularia volubilis","COI",TRUE,"partly",1,1
+"Carcharodon carcharias","COI",FALSE,"not",1,1
+"Carinomella lactea","COI",TRUE,"rocky intertidal",4,1
+"Caulacanthus ustulatus","COI",TRUE,"rocky intertidal",16,2
+"Cebidichthys violaceus","COI",TRUE,"rocky intertidal",15,5
+"Celleporaria brunnea","COI",TRUE,"partly",1,1
+"Centroceras clavulatum","COI",TRUE,"rocky intertidal",17,4
+"Chaetopterus dewysee","COI",FALSE,"not",26,5
+"Chondracanthus canaliculatus","COI",TRUE,"rocky intertidal",514,15
+"Chondracanthus corymbiferus","COI",TRUE,"partly",46,2
+"Chondracanthus exasperatus","COI",TRUE,"rocky intertidal",162,11
+"Chthamalus alani","COI",TRUE,"rocky intertidal",2,1
+"Chthamalus dalli","COI",TRUE,"rocky intertidal",21,5
+"Chthamalus fissus","COI",TRUE,"rocky intertidal",122,15
+"Citharichthys stigmaeus","COI",FALSE,"not",1,1
+"Clinocottus analis","COI",TRUE,"rocky intertidal",6,3
+"Clinocottus recalvus","COI",TRUE,"rocky intertidal",5,1
+"Clionaopsis platei","COI",FALSE,"not",13,2
+"Codium cuneatum","COI",TRUE,"rocky intertidal",20,1
+"Colpomenia peregrina","COI",TRUE,"rocky intertidal",11,6
+"Colpomenia sinuosa","COI",TRUE,"rocky intertidal",1,1
+"Corallina officinalis","COI",TRUE,"rocky intertidal",237,12
+"Corallina polysticha","COI",TRUE,"rocky intertidal",7,2
+"Corallina vancouveriensis","COI",TRUE,"rocky intertidal",3,2
+"Corallophila eatoniana","COI",FALSE,"not",14,3
+"Corambe pacifica","COI",TRUE,"rocky intertidal",1,1
+"Corambe steinbergae","COI",TRUE,"partly",5,3
+"Corynactis californica","COI",TRUE,"partly",18,4
+"Coryne eximia","COI",TRUE,"rocky intertidal",16,1
+"Crepidula perforans","COI",TRUE,"rocky intertidal",1,1
+"Cryptonemia obovata","COI",TRUE,"partly",1,1
+"Cryptopleura ruprechtiana","COI",TRUE,"partly",5,1
+"Cryptosiphonia woodii","COI",TRUE,"rocky intertidal",6,2
+"Cucumaria salma","COI",TRUE,"rocky intertidal",1,1
+"Cumagloia andersonii","COI",TRUE,"rocky intertidal",14,2
+"Cyanoplax hartwegii","COI",TRUE,"rocky intertidal",7,2
+"Cyanoplax keepiana","COI",TRUE,"rocky intertidal",20,1
+"Dactylosiphon bullosus","COI",TRUE,"rocky intertidal",7,2
+"Dasya sinicola","COI",TRUE,"rocky intertidal",2,2
+"Dendraster excentricus","COI",FALSE,"not",10,2
+"Dendrochiton thamnoporus","COI",TRUE,"rocky intertidal",1,1
+"Dermasterias imbricata","COI",TRUE,"rocky intertidal",1,1
+"Diaphorodoris lirulatocauda","COI",TRUE,"rocky intertidal",1,1
+"Diaulula sandiegensis","COI",TRUE,"rocky intertidal",4,3
+"Dictyota flabellata","COI",TRUE,"rocky intertidal",101,6
+"Diopatra ornata","COI",FALSE,"not",31,2
+"Doris montereyensis","COI",TRUE,"rocky intertidal",2,1
+"Echinometra vanbrunti","COI",FALSE,"not",2,1
+"Ectocarpus commensalis","COI",TRUE,"rocky intertidal",12,3
+"Ectopleura marina","COI",TRUE,"partly",45,4
+"Egregia menziesii","COI",TRUE,"rocky intertidal",356,9
+"Embiotoca jacksoni","COI",FALSE,"not",9,2
+"Embiotoca lateralis","COI",FALSE,"not",1,1
+"Emplectonema viride","COI",TRUE,"rocky intertidal",17,3
+"Endectyon hispitumulus","COI",TRUE,"partly",3,1
+"Endocladia muricata","COI",TRUE,"rocky intertidal",189,7
+"Erythrocystis saccata","COI",TRUE,"rocky intertidal",21,4
+"Erythrophyllum delesserioides","COI",TRUE,"partly",2,1
+"Eudendrium californicum","COI",TRUE,"rocky intertidal",43,1
+"Eudistoma psammion","COI",TRUE,"partly",17,3
+"Eulalia aviculiseta","COI",TRUE,"rocky intertidal",1,1
+"Eupolymnia heterobranchia","COI",TRUE,"rocky intertidal",1,1
+"Eutrichosiphonia confusa","COI",TRUE,"rocky intertidal",5,1
+"Fredericqia chiton","COI",TRUE,"rocky intertidal",7,2
+"Gelidium coulteri","COI",TRUE,"rocky intertidal",273,17
+"Gelidium kathyanniae","COI",TRUE,"rocky intertidal",16,4
+"Gelidium robustum","COI",TRUE,"rocky intertidal",74,8
+"Gelidium vagum","COI",TRUE,"rocky intertidal",3,1
+"Genyonemus lineatus","COI",FALSE,"not",1,1
+"Gibbonsia metzi","COI",TRUE,"rocky intertidal",1,1
+"Girella nigricans","COI",TRUE,"rocky intertidal",2,1
+"Gloiocladia laciniata","COI",TRUE,"rocky intertidal",13,1
+"Gloiosiphonia verticillaris","COI",TRUE,"rocky intertidal",2,1
+"Gracilariophila oryzoides","COI",TRUE,"rocky intertidal",2,1
+"Gracilariopsis andersonii","COI",TRUE,"rocky intertidal",322,4
+"Grateloupia californica","COI",TRUE,"rocky intertidal",300,9
+"Gymnothorax mordax","COI",TRUE,"partly",2,1
+"Halichondria bowerbanki","COI",TRUE,"rocky intertidal",23,9
+"Halichondria panicea","COI",TRUE,"rocky intertidal",83,8
+"Haliclystus inabai","COI",TRUE,"rocky intertidal",1,1
+"Halisarca sacra","COI",TRUE,"rocky intertidal",5,2
+"Halosydna brevisetosa","COI",TRUE,"rocky intertidal",4,1
+"Haminoea virescens","COI",TRUE,"partly",17,3
+"Haplogloia andersonii","COI",TRUE,"rocky intertidal",274,3
+"Hecatonema terminale","COI",TRUE,"rocky intertidal",19,2
+"Hermissenda opalescens","COI",TRUE,"rocky intertidal",14,7
+"Herposiphonia littoralis","COI",TRUE,"rocky intertidal",4,2
+"Herposiphonia secunda","COI",TRUE,"rocky intertidal",9,1
+"Herposiphonia verticillata","COI",TRUE,"rocky intertidal",1,1
+"Heterodontus francisci","COI",FALSE,"not",4,1
+"Holothuria lubrica","COI",TRUE,"rocky intertidal",18,1
+"Hubrechtella juliae","COI",TRUE,"rocky intertidal",2,2
+"Hymeniacidon perlevis","COI",TRUE,"rocky intertidal",38,6
+"Hypnea johnstonii","COI",TRUE,"rocky intertidal",2,1
+"Hypsoblennius jenkinsi","COI",TRUE,"rocky intertidal",2,1
+"Hypsypops rubicundus","COI",FALSE,"not",10,3
+"Kallymenicola penetrans","COI",TRUE,"partly",2,1
+"Kirchenpaueria goodei","COI",TRUE,"partly",32,2
+"Labrisomus multiporosus","COI",TRUE,"rocky intertidal",1,1
+"Labrisomus xanti","COI",TRUE,"rocky intertidal",1,1
+"Laminaria farlowii","COI",FALSE,"not",24,2
+"Laminarionema elsbetiae","COI",TRUE,"rocky intertidal",2,2
+"Laurencia pacifica","COI",TRUE,"rocky intertidal",3,2
+"Leathesia marina","COI",TRUE,"rocky intertidal",17,4
+"Leptosynapta clarki","COI",FALSE,"not",1,1
+"Lissothuria nutriens","COI",TRUE,"rocky intertidal",1,1
+"Lithophyllum grumosum","COI",TRUE,"rocky intertidal",2,1
+"Lithothrix aspergillum","COI",TRUE,"rocky intertidal",6,4
+"Littorina keenae","COI",TRUE,"rocky intertidal",10,3
+"Littorina plena","COI",TRUE,"rocky intertidal",8,1
+"Lomentaria hakodatensis","COI",TRUE,"rocky intertidal",10,4
+"Lottia austrodigitalis","COI",TRUE,"rocky intertidal",12,2
+"Lottia digitalis","COI",TRUE,"rocky intertidal",2,1
+"Lottia fenestrata","COI",TRUE,"rocky intertidal",5,1
+"Lottia paradigitalis","COI",TRUE,"rocky intertidal",88,2
+"Lovenia cordiformis","COI",FALSE,"not",3,2
+"Macrocystis pyrifera","COI",FALSE,"not",173,11
+"Manania handi","COI",TRUE,"rocky intertidal",10,1
+"Marphysa californica","COI",TRUE,"partly",15,3
+"Mastocarpus agardhii","COI",TRUE,"rocky intertidal",19,1
+"Mastocarpus cristatus","COI",TRUE,"rocky intertidal",20,1
+"Mastocarpus intermedius","COI",TRUE,"rocky intertidal",159,5
+"Mastocarpus papillatus","COI",TRUE,"rocky intertidal",38,5
+"Mazzaella affinis","COI",TRUE,"rocky intertidal",174,11
+"Mazzaella californica","COI",TRUE,"rocky intertidal",30,2
+"Mazzaella coriacea","COI",TRUE,"rocky intertidal",20,1
+"Mazzaella flaccida","COI",TRUE,"rocky intertidal",367,7
+"Mazzaella leptorhynchos","COI",TRUE,"rocky intertidal",378,9
+"Mazzaella oregona","COI",TRUE,"rocky intertidal",11,2
+"Mazzaella rosea","COI",TRUE,"rocky intertidal",38,3
+"Mazzaella splendens","COI",TRUE,"rocky intertidal",357,5
+"Megabalanus californicus","COI",TRUE,"rocky intertidal",1,1
+"Membranipora membranacea","COI",TRUE,"partly",305,17
+"Membranipora villosa","COI",TRUE,"partly",3,2
+"Mesocentrotus franciscanus","COI",FALSE,"not",4,3
+"Mesogloia japonica","COI",TRUE,"rocky intertidal",1,1
+"Microcladia coulteri","COI",TRUE,"rocky intertidal",96,8
+"Micrometrus minimus","COI",TRUE,"rocky intertidal",5,2
+"Micropodarke dubia","COI",TRUE,"rocky intertidal",1,1
+"Mopalia ciliata","COI",TRUE,"rocky intertidal",2,1
+"Mopalia hindsii","COI",TRUE,"rocky intertidal",1,1
+"Myliobatis californica","COI",FALSE,"not",2,2
+"Myrionema balticum","COI",TRUE,"rocky intertidal",33,8
+"Myrionema strangulans","COI",TRUE,"rocky intertidal",10,1
+"Mytilus californianus","COI",TRUE,"rocky intertidal",27,2
+"Mytilus edulis complex sp. DC-2011","COI",TRUE,"rocky intertidal",7,1
+"Mytilus galloprovincialis","COI",TRUE,"rocky intertidal",20,2
+"Naineris dendritica","COI",TRUE,"partly",109,11
+"Neogastroclonium subarticulatum","COI",TRUE,"rocky intertidal",39,7
+"Neoporphyra perforata","COI",TRUE,"rocky intertidal",309,7
+"Neorhodomela larix","COI",TRUE,"rocky intertidal",35,2
+"Neorhodomela oregona","COI",TRUE,"rocky intertidal",1,1
+"Neosabellaria cementarium","COI",TRUE,"rocky intertidal",2,2
+"Nereocystis luetkeana","COI",FALSE,"not",2,1
+"Nerita funiculata","COI",TRUE,"rocky intertidal",13,1
+"Nienburgia andersoniana","COI",TRUE,"partly",45,7
+"Nuttallina californica","COI",TRUE,"rocky intertidal",3,2
+"Nuttallina fluxa","COI",TRUE,"rocky intertidal",4,3
+"Obelia dichotoma","COI",TRUE,"rocky intertidal",34,8
+"Octopus bimaculoides","COI",TRUE,"rocky intertidal",10,4
+"Odonthalia floccosa","COI",TRUE,"rocky intertidal",7,1
+"Oligocottus maculosus","COI",TRUE,"rocky intertidal",1,1
+"Oltmannsiellopsis viridis","COI",TRUE,"rocky intertidal",1,1
+"Ophiactis simplex","COI",TRUE,"rocky intertidal",1,1
+"Ophioderma panamense","COI",TRUE,"partly",5,1
+"Ophioplocus esmarki","COI",TRUE,"rocky intertidal",1,1
+"Ophiopteris papillosa","COI",TRUE,"rocky intertidal",7,2
+"Ophiothrix spiculata","COI",TRUE,"partly",13,4
+"Orienthella trilineata","COI",TRUE,"partly",3,1
+"Orthopyxis caliculata","COI",TRUE,"rocky intertidal",16,2
+"Orthopyxis everta","COI",TRUE,"rocky intertidal",201,5
+"Orthopyxis integra","COI",TRUE,"rocky intertidal",6,1
+"Oscarella carmela","COI",TRUE,"rocky intertidal",7,2
+"Osmundea spectabilis","COI",TRUE,"rocky intertidal",32,5
+"Ostrea lurida","COI",TRUE,"rocky intertidal",10,3
+"Oxylebius pictus","COI",TRUE,"partly",3,2
+"Pachychalina tenera","COI",TRUE,"partly",5,1
+"Pachydictyon coriaceum","COI",TRUE,"partly",2,1
+"Pachygrapsus crassipes","COI",TRUE,"rocky intertidal",30,12
+"Pachymeniopsis lanceolata","COI",TRUE,"rocky intertidal",5,1
+"Padina boergesenii","COI",TRUE,"rocky intertidal",2,2
+"Panopea generosa","COI",FALSE,"not",2,2
+"Papenfussiella kuromo","COI",TRUE,"rocky intertidal",23,3
+"Paralabrax clathratus","COI",FALSE,"not",20,3
+"Paralichthys californicus","COI",FALSE,"not",5,1
+"Parallorchestes cowani","COI",TRUE,"rocky intertidal",1,1
+"Paranemertes peregrina","COI",TRUE,"rocky intertidal",2,1
+"Patiria miniata","COI",TRUE,"rocky intertidal",18,4
+"Pectinaria californiensis","COI",FALSE,"not",1,1
+"Petalonia binghamiae","COI",TRUE,"rocky intertidal",71,7
+"Petalonia fascia","COI",TRUE,"rocky intertidal",2,1
+"Petrospongium rugosum","COI",TRUE,"rocky intertidal",243,12
+"Phascolosoma agassizii","COI",TRUE,"rocky intertidal",16,3
+"Pholoides asperus","COI",TRUE,"partly",1,1
+"Phoronis ijimai","COI",TRUE,"rocky intertidal",1,1
+"Phragmatopoma californica","COI",TRUE,"rocky intertidal",247,16
+"Phyllochaetopterus prolifica","COI",TRUE,"partly",2,2
+"Phyllodoce medipapillata","COI",TRUE,"rocky intertidal",1,1
+"Pikea californica","COI",TRUE,"rocky intertidal",2,1
+"Pione carpenteri","COI",TRUE,"rocky intertidal",7,2
+"Pisaster ochraceus","COI",TRUE,"rocky intertidal",78,7
+"Planosiphon gracilis","COI",TRUE,"rocky intertidal",23,1
+"Platynereis bicanaliculata","COI",TRUE,"rocky intertidal",4,2
+"Pleuronichthys decurrens","COI",FALSE,"not",1,1
+"Plocamium pacificum","COI",TRUE,"rocky intertidal",3,2
+"Plumularia setacea","COI",TRUE,"partly",6,1
+"Pollicipes polymerus","COI",TRUE,"rocky intertidal",51,6
+"Polycirrus californicus","COI",TRUE,"rocky intertidal",8,4
+"Polyneura latissima","COI",TRUE,"partly",45,3
+"Polysiphonia hendryi","COI",TRUE,"rocky intertidal",26,1
+"Pontogeneia rostrata","COI",TRUE,"rocky intertidal",2,2
+"Prionitis lanceolata","COI",TRUE,"rocky intertidal",123,8
+"Proceraea nigropunctata","COI",TRUE,"rocky intertidal",1,1
+"Protohyale frequens","COI",TRUE,"rocky intertidal",20,2
+"Protosuberites denhartogi","COI",TRUE,"rocky intertidal",8,1
+"Pseudobatos productus","COI",FALSE,"not",1,1
+"Pseudocnus californicus","COI",TRUE,"rocky intertidal",5,1
+"Pseudocnus lubricus","COI",TRUE,"rocky intertidal",20,1
+"Pterochondria woodii","COI",TRUE,"rocky intertidal",1,1
+"Pterocladiella capillacea","COI",TRUE,"rocky intertidal",40,5
+"Pterygophora californica","COI",FALSE,"not",4,1
+"Ptilosarcus gurneyi","COI",FALSE,"not",1,1
+"Ptilota densa","COI",TRUE,"partly",1,1
+"Pugettia producta","COI",TRUE,"partly",10,2
+"Pugettia richii","COI",TRUE,"partly",2,1
+"Pyropia perforata","COI",TRUE,"rocky intertidal",11,1
+"Rhodonematella subimmersa","COI",FALSE,"not",6,2
+"Rhodymenia californica","COI",TRUE,"rocky intertidal",8,3
+"Rhodymenia pacifica","COI",TRUE,"rocky intertidal",7,1
+"Romaleon antennarium","COI",TRUE,"partly",6,2
+"Rostanga pulchra","COI",TRUE,"rocky intertidal",7,4
+"Sagartiogeton laceratus","COI",TRUE,"partly",32,2
+"Salishia firma","COI",TRUE,"rocky intertidal",1,1
+"Sardinops sagax","COI",FALSE,"not",9,2
+"Sargassum horneri","COI",TRUE,"partly",1,1
+"Savoiea robusta","COI",TRUE,"rocky intertidal",8,1
+"Schimmelmannia plumosa","COI",TRUE,"rocky intertidal",1,1
+"Schistomeringos annulata","COI",TRUE,"rocky intertidal",2,1
+"Scinaia johnstoniae","COI",TRUE,"rocky intertidal",1,1
+"Scomber japonicus","COI",FALSE,"not",1,1
+"Scorpaenichthys marmoratus","COI",TRUE,"partly",81,6
+"Scytosiphon lomentaria","COI",TRUE,"rocky intertidal",222,3
+"Seriphus politus","COI",FALSE,"not",2,1
+"Smithora naiadum","COI",TRUE,"rocky intertidal",355,7
+"Stauridiosarsia cliffordi","COI",TRUE,"partly",6,1
+"Stenogramma californicum","COI",TRUE,"rocky intertidal",40,2
+"Stenoplax conspicua","COI",TRUE,"rocky intertidal",11,1
+"Stephanocystis osmundacea","COI",TRUE,"partly",95,11
+"Stiliger fuscovittatus","COI",TRUE,"rocky intertidal",1,1
+"Strongylocentrotus purpuratus","COI",TRUE,"rocky intertidal",251,12
+"Symphyocladiella baileyi","COI",TRUE,"rocky intertidal",2,1
+"Symphyocladiella dendroidea","COI",TRUE,"rocky intertidal",1,1
+"Tegula funebralis","COI",TRUE,"rocky intertidal",5,2
+"Tetraclita rubescens","COI",TRUE,"rocky intertidal",12,4
+"Themiste dyscrita","COI",TRUE,"rocky intertidal",12,1
+"Thylacodes squamigerus","COI",TRUE,"rocky intertidal",24,4
+"Trimusculus reticulatus","COI",TRUE,"rocky intertidal",13,3
+"Triopha maculata","COI",TRUE,"partly",3,3
+"Tumidotheres margarita","COI",FALSE,"not",1,1
+"Turritopsis nutricula","COI",TRUE,"partly",1,1
+"Typhlogobius californiensis","COI",TRUE,"rocky intertidal",11,3
+"Urobatis halleri","COI",FALSE,"not",22,1
+"Watersipora arcuata","COI",TRUE,"rocky intertidal",27,2
+"Wildemania occidentalis","COI",TRUE,"rocky intertidal",248,2
+"Zonaria farlowii","COI",TRUE,"partly",1,1

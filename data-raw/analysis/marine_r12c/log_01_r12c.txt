@@ -1,0 +1,37 @@
+12:19:57 12S : libraries 1234  species 183  intertidal+partly 61 
+12:19:57 COI : libraries 976  species 303  intertidal+partly 265 
+  marker  site units bags filters libraries
+1    12S    CJ     6    6      12        48
+2    12S COAST    21  210     421       421
+3    12S    GP     7   82     184       719
+4    12S    JB     6    6      12        46
+5    COI    CJ     7    7      14        34
+6    COI COAST    21  210     421       421
+7    COI    GP     7   85     213       490
+8    COI    JB     6    6      11        31
+   site bags_per_unit  n
+1    CJ             1  7
+2 COAST            10 21
+3    GP            10  1
+4    GP            11  1
+5    GP            12  1
+6    GP            13  4
+7    JB             1  6
+        0.77 real         0.71 user         0.04 sys
+           174424064  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               12401  page reclaims
+                  20  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  19  voluntary context switches
+                  63  involuntary context switches
+         11162962480  instructions retired
+          2791895517  cycles elapsed
+           120620416  peak memory footprint
