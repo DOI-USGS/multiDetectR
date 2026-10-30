@@ -19,9 +19,9 @@ library(here)
 # Pareto-frontier visualization from the precomputed Lafferty design table. It
 # does not use occStan or the Dryad reads, so it stands alone.
 #
-# The retired functions were moved to R/retired/ (not deleted) for history; they
-# are no longer sourced. If the marine occupancy analysis is ever needed again,
-# see ../marine_r12c/ (the current marine method) rather than reviving these.
+# The retired functions were moved to retired_occstan/ (not deleted) for history;
+# they are no longer sourced. If the marine occupancy analysis is ever needed
+# again, see ../marine_r12c/ (the current marine method) rather than reviving these.
 
 release_dir <- Sys.getenv(
   "MULTIDETECTR_DATA",

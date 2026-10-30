@@ -122,7 +122,12 @@ In addition to the R package source files, the main level of the repository cont
 - `DISCLAIMER.md`, the standard USGS disclaimer.
 - `code.json`, the required machine-readable metadata about the code.
 
-The reproducible analyses that feed the manuscript, the vignettes, and the Shiny app live under `data-raw/analysis/`.
+The reproducible analyses that feed the manuscript, the vignettes, and the Shiny app live under `data-raw/analysis/`, each as a `targets` workflow with its own README:
+
+- `marine_r12c/` — the marine optimization example (the mixture-model fits, the one-pass allocation rule, the rule-vs-grid validation, and the location curves) on release r12c of the Point Conception data.
+- `marine/` — the marine cost-and-richness analysis (the Bayesian power-law richness model and the Pareto front) from the precomputed design table.
+- `carp/` — the freshwater (Burns Harbor) example: two-level `occStan` occupancy fits, species accumulation, and turnover.
+
 That directory is excluded from the built package by `.Rbuildignore`, so the installable package stands alone.
 
 ## Data sources
