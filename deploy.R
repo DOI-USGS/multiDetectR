@@ -60,7 +60,33 @@ if (!requireNamespace("rsconnect", quietly = TRUE)) {
   stop("Need 'rsconnect' installed. install.packages('rsconnect')")
 }
 app_dir <- "inst/shiny"
-message("Writing ", file.path(app_dir, "manifest.json"), " ...")
+manifest_path <- file.path(app_dir, "manifest.json")
+message("Writing ", manifest_path, " ...")
 rsconnect::writeManifest(appDir = app_dir)
-message("Done. Review inst/shiny/manifest.json, then deploy (see ",
-        "notes/deploy-connect.md).")
+
+## --- 3. Sanity-check the manifest BEFORE committing/pushing. -----------------
+## Connect's Git-backed deploy installs multiDetectR from the source recorded
+## here; if it was recorded as a local path, the Connect build will fail.
+mf <- jsonlite::fromJSON(manifest_path, simplifyVector = FALSE)
+if (is.null(mf$metadata$appmode) || mf$metadata$appmode != "shiny") {
+  warning("manifest appmode is not 'shiny' (got: ",
+          mf$metadata$appmode %||% "<none>", ").")
+}
+md <- mf$packages[["multiDetectR"]]
+if (is.null(md)) {
+  warning("multiDetectR is NOT in the manifest packages. Connect will not ",
+          "install it; the app's library(multiDetectR) will fail.")
+} else {
+  src <- md$Source %||% md$description$Source %||% "<unknown>"
+  message("multiDetectR recorded with Source = ", src)
+  if (!grepl("github", tolower(src))) {
+    warning("multiDetectR Source is '", src, "', not GitHub. Connect cannot ",
+            "install it from a local path. Re-run after installing the package ",
+            "from GitHub (that is what records the GitHub source).")
+  }
+}
+message("Done. If the checks above are clean, commit and push the manifest:")
+message("  git add ", manifest_path)
+message("  git commit -m \"Add Connect manifest for the Shiny app\"")
+message("  git push origin main")
+message("Then point Connect's Git-backed publishing at the 'inst/shiny' dir.")
