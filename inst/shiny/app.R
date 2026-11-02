@@ -114,9 +114,10 @@ ui <- fluidPage(
         tags$li(HTML(paste0(
           "<b>Branches (methods/places).</b> When the options are not nested ",
           "&mdash; competing methods on the same material, or separate places ",
-          "&mdash; enter the detection rate each branch gives per unit budget ",
-          "against each target, and the tool returns the budget split and ",
-          "whether to concentrate on one branch or spread across them.")))
+          "&mdash; enter how likely one unit of each branch is to detect each ",
+          "target and what one unit costs, and the tool returns the budget ",
+          "split and whether to concentrate on one branch or spread across ",
+          "them.")))
       ),
       p(HTML(paste0(
         "<b>Reference:</b> Lafferty KD, Larson DM, Spear SF, Schulte N, Coombs ",
@@ -329,30 +330,37 @@ ui <- fluidPage(
         helpText(HTML(paste0(
           "Branches are options that are NOT nested within one another: ",
           "separate methods applied to the same material, or separate places ",
-          "to sample. Given the detection hazard (in nats) each branch delivers ",
-          "per unit of budget against each target, the rule returns the budget ",
-          "split that maximizes weighted detection, and whether to concentrate ",
-          "on one branch or spread across them (manuscript Supplement S1.5)."))),
+          "to sample. The tool returns how to split a budget across them to ",
+          "maximize the chance of detecting the targets, and whether to ",
+          "concentrate on one branch or spread across them (manuscript ",
+          "Supplement S1.5)."))),
+        helpText(HTML(paste0(
+          "You describe each branch in everyday terms: how likely <b>one unit</b> ",
+          "of effort (one sample, one assay) is to detect each target, and what ",
+          "one unit <b>costs</b>. The tool converts these to detection rates for ",
+          "you."))),
         sliderInput("b_targets", "Number of targets",
                     min = 1L, max = max_targets, value = 1L, step = 1L),
         sliderInput("b_branches", "Number of branches (methods/places)",
                     min = 2L, max = 8L, value = 2L, step = 1L),
-        helpText(HTML(paste0(
-          "Edit the rate table (double-click a cell): <i>r</i><sub>tk</sub> is ",
-          "the detection hazard branch <i>k</i> gives per unit budget against ",
-          "target <i>t</i>. A rate of 0 means that branch cannot detect that ",
-          "target (e.g., a place where the target is absent)."))),
-        numericInput("b_budget", "Budget", value = 20, min = 0, step = 1),
+        numericInput("b_budget", "Total budget ($)",
+                     value = 1000, min = 0, step = 50),
         hr(),
         downloadButton("b_download_script", "Download R script")
       ),
       mainPanel(
         width = 8,
-        h4("Per-branch detection rates (editable)"),
+        h4("Per-unit detection probability (editable)"),
         helpText(HTML(paste0(
-          "Rows are targets, columns are branches. Each cell is the hazard in ",
-          "nats per unit of budget."))),
-        DT::DTOutput("b_rate_table"),
+          "Rows are targets, columns are branches. Each cell is the probability ",
+          "that <b>one unit</b> of that branch detects that target (0 to 1). ",
+          "A 0 means the branch cannot detect that target (e.g., a place where ",
+          "the target is absent)."))),
+        DT::DTOutput("b_prob_table"),
+        tags$br(),
+        h4("Cost of one unit of each branch ($)"),
+        helpText("What a single sample or assay from each branch costs."),
+        DT::DTOutput("b_cost_table"),
         tags$br(),
         verbatimTextOutput("b_headline"),
         h4("Optimal budget split"),
@@ -851,68 +859,109 @@ server <- function(input, output, session) {
   ## Tab 3: branches (complementary methods or places)                   ##
   ## =================================================================== ##
 
-  b_rate <- reactiveVal(NULL)
+  ## The user supplies intuitive quantities -- a per-UNIT detection probability
+  ## for each target x branch, and a per-branch unit cost -- and we convert to
+  ## the hazard-per-dollar rate the rule needs. One unit of branch k costs
+  ## cost_k and delivers hazard -log(1 - p_tk) nats against target t, so
+  ## rate_tk = -log(1 - p_tk) / cost_k. Nats never appear in the UI.
+  b_prob <- reactiveVal(NULL)   # targets x branches per-unit detection probs
+  b_cost <- reactiveVal(NULL)   # per-branch unit cost
 
-  ## (Re)build the rate matrix when the target/branch counts change, keeping
-  ## overlapping cells.
+  ## (Re)build defaults when the target/branch counts change, keeping overlap.
   observeEvent(list(input$b_targets, input$b_branches), {
     nt <- input$b_targets
     nk <- input$b_branches
-    old <- b_rate()
-    ## Default rates: make DIFFERENT targets favour DIFFERENT branches, so the
-    ## interesting "spread the budget" behaviour shows out of the box instead of
-    ## the trivial case where one branch dominates for everyone (which always
-    ## says "concentrate"). Deterministic (reproducible): target t peaks on the
-    ## branch t cycles to, with lower rates on the others. A single target keeps
-    ## a simple descending ramp (that one is a genuine dominance case).
+    oldp <- b_prob()
+    ## Default probabilities: make DIFFERENT targets favour DIFFERENT branches,
+    ## so the "spread the budget" behaviour shows out of the box rather than the
+    ## trivial case where one branch is best for everyone. Deterministic.
     if (nt == 1L) {
-      r <- matrix(round(seq(0.9, 0.3, length.out = nk), 2), nrow = 1)
+      p <- matrix(round(seq(0.6, 0.2, length.out = nk), 2), nrow = 1)
     } else {
-      hi <- 0.9; lo <- 0.3
-      r <- matrix(lo, nrow = nt, ncol = nk)
+      hi <- 0.6; lo <- 0.2
+      p <- matrix(lo, nrow = nt, ncol = nk)
       for (t in seq_len(nt)) {
         peak <- ((t - 1) %% nk) + 1          # each target's preferred branch
-        r[t, ] <- round(lo + (hi - lo) *
-                          (0.4 ^ abs(seq_len(nk) - peak)), 2)
+        p[t, ] <- round(lo + (hi - lo) * (0.4 ^ abs(seq_len(nk) - peak)), 2)
       }
     }
-    if (!is.null(old)) {
-      ro <- min(nrow(old), nt); co <- min(ncol(old), nk)
-      r[seq_len(ro), seq_len(co)] <- old[seq_len(ro), seq_len(co), drop = FALSE]
+    if (!is.null(oldp)) {
+      ro <- min(nrow(oldp), nt); co <- min(ncol(oldp), nk)
+      p[seq_len(ro), seq_len(co)] <- oldp[seq_len(ro), seq_len(co), drop = FALSE]
     }
-    rownames(r) <- paste0("target_", seq_len(nt))
-    colnames(r) <- paste0("branch_", seq_len(nk))
-    b_rate(r)
+    rownames(p) <- paste0("target_", seq_len(nt))
+    colnames(p) <- paste0("branch_", seq_len(nk))
+    b_prob(p)
+
+    oldc <- b_cost()
+    cst <- rep(50, nk)                       # a plausible default unit cost
+    if (!is.null(oldc)) {
+      co <- min(length(oldc), nk)
+      cst[seq_len(co)] <- oldc[seq_len(co)]
+    }
+    b_cost(cst)
   }, ignoreInit = FALSE)
 
-  output$b_rate_table <- DT::renderDT({
-    r <- b_rate(); req(r)
-    df <- data.frame(target = rownames(r), r, check.names = FALSE)
-    colnames(df) <- c("target",
-                      paste0("branch ", seq_len(ncol(r)),
-                             " (<i>r</i><sub>t", seq_len(ncol(r)), "</sub>)"))
+  ## Editable per-unit detection-probability table.
+  output$b_prob_table <- DT::renderDT({
+    p <- b_prob(); req(p)
+    df <- data.frame(target = rownames(p), p, check.names = FALSE)
+    colnames(df) <- c("target", paste0("branch ", seq_len(ncol(p))))
     DT::datatable(df, rownames = FALSE, editable = "cell", escape = FALSE,
                   options = list(dom = "t", paging = FALSE, ordering = FALSE))
   }, server = TRUE)
 
-  observeEvent(input$b_rate_table_cell_edit, {
-    info <- input$b_rate_table_cell_edit
-    r <- b_rate()
-    j <- info$col            # 0 = target name, 1.. = branch rates
+  observeEvent(input$b_prob_table_cell_edit, {
+    info <- input$b_prob_table_cell_edit
+    p <- b_prob()
+    j <- info$col            # 0 = target name, 1.. = branch probabilities
     val <- suppressWarnings(as.numeric(info$value))
     if (j == 0) {
-      rownames(r)[info$row] <- as.character(info$value)
-    } else if (!is.na(val) && val >= 0) {
-      r[info$row, j] <- val
+      rownames(p)[info$row] <- as.character(info$value)
+    } else if (!is.na(val) && val >= 0 && val < 1) {
+      p[info$row, j] <- val   # keep in [0, 1); 1 would be infinite hazard
     }
-    b_rate(r)
+    b_prob(p)
+  })
+
+  ## Editable per-branch unit-cost row.
+  output$b_cost_table <- DT::renderDT({
+    cst <- b_cost(); req(cst)
+    df <- as.data.frame(as.list(cst))
+    colnames(df) <- paste0("branch ", seq_along(cst), " ($/unit)")
+    DT::datatable(df, rownames = FALSE, editable = "cell", escape = FALSE,
+                  options = list(dom = "t", paging = FALSE, ordering = FALSE))
+  }, server = TRUE)
+
+  observeEvent(input$b_cost_table_cell_edit, {
+    info <- input$b_cost_table_cell_edit
+    cst <- b_cost()
+    val <- suppressWarnings(as.numeric(info$value))
+    if (!is.na(val) && val > 0) cst[info$col + 1] <- val
+    b_cost(cst)
+  })
+
+  ## Convert probability + cost to the hazard-per-dollar rate the rule needs.
+  b_rate_mat <- reactive({
+    p <- b_prob(); cst <- b_cost()
+    req(p, cst, ncol(p) == length(cst))
+    validate(
+      need(all(p >= 0 & p < 1),
+           "Each detection probability must be in [0, 1)."),
+      need(all(cst > 0), "Each unit cost must be positive.")
+    )
+    ## rate_tk = -log(1 - p_tk) / cost_k
+    r <- sweep(-log1p(-p), 2, cst, "/")
+    rownames(r) <- rownames(p)
+    colnames(r) <- colnames(p)
+    r
   })
 
   b_result <- reactive({
-    r <- b_rate()
-    req(r, !is.na(input$b_budget), input$b_budget > 0)
-    validate(need(all(r >= 0), "Rates must be zero or positive."),
-             need(any(r > 0), "At least one rate must be positive."))
+    r <- b_rate_mat()
+    req(!is.na(input$b_budget), input$b_budget > 0)
+    validate(need(any(r > 0),
+                  "At least one detection probability must be above 0."))
     tryCatch(
       allocate_branches(rate = r, budget = input$b_budget),
       error = function(e)
@@ -935,19 +984,20 @@ server <- function(input, output, session) {
 
   output$b_share_table <- renderTable({
     res <- b_result()
-    r <- b_rate()
+    cst <- b_cost()
+    amount <- res$share * input$b_budget
     data.frame(
-      "Branch"                 = colnames(r),
-      "Budget share"           = res$share,
-      "Budget amount"          = res$share * input$b_budget,
+      "Branch"               = names_or_index(b_prob()),
+      "Budget share"         = res$share,
+      "Budget amount ($)"    = amount,
+      "Units (amount/cost)"  = floor(amount / cst),
       check.names = FALSE
     )
   }, digits = 4)
 
   output$b_share_plot <- renderPlot({
     res <- b_result()
-    r <- b_rate()
-    graphics::barplot(res$share, names.arg = colnames(r),
+    graphics::barplot(res$share, names.arg = colnames(b_prob()),
                       ylab = "Share of budget", ylim = c(0, 1),
                       col = "steelblue", border = NA)
   })
@@ -955,25 +1005,40 @@ server <- function(input, output, session) {
   output$b_download_script <- downloadHandler(
     filename = function() "multidetectr_branches.R",
     content = function(file) {
-      r <- b_rate()
-      writeLines(build_branches_script(r, input$b_budget), file)
+      writeLines(build_branches_script(b_prob(), b_cost(), input$b_budget),
+                 file)
     }
   )
 }
 
+## Branch column labels (branch names, or indices if unnamed).
+names_or_index <- function(p) {
+  cn <- colnames(p)
+  if (is.null(cn)) paste0("branch_", seq_len(ncol(p))) else cn
+}
+
 ## Assemble a runnable script for a branches (methods/places) allocation.
-build_branches_script <- function(rate, budget) {
-  nt <- nrow(rate)
-  nk <- ncol(rate)
+## Emits the intuitive inputs (per-unit detection probability and unit cost) and
+## the conversion to the hazard-per-dollar rate, so the script matches the app.
+build_branches_script <- function(prob, cost, budget) {
+  nt <- nrow(prob)
   row_txt <- vapply(seq_len(nt), function(t) {
-    sprintf("  c(%s)", paste(signif(rate[t, ], 6), collapse = ", "))
+    sprintf("  c(%s)", paste(signif(prob[t, ], 6), collapse = ", "))
   }, character(1))
-  rate_txt <- paste0("rbind(\n", paste(row_txt, collapse = ",\n"), "\n)")
+  prob_txt <- paste0("rbind(\n", paste(row_txt, collapse = ",\n"), "\n)")
   c(
     "# Reproducible script generated by the multiDetectR Shiny app (branches).",
     "library(multiDetectR)",
     "",
-    paste0("rate <- ", rate_txt),
+    "# Per-unit detection probability (rows = targets, columns = branches)",
+    paste0("prob <- ", prob_txt),
+    "# Cost of one unit of each branch",
+    paste0("cost <- c(", paste(signif(cost, 6), collapse = ", "), ")"),
+    "",
+    "# Convert to the hazard-per-dollar rate the rule uses:",
+    "#   one unit of branch k costs cost[k] and gives hazard -log(1 - prob)",
+    "rate <- sweep(-log1p(-prob), 2, cost, \"/\")",
+    "",
     sprintf("branches <- allocate_branches(rate = rate, budget = %s)",
             signif(budget, 6)),
     "str(branches)"
