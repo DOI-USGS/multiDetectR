@@ -144,10 +144,15 @@ ui <- fluidPage(
                    choices = c("Maximize detection" = "detection",
                                "Maximize count" = "count"),
                    selected = "detection"),
-      radioButtons("constraint", "Constraint",
-                   choices = c("Budget" = "budget",
-                               "Required detection probability" = "P_target"),
+      radioButtons("constraint", "Which optimization problem?",
+                   choices = c(
+                     "Fixed budget \u2192 maximize detection" = "budget",
+                     "Fixed detection \u2192 minimize budget" = "P_target"),
                    selected = "budget"),
+      helpText(HTML(paste0(
+        "These are the two design problems: either you fix the budget and the ",
+        "rule maximizes detection, or you fix a required detection probability ",
+        "and it finds the cheapest design that reaches it."))),
       conditionalPanel(
         "input.constraint == 'budget'",
         numericInput("budget", "Budget", value = 5000, min = 0, step = 100)
@@ -160,6 +165,11 @@ ui <- fluidPage(
       checkboxInput("integer", "Integer replicate counts", value = TRUE),
       checkboxInput("enumerate",
                     "Use exhaustive search (small budgets)", value = FALSE),
+      helpText(HTML(paste0(
+        "Exhaustive search is a separate choice from the two problems above: it ",
+        "finds the exact integer optimum by trying every design, which matters ",
+        "only at small budgets where rounding the solution can miss the best ",
+        "design."))),
       hr(),
       downloadButton("download_script", "Download R script")
     ),
@@ -271,21 +281,33 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
 
-  ## Dynamically generated per-level theta and cost inputs.
+  ## Dynamically generated per-level theta and cost inputs. Each level gets a
+  ## heading that names where it sits in the hierarchy (level 1 = outermost /
+  ## reporting, level d = innermost), so a user always knows which end is which.
   output$level_inputs <- renderUI({
     d <- input$d
     defaults_theta <- rep(0.5, d)
     defaults_cost <- 10^(seq(d, 1) - 1) * 2   # outer levels cost more
+    level_label <- function(i, d) {
+      if (d == 1L) return("Level 1 (the only level)")
+      if (i == 1L) return(sprintf("Level %d \u2014 outermost (reporting)", i))
+      if (i == d)  return(sprintf("Level %d \u2014 innermost", i))
+      sprintf("Level %d", i)
+    }
     lapply(seq_len(d), function(i) {
-      fluidRow(
-        column(6, numericInput(
-          paste0("theta_", i),
-          HTML(sprintf("&theta;<sub>%d</sub>", i)),
-          value = defaults_theta[i], min = 0.001, max = 0.999, step = 0.01)),
-        column(6, numericInput(
-          paste0("cost_", i),
-          HTML(sprintf("<i>c</i><sub>%d</sub>", i)),
-          value = defaults_cost[i], min = 0.0001, step = 1))
+      tagList(
+        tags$p(tags$b(level_label(i, d)),
+               style = "margin-bottom:2px; margin-top:8px;"),
+        fluidRow(
+          column(6, numericInput(
+            paste0("theta_", i),
+            HTML(sprintf("&theta;<sub>%d</sub> (detectability)", i)),
+            value = defaults_theta[i], min = 0.001, max = 0.999, step = 0.01)),
+          column(6, numericInput(
+            paste0("cost_", i),
+            HTML(sprintf("<i>c</i><sub>%d</sub> (unit cost)", i)),
+            value = defaults_cost[i], min = 0.0001, step = 1))
+        )
       )
     })
   })
@@ -383,11 +405,18 @@ server <- function(input, output, session) {
   output$identity_table <- renderTable({
     id <- optimality_identity(design())
     if (nrow(id) == 0) {
-      data.frame(note = "Single-level design: no inner levels to audit.")
-    } else {
-      id
+      return(data.frame(note = "Single-level design: no inner levels to audit."))
     }
-  }, digits = 4)
+    ## Relabel A and B with what each term means (Kevin's request).
+    data.frame(
+      "Level"                              = id$level,
+      "<i>A</i> (detection share inside)"  = id$A,
+      "<i>B</i> (cost share inside)"       = id$B,
+      "<i>A</i> &minus; <i>B</i>"          = id$diff,
+      check.names = FALSE
+    )
+  }, digits = 4, sanitize.text.function = identity,
+     sanitize.colnames.function = identity)
 
   ## Export a standalone, reproducible R script for the current design.
   output$download_script <- downloadHandler(
@@ -445,8 +474,13 @@ server <- function(input, output, session) {
                      round(st$theta, 3),
                      weight = st$weight,
                      check.names = FALSE)
-    ## Greek + subscript column headers (HTML; escape = FALSE below renders them).
-    theta_hdr <- paste0("&theta;<sub>", seq_len(ncol(st$theta)), "</sub>")
+    ## Greek + subscript column headers (HTML; escape = FALSE below renders them),
+    ## with the outermost/innermost ends marked so the direction is unambiguous.
+    dlev <- ncol(st$theta)
+    theta_hdr <- vapply(seq_len(dlev), function(i) {
+      end <- if (i == 1L) " (outermost)" else if (i == dlev) " (innermost)" else ""
+      paste0("&theta;<sub>", i, "</sub>", end)
+    }, character(1))
     colnames(df) <- c("target", theta_hdr, "<i>w</i> (weight)")
     DT::datatable(df, rownames = FALSE, editable = "cell", escape = FALSE,
                   options = list(dom = "t", paging = FALSE, ordering = FALSE))
@@ -474,8 +508,13 @@ server <- function(input, output, session) {
     cst <- m_cost()
     req(cst)
     df <- as.data.frame(as.list(cst))
-    ## Greek/italic + subscript headers for the shared per-level costs.
-    colnames(df) <- paste0("<i>c</i><sub>", seq_along(cst), "</sub>")
+    ## Greek/italic + subscript headers for the shared per-level costs, with the
+    ## outermost/innermost ends marked.
+    dlev <- length(cst)
+    colnames(df) <- vapply(seq_along(cst), function(i) {
+      end <- if (i == 1L) " (outermost)" else if (i == dlev) " (innermost)" else ""
+      paste0("<i>c</i><sub>", i, "</sub>", end)
+    }, character(1))
     DT::datatable(df, rownames = FALSE, editable = "cell", escape = FALSE,
                   options = list(dom = "t", paging = FALSE, ordering = FALSE))
   }, server = TRUE)
