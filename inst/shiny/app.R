@@ -97,16 +97,26 @@ ui <- fluidPage(
       tags$ul(
         tags$li(HTML(paste0(
           "<b>Single species.</b> Set the number of levels, each level's ",
-          "&theta; and cost, and a budget or a target detection probability. ",
-          "You get the per-level design, a budget&ndash;detection curve you can ",
-          "hover to read values, and an optimality audit. One click exports a ",
-          "reproducible R script."))),
+          "&theta; and cost, and either a fixed budget (maximize detection) or ",
+          "a required detection probability (minimize budget) &mdash; the two ",
+          "design problems. You get the per-level design, a budget&ndash;",
+          "detection frontier with the integer step function overlaid, an ",
+          "optimality audit, and the option to compare the optimum against a ",
+          "design you enter yourself. One click exports a reproducible R ",
+          "script."))),
         tags$li(HTML(paste0(
           "<b>Multispecies assemblage.</b> Several targets share one survey but ",
           "detect differently. Enter each target's &theta; across the levels ",
           "(edit the table or upload a CSV) and a relative weight. The tool ",
           "returns the single design that best serves the whole set, which is ",
-          "governed by the hardest-to-detect targets, not the average one.")))
+          "governed by the hardest-to-detect targets, not the average one, and ",
+          "a cost&ndash;detection frontier for the assemblage."))),
+        tags$li(HTML(paste0(
+          "<b>Branches (methods/places).</b> When the options are not nested ",
+          "&mdash; competing methods on the same material, or separate places ",
+          "&mdash; enter the detection rate each branch gives per unit budget ",
+          "against each target, and the tool returns the budget split and ",
+          "whether to concentrate on one branch or spread across them.")))
       ),
       p(HTML(paste0(
         "<b>Reference:</b> Lafferty KD, Larson DM, Spear SF, Schulte N, Coombs ",
@@ -171,6 +181,18 @@ ui <- fluidPage(
         "only at small budgets where rounding the solution can miss the best ",
         "design."))),
       hr(),
+      ## Compare the optimum against a user-supplied design (Kevin's request).
+      checkboxInput("compare_alt",
+                    "Compare against my own design", value = FALSE),
+      conditionalPanel(
+        "input.compare_alt == true",
+        helpText(HTML(paste0(
+          "Enter your own per-level counts <i>n</i><sub>i</sub> (outermost ",
+          "first). The tool shows your design's detection and cost next to the ",
+          "optimum, so you can see what a chosen design gives up."))),
+        uiOutput("alt_inputs")
+      ),
+      hr(),
       downloadButton("download_script", "Download R script")
     ),
     mainPanel(
@@ -192,12 +214,25 @@ ui <- fluidPage(
         "budget&ndash;detection curve below."))),
       tableOutput("design_table"),
       h4("Budget-detection frontier"),
-      helpText("Hover over the curve to read the budget and the detection ",
-               "probability at that point."),
-      plotOutput("frontier", height = "320px",
+      helpText(HTML(paste0(
+        "The smooth curve is the continuous frontier, ",
+        "<i>P</i>(<i>B</i>) = 1 &minus; exp(&minus;<i>B</i> / &kappa;<sub>1</sub>). ",
+        "With integer replicate counts the achievable detection is a STEP ",
+        "function (grey): it rises only when the budget crosses the cost of the ",
+        "next whole outermost unit, so between steps extra budget buys nothing. ",
+        "Hover to read the budget and detection at the cursor."))),
+      plotOutput("frontier", height = "340px",
                  hover = hoverOpts(id = "frontier_hover", delay = 50,
                                    delayType = "throttle")),
       verbatimTextOutput("frontier_readout"),
+      conditionalPanel(
+        "input.compare_alt == true",
+        h4("Your design vs the optimum"),
+        helpText(HTML(paste0(
+          "Your entered design compared with the rule's optimum at the same ",
+          "settings: the detection each reaches and what it costs."))),
+        tableOutput("compare_table")
+      ),
       h4("Optimality audit (A = B at the optimum)"),
       helpText(
         "At an optimal design, each level spends the same share of its budget ",
@@ -267,10 +302,65 @@ ui <- fluidPage(
           "its miss-weight &lambda; = weight &times; (1 &minus; detection). The ",
           "target with the largest &lambda; (marked) binds the design: effort ",
           "is pulled toward the elusive targets, not the average one."))),
-        tableOutput("m_target_table")
+        tableOutput("m_target_table"),
+        h4("Assemblage cost-detection frontier (Pareto analogue)"),
+        helpText(HTML(paste0(
+          "The weighted detection <i>D</i> the assemblage reaches as the budget ",
+          "grows, re-optimizing the shared design at each budget. This is the ",
+          "multispecies analogue of the single-species frontier and of the ",
+          "cost-vs-richness Pareto front: <i>D</i> plays the role of richness. ",
+          "The marked point is the current budget. Detection climbs steeply at ",
+          "first, then flattens as the elusive targets become the binding ",
+          "constraint."))),
+        plotOutput("m_frontier", height = "320px")
       )
     )
-    ) # end Tab 2
+    ), # end Tab 2
+
+    ## ------------------------------------------------------------------ ##
+    ## Tab 3: branches (complementary methods or places)                  ##
+    ## ------------------------------------------------------------------ ##
+    tabPanel(
+    "Branches (methods/places)",
+    br(),
+    sidebarLayout(
+      sidebarPanel(
+        width = 4,
+        helpText(HTML(paste0(
+          "Branches are options that are NOT nested within one another: ",
+          "separate methods applied to the same material, or separate places ",
+          "to sample. Given the detection hazard (in nats) each branch delivers ",
+          "per unit of budget against each target, the rule returns the budget ",
+          "split that maximizes weighted detection, and whether to concentrate ",
+          "on one branch or spread across them (manuscript Supplement S1.5)."))),
+        sliderInput("b_targets", "Number of targets",
+                    min = 1L, max = max_targets, value = 1L, step = 1L),
+        sliderInput("b_branches", "Number of branches (methods/places)",
+                    min = 2L, max = 8L, value = 2L, step = 1L),
+        helpText(HTML(paste0(
+          "Edit the rate table (double-click a cell): <i>r</i><sub>tk</sub> is ",
+          "the detection hazard branch <i>k</i> gives per unit budget against ",
+          "target <i>t</i>. A rate of 0 means that branch cannot detect that ",
+          "target (e.g., a place where the target is absent)."))),
+        numericInput("b_budget", "Budget", value = 20, min = 0, step = 1),
+        hr(),
+        downloadButton("b_download_script", "Download R script")
+      ),
+      mainPanel(
+        width = 8,
+        h4("Per-branch detection rates (editable)"),
+        helpText(HTML(paste0(
+          "Rows are targets, columns are branches. Each cell is the hazard in ",
+          "nats per unit of budget."))),
+        DT::DTOutput("b_rate_table"),
+        tags$br(),
+        verbatimTextOutput("b_headline"),
+        h4("Optimal budget split"),
+        tableOutput("b_share_table"),
+        plotOutput("b_share_plot", height = "260px")
+      )
+    )
+    ) # end Tab 3
 
   ) # end tabsetPanel
   ), # end main-content div
@@ -384,7 +474,45 @@ server <- function(input, output, session) {
      sanitize.colnames.function = identity)
 
   output$frontier <- renderPlot({
-    plot(design())
+    des <- design()
+    kappa1 <- des$kappa1
+    ## Smooth continuous frontier, P(B) = 1 - exp(-B / kappa1).
+    max_budget <- kappa1 * nats(0.999)
+    Bc <- seq(0, max_budget, length.out = 400)
+    Pc <- -expm1(-Bc / kappa1)
+    graphics::plot(Bc, Pc, type = "l", lwd = 2, col = "black",
+                   xlab = "Budget", ylab = "Detection probability",
+                   ylim = c(0, 1))
+    ## Integer step function: with the inner design fixed, each whole outermost
+    ## unit costs C1 and the achievable detection jumps only at multiples of C1.
+    ## P at n_1 outermost units is 1 - exp(-n_1 * h_1) = 1 - exp(-n_1 * C1 / kappa1).
+    C1 <- des$C / max(des$n[1], 1)           # cost of one outermost unit
+    if (is.finite(C1) && C1 > 0) {
+      n1_max <- max(1, floor(max_budget / C1))
+      n1_max <- min(n1_max, 2000)            # keep the step set tractable
+      n1_seq <- 0:n1_max
+      B_step <- n1_seq * C1
+      P_step <- -expm1(-B_step / kappa1)
+      ## Draw as a staircase: detection is flat from one unit's cost up to the
+      ## next, then jumps.
+      graphics::segments(B_step[-length(B_step)], P_step[-length(P_step)],
+                         B_step[-1], P_step[-length(P_step)],
+                         col = "grey55", lwd = 2)                 # flat treads
+      graphics::segments(B_step[-1], P_step[-length(P_step)],
+                         B_step[-1], P_step[-1],
+                         col = "grey55", lwd = 1, lty = 2)        # risers
+      graphics::points(B_step, P_step, pch = 19, cex = 0.5, col = "grey40")
+    }
+    ## Mark this design's point.
+    if (des$C <= max_budget && des$P1 > 0) {
+      graphics::points(des$C, des$P1, pch = 19, col = "firebrick", cex = 1.3)
+      graphics::segments(des$C, 0, des$C, des$P1, lty = 3, col = "firebrick")
+    }
+    graphics::legend("bottomright",
+                     legend = c("continuous frontier", "integer steps",
+                                "this design"),
+                     col = c("black", "grey55", "firebrick"),
+                     lwd = c(2, 2, NA), pch = c(NA, NA, 19), bty = "n")
   })
 
   ## Readout of the point under the cursor. The x position is a budget; the
@@ -428,6 +556,45 @@ server <- function(input, output, session) {
                               input$enumerate), file)
     }
   )
+
+  ## --- Compare against a user-supplied design (optimum vs alternative) ----- ##
+  ## One count input per level, seeded from the current optimum so the user
+  ## starts from the recommended design and edits it.
+  output$alt_inputs <- renderUI({
+    d <- input$d
+    des <- tryCatch(design(), error = function(e) NULL)
+    seed_n <- if (!is.null(des) && length(des$n) == d) round(des$n) else rep(1, d)
+    lapply(seq_len(d), function(i) {
+      end <- if (i == 1L) " (outermost)" else if (i == d) " (innermost)" else ""
+      numericInput(paste0("alt_n_", i),
+                   HTML(sprintf("<i>n</i><sub>%d</sub>%s", i, end)),
+                   value = seed_n[i], min = 0, step = 1)
+    })
+  })
+
+  output$compare_table <- renderTable({
+    req(isTRUE(input$compare_alt))
+    des <- design()
+    d <- input$d
+    iv <- inputs()
+    alt_n <- vapply(seq_len(d),
+                    function(i) input[[paste0("alt_n_", i)]], numeric(1))
+    req(!any(is.na(alt_n)))
+    validate(need(all(alt_n >= 0), "Counts must be zero or positive."))
+    ## Detection and cost of the user's design, via the same package internals.
+    alt_P <- if (all(alt_n >= 1)) detection_recursion(iv$theta, alt_n)$P1 else 0
+    alt_C <- total_cost(iv$cost, alt_n)
+    data.frame(
+      "Design"                         = c("Optimum (rule)", "Your design"),
+      "Counts <i>n</i> (outer&rarr;inner)" =
+        c(paste(round(des$n), collapse = " / "),
+          paste(round(alt_n), collapse = " / ")),
+      "Detection"                      = c(des$P1, alt_P),
+      "Total cost"                     = c(des$C, alt_C),
+      check.names = FALSE
+    )
+  }, digits = 4, sanitize.text.function = identity,
+     sanitize.colnames.function = identity)
 
   ## =================================================================== ##
   ## Tab 2: multispecies assemblage                                      ##
@@ -632,6 +799,161 @@ server <- function(input, output, session) {
                                          input$m_budget, input$m_integer),
                  file)
     }
+  )
+
+  ## Assemblage cost-detection frontier (Pareto analogue): re-optimize the shared
+  ## design across a grid of budgets and plot weighted detection D vs cost.
+  output$m_frontier <- renderPlot({
+    st <- m_theta()
+    cst <- m_cost()
+    req(st, cst, ncol(st$theta) == length(cst),
+        all(st$theta > 0 & st$theta < 1), all(cst > 0),
+        any(st$weight > 0), !is.na(input$m_budget), input$m_budget > 0)
+    ## A budget grid spanning from a small design to ~2x the current budget, so
+    ## the current point sits inside the plotted range.
+    bmax <- max(input$m_budget * 2, input$m_budget + sum(cst))
+    budgets <- seq(sum(cst), bmax, length.out = 40)
+    pts <- lapply(budgets, function(b) {
+      des <- tryCatch(
+        allocate_assemblage(st$theta, cst, budget = b, weight = st$weight,
+                            integer = input$m_integer),
+        error = function(e) NULL)
+      if (is.null(des) || des$n[1] < 1) return(NULL)
+      c(cost = des$C, D = des$D)
+    })
+    pts <- do.call(rbind, pts[!vapply(pts, is.null, logical(1))])
+    validate(need(!is.null(pts) && nrow(pts) >= 2,
+                  "Not enough feasible budgets to draw a frontier."))
+    graphics::plot(pts[, "cost"], pts[, "D"], type = "b", pch = 19, cex = 0.5,
+                   col = "steelblue", lwd = 2,
+                   xlab = "Total cost", ylab = "Weighted detection D",
+                   ylim = c(0, 1))
+    cur <- tryCatch(m_design(), error = function(e) NULL)
+    if (!is.null(cur) && cur$n[1] >= 1) {
+      graphics::points(cur$C, cur$D, pch = 19, col = "firebrick", cex = 1.3)
+      graphics::segments(cur$C, 0, cur$C, cur$D, lty = 3, col = "firebrick")
+      graphics::legend("bottomright",
+                       legend = c("re-optimized frontier", "current budget"),
+                       col = c("steelblue", "firebrick"),
+                       lwd = c(2, NA), pch = c(19, 19), bty = "n")
+    }
+  })
+
+  ## =================================================================== ##
+  ## Tab 3: branches (complementary methods or places)                   ##
+  ## =================================================================== ##
+
+  b_rate <- reactiveVal(NULL)
+
+  ## (Re)build the rate matrix when the target/branch counts change, keeping
+  ## overlapping cells.
+  observeEvent(list(input$b_targets, input$b_branches), {
+    nt <- input$b_targets
+    nk <- input$b_branches
+    old <- b_rate()
+    r <- matrix(round(seq(0.9, 0.3, length.out = nk), 2),
+                nrow = nt, ncol = nk, byrow = TRUE)
+    if (!is.null(old)) {
+      ro <- min(nrow(old), nt); co <- min(ncol(old), nk)
+      r[seq_len(ro), seq_len(co)] <- old[seq_len(ro), seq_len(co), drop = FALSE]
+    }
+    rownames(r) <- paste0("target_", seq_len(nt))
+    colnames(r) <- paste0("branch_", seq_len(nk))
+    b_rate(r)
+  }, ignoreInit = FALSE)
+
+  output$b_rate_table <- DT::renderDT({
+    r <- b_rate(); req(r)
+    df <- data.frame(target = rownames(r), r, check.names = FALSE)
+    colnames(df) <- c("target",
+                      paste0("branch ", seq_len(ncol(r)),
+                             " (<i>r</i><sub>t", seq_len(ncol(r)), "</sub>)"))
+    DT::datatable(df, rownames = FALSE, editable = "cell", escape = FALSE,
+                  options = list(dom = "t", paging = FALSE, ordering = FALSE))
+  }, server = TRUE)
+
+  observeEvent(input$b_rate_table_cell_edit, {
+    info <- input$b_rate_table_cell_edit
+    r <- b_rate()
+    j <- info$col            # 0 = target name, 1.. = branch rates
+    val <- suppressWarnings(as.numeric(info$value))
+    if (j == 0) {
+      rownames(r)[info$row] <- as.character(info$value)
+    } else if (!is.na(val) && val >= 0) {
+      r[info$row, j] <- val
+    }
+    b_rate(r)
+  })
+
+  b_result <- reactive({
+    r <- b_rate()
+    req(r, !is.na(input$b_budget), input$b_budget > 0)
+    validate(need(all(r >= 0), "Rates must be zero or positive."),
+             need(any(r > 0), "At least one rate must be positive."))
+    tryCatch(
+      allocate_branches(rate = r, budget = input$b_budget),
+      error = function(e)
+        validate(need(FALSE, paste("Could not solve:", conditionMessage(e)))))
+  })
+
+  output$b_headline <- renderText({
+    res <- b_result()
+    regime_txt <- c(dominance = "one branch is best for every target (dominance)",
+                    `small-budget` = "small-budget regime (weighted average over targets)",
+                    `large-budget` = "large-budget regime (the branch's worst target decides)")
+    sprintf(paste0("Weighted detection: %.4f\n%s\nTheorem 2 regime: %s"),
+            res$detection,
+            if (res$concentrate)
+              "Concentrate: put the whole budget on the single best branch."
+            else
+              "Spread: split the budget across branches (shares below).",
+            regime_txt[[res$regime]])
+  })
+
+  output$b_share_table <- renderTable({
+    res <- b_result()
+    r <- b_rate()
+    data.frame(
+      "Branch"                 = colnames(r),
+      "Budget share"           = res$share,
+      "Budget amount"          = res$share * input$b_budget,
+      check.names = FALSE
+    )
+  }, digits = 4)
+
+  output$b_share_plot <- renderPlot({
+    res <- b_result()
+    r <- b_rate()
+    graphics::barplot(res$share, names.arg = colnames(r),
+                      ylab = "Share of budget", ylim = c(0, 1),
+                      col = "steelblue", border = NA)
+  })
+
+  output$b_download_script <- downloadHandler(
+    filename = function() "multidetectr_branches.R",
+    content = function(file) {
+      r <- b_rate()
+      writeLines(build_branches_script(r, input$b_budget), file)
+    }
+  )
+}
+
+## Assemble a runnable script for a branches (methods/places) allocation.
+build_branches_script <- function(rate, budget) {
+  nt <- nrow(rate)
+  nk <- ncol(rate)
+  row_txt <- vapply(seq_len(nt), function(t) {
+    sprintf("  c(%s)", paste(signif(rate[t, ], 6), collapse = ", "))
+  }, character(1))
+  rate_txt <- paste0("rbind(\n", paste(row_txt, collapse = ",\n"), "\n)")
+  c(
+    "# Reproducible script generated by the multiDetectR Shiny app (branches).",
+    "library(multiDetectR)",
+    "",
+    paste0("rate <- ", rate_txt),
+    sprintf("branches <- allocate_branches(rate = rate, budget = %s)",
+            signif(budget, 6)),
+    "str(branches)"
   )
 }
 
