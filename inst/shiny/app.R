@@ -612,7 +612,15 @@ server <- function(input, output, session) {
     d <- input$m_d
     nt <- input$m_targets
     old <- m_theta()
-    th <- matrix(0.5, nrow = nt, ncol = d)
+    ## Default theta: make species DIFFER so the "hardest target binds the
+    ## design" behaviour is visible out of the box, rather than an all-0.5 table.
+    ## Deterministic (so the app is reproducible): each species gets a base
+    ## detectability stepped across a range, with a mild rise toward the inner
+    ## levels; everything clamped to (0, 1). Users still edit freely.
+    base <- if (nt == 1L) 0.5 else seq(0.3, 0.7, length.out = nt)
+    level_adj <- if (d == 1L) 0 else 0.05 * (seq_len(d) - (d + 1) / 2)
+    th <- outer(base, level_adj, `+`)
+    th <- pmin(pmax(th, 0.05), 0.95)
     wt <- rep(1, nt)
     if (!is.null(old)) {
       ro <- min(nrow(old$theta), nt)
@@ -851,8 +859,23 @@ server <- function(input, output, session) {
     nt <- input$b_targets
     nk <- input$b_branches
     old <- b_rate()
-    r <- matrix(round(seq(0.9, 0.3, length.out = nk), 2),
-                nrow = nt, ncol = nk, byrow = TRUE)
+    ## Default rates: make DIFFERENT targets favour DIFFERENT branches, so the
+    ## interesting "spread the budget" behaviour shows out of the box instead of
+    ## the trivial case where one branch dominates for everyone (which always
+    ## says "concentrate"). Deterministic (reproducible): target t peaks on the
+    ## branch t cycles to, with lower rates on the others. A single target keeps
+    ## a simple descending ramp (that one is a genuine dominance case).
+    if (nt == 1L) {
+      r <- matrix(round(seq(0.9, 0.3, length.out = nk), 2), nrow = 1)
+    } else {
+      hi <- 0.9; lo <- 0.3
+      r <- matrix(lo, nrow = nt, ncol = nk)
+      for (t in seq_len(nt)) {
+        peak <- ((t - 1) %% nk) + 1          # each target's preferred branch
+        r[t, ] <- round(lo + (hi - lo) *
+                          (0.4 ^ abs(seq_len(nk) - peak)), 2)
+      }
+    }
     if (!is.null(old)) {
       ro <- min(nrow(old), nt); co <- min(ncol(old), nk)
       r[seq_len(ro), seq_len(co)] <- old[seq_len(ro), seq_len(co), drop = FALSE]
