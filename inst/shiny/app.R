@@ -353,9 +353,11 @@ ui <- fluidPage(
         h4("Per-unit detection probability (editable)"),
         helpText(HTML(paste0(
           "Rows are targets, columns are branches. Each cell is the probability ",
-          "that <b>one unit</b> of that branch detects that target (0 to 1). ",
-          "A 0 means the branch cannot detect that target (e.g., a place where ",
-          "the target is absent)."))),
+          "that <b>one unit</b> of that branch detects that target, from 0 up ",
+          "to (but not including) 1. A 0 means the branch cannot detect that ",
+          "target (e.g., a place where the target is absent); 1 is not allowed, ",
+          "since \u201calways detects in one unit\u201d is an infinite detection ",
+          "rate."))),
         DT::DTOutput("b_prob_table"),
         tags$br(),
         h4("Cost of one unit of each branch ($)"),
@@ -918,10 +920,22 @@ server <- function(input, output, session) {
     val <- suppressWarnings(as.numeric(info$value))
     if (j == 0) {
       rownames(p)[info$row] <- as.character(info$value)
+      b_prob(p)
     } else if (!is.na(val) && val >= 0 && val < 1) {
       p[info$row, j] <- val   # keep in [0, 1); 1 would be infinite hazard
+      b_prob(p)
+    } else {
+      ## Reject out-of-range or non-numeric entries with a visible message, and
+      ## re-render so the cell reverts to its previous value (rather than
+      ## silently keeping the bad edit on screen).
+      showNotification(
+        paste0("A per-unit detection probability must be a number from 0 up to ",
+               "(but not including) 1. A probability of 1 would mean one unit ",
+               "always detects, which is an infinite detection rate. ",
+               "Keeping the previous value."),
+        type = "warning", duration = 8)
+      b_prob(p)   # unchanged; triggers a re-render that restores the cell
     }
-    b_prob(p)
   })
 
   ## Editable per-branch unit-cost row.
